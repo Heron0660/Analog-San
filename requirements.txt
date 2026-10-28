@@ -1,0 +1,14 @@
+# =============================================================================
+#  Analog-San - Dependências Python
+#  Instale com: pip install -r requirements.txt
+# =============================================================================
+
+# Quimioinformática - manipulação molecular e cálculo de propriedades ADMET
+rdkit>=2022.09.1
+
+# Interface gráfica moderna (dark/light mode) baseada em Tkinter
+customtkinter>=5.2.0
+
+# Manipulação e renderização de imagens (visualização 2D de moléculas)
+# Também usada para gráficos científicos do módulo de validação
+Pillow>=9.0.0

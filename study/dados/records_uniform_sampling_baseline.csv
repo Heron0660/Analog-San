@@ -1,0 +1,721 @@
+﻿ID_Molecula,SMILES,Modificacao,PrioridadeSintese,FacilidadeSintese,EtapaGeracao,MW,LogP,HBA,HBD,TPSA,RotBonds,HAC,ScoreGlobal,CategoriaScore,LipinskiOK,VeberOK,RegrasVioladas,SimilaridadeTanimoto,SAScore,QtdAlertas,AlertasQuimicos,Prototype,Seed
+Analog_0001,CC(=O)N(C)c1ccc(O)cc1,N-Metilação,1,muito alta,protótipo,165.19,1.37,2,1,40.54,1,12,87.6,prioritário,sim,sim,nenhuma,0.4138,1.87,0,nenhum,Paracetamol,41242
+Analog_0002,COc1ccc(NC(C)=O)cc1,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,165.19,1.65,2,1,38.33,2,12,91.83,prioritário,sim,sim,nenhuma,0.5926,1.22,0,nenhum,Paracetamol,41242
+Analog_0003,COc1cnc(NC(C)=O)cc1C(F)(F)F,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,234.18,2.07,3,1,51.22,2,16,84.61,prioritário,sim,sim,nenhuma,0.2558,2.28,0,nenhum,Paracetamol,41242
+Analog_0004,CC(=O)Nc1ccc(N)cc1,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,150.18,1.23,2,2,55.12,1,11,80.17,prioritário,sim,sim,nenhuma,0.64,1.46,2,anil_no_alk(40); aniline,Paracetamol,41242
+Analog_0005,CC(=O)Nc1ccc(O)c(C)c1,Metilação Aromática (-CH3),2,alta,protótipo,165.19,1.66,2,2,49.33,1,12,83.02,prioritário,sim,sim,nenhuma,0.5517,1.63,1,hydroquinone,Paracetamol,41242
+Analog_0006,CC(=O)Nc1ccc(O)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,165.19,1.66,2,2,49.33,1,12,83.0,prioritário,sim,sim,nenhuma,0.5517,1.64,1,hydroquinone,Paracetamol,41242
+Analog_0007,CC(=O)Nc1ccc(O)c(F)c1,Fluoração Aromática,3,alta,protótipo,169.15,1.49,2,2,49.33,1,12,82.74,prioritário,sim,sim,nenhuma,0.5333,1.68,1,hydroquinone,Paracetamol,41242
+Analog_0008,CC(=O)Nc1ccc(O)cc1F,Fluoração Aromática,3,alta,protótipo,169.15,1.49,2,2,49.33,1,12,81.74,prioritário,sim,sim,nenhuma,0.4839,1.75,1,hydroquinone,Paracetamol,41242
+Analog_0009,CC(=O)Nc1ccc(O)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,166.18,0.93,3,3,75.35,1,12,70.75,promissor,sim,sim,nenhuma,0.5333,1.84,3,aniline; catechol; hydroquinone,Paracetamol,41242
+Analog_0010,CC(=O)Nc1ccc(O)cc1N,Aminação Aromática (-NH2),4,média,protótipo,166.18,0.93,3,3,75.35,1,12,73.95,promissor,sim,sim,nenhuma,0.4839,1.91,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0011,O=C(CO)Nc1ccc(O)cc1,Hidroxilação Alifática,4,média,protótipo,167.16,0.32,3,3,69.56,2,12,79.85,promissor,sim,sim,nenhuma,0.5556,1.67,1,hydroquinone,Paracetamol,41242
+Analog_0012,CC(=O)Nc1ccc(O)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,152.15,0.75,3,2,62.22,1,11,81.99,prioritário,sim,sim,nenhuma,0.5,2.03,0,nenhum,Paracetamol,41242
+Analog_0013,CC(=O)Nc1ccc(O)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,152.15,0.75,3,2,62.22,1,11,82.52,prioritário,sim,sim,nenhuma,0.5517,2.29,0,nenhum,Paracetamol,41242
+Analog_0014,CC(=O)Nc1ccc(O)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,176.17,1.22,3,2,73.12,1,13,78.35,promissor,sim,sim,nenhuma,0.4848,2.01,1,hydroquinone,Paracetamol,41242
+Analog_0015,CC(=O)Nc1ccc(O)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,176.17,1.22,3,2,73.12,1,13,77.5,promissor,sim,sim,nenhuma,0.4412,2.05,1,hydroquinone,Paracetamol,41242
+Analog_0016,CC(=O)Nc1ccc(O)c(Cl)c1,Cloração Aromática,5,média,protótipo,185.61,2.0,2,2,49.33,1,12,79.91,promissor,sim,sim,nenhuma,0.5333,1.65,1,hydroquinone,Paracetamol,41242
+Analog_0017,CC(=O)Nc1ccc(O)cc1Cl,Cloração Aromática,5,média,protótipo,185.61,2.0,2,2,49.33,1,12,78.89,promissor,sim,sim,nenhuma,0.4839,1.73,1,hydroquinone,Paracetamol,41242
+Analog_0018,CC(=O)Nc1cc(C(F)(F)F)c(O)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,220.15,1.76,3,2,62.22,1,15,78.79,promissor,sim,sim,nenhuma,0.3077,2.46,0,nenhum,Paracetamol,41242
+Analog_0019,CC(=O)Nc1ccc(O)c(C(F)(F)F)n1,Bioisostero: Benzeno->Piridina,5,média,exploração,220.15,1.76,3,2,62.22,1,15,79.57,promissor,sim,sim,nenhuma,0.3514,2.46,0,nenhum,Paracetamol,41242
+Analog_0020,CC(=O)Nc1cnc(O)c(C(F)(F)F)c1,Bioisostero: Benzeno->Piridina,5,média,exploração,220.15,1.76,3,2,62.22,1,15,80.0,promissor,sim,sim,nenhuma,0.3784,2.5,0,nenhum,Paracetamol,41242
+Analog_0021,N#Cc1cc(NC(=O)CO)ccc1O,Cianação Aromática (-CN),5,média,exploração,192.17,0.19,4,3,93.35,2,14,74.42,promissor,sim,sim,nenhuma,0.275,2.19,1,hydroquinone,Paracetamol,41242
+Analog_0022,N#Cc1cc(O)ccc1NC(=O)CO,Cianação Aromática (-CN),5,média,exploração,192.17,0.19,4,3,93.35,2,14,74.37,promissor,sim,sim,nenhuma,0.275,2.22,1,hydroquinone,Paracetamol,41242
+Analog_0023,CC(=O)Nc1c(N)cc(O)cc1Cl,Cloração Aromática,5,média,exploração,200.62,1.59,3,3,75.35,1,13,71.78,promissor,sim,sim,nenhuma,0.3714,2.3,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0024,CC(=O)Nc1cc(Cl)c(O)cc1N,Cloração Aromática,5,média,exploração,200.62,1.59,3,3,75.35,1,13,71.33,promissor,sim,sim,nenhuma,0.3333,2.15,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0025,CC(=O)Nc1ccc(O)c(Cl)c1N,Cloração Aromática,5,média,exploração,200.62,1.59,3,3,75.35,1,13,71.69,promissor,sim,sim,nenhuma,0.3714,2.36,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0026,CC(=O)Nc1ccc(O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,219.16,2.37,2,2,49.33,1,15,74.64,promissor,sim,sim,nenhuma,0.4848,1.93,1,hydroquinone,Paracetamol,41242
+Analog_0027,CC(=O)Nc1ccc(O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,219.16,2.37,2,2,49.33,1,15,73.78,promissor,sim,sim,nenhuma,0.4412,1.98,1,hydroquinone,Paracetamol,41242
+Analog_0028,CC(=O)Nc1c(N)cc(O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,234.18,1.95,3,3,75.35,1,16,66.92,promissor,sim,sim,nenhuma,0.3421,2.54,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0029,CC(=O)Nc1cc(C(F)(F)F)c(O)cc1N,Trifluorometilação (-CF3),6,baixa,exploração,234.18,1.95,3,3,75.35,1,16,66.58,promissor,sim,sim,nenhuma,0.3077,2.36,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0030,CC(=O)Nc1ccc(O)c(C(F)(F)F)c1N,Trifluorometilação (-CF3),6,baixa,exploração,234.18,1.95,3,3,75.35,1,16,66.98,promissor,sim,sim,nenhuma,0.3421,2.5,2,aniline; hydroquinone,Paracetamol,41242
+Analog_0001,CC(=O)N(C)c1ccc(O)cc1,N-Metilação,1,muito alta,protótipo,165.19,1.37,2,1,40.54,1,12,87.6,prioritário,sim,sim,nenhuma,0.4138,1.87,0,nenhum,Paracetamol,41243
+Analog_0002,COc1ccc(NC(C)=O)cc1,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,165.19,1.65,2,1,38.33,2,12,91.83,prioritário,sim,sim,nenhuma,0.5926,1.22,0,nenhum,Paracetamol,41243
+Analog_0003,COc1ccc(NC(C)=O)cc1C(F)(F)F,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,233.19,2.67,2,1,38.33,2,16,88.1,prioritário,sim,sim,nenhuma,0.4054,1.77,0,nenhum,Paracetamol,41243
+Analog_0004,CC(=O)Nc1ccc(N)cc1,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,150.18,1.23,2,2,55.12,1,11,80.17,prioritário,sim,sim,nenhuma,0.64,1.46,2,anil_no_alk(40); aniline,Paracetamol,41243
+Analog_0005,CC(=O)Nc1ccc(O)c(C)c1,Metilação Aromática (-CH3),2,alta,protótipo,165.19,1.66,2,2,49.33,1,12,83.02,prioritário,sim,sim,nenhuma,0.5517,1.63,1,hydroquinone,Paracetamol,41243
+Analog_0006,CC(=O)Nc1ccc(O)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,165.19,1.66,2,2,49.33,1,12,83.0,prioritário,sim,sim,nenhuma,0.5517,1.64,1,hydroquinone,Paracetamol,41243
+Analog_0007,CC(=O)Nc1ccc(O)c(F)c1,Fluoração Aromática,3,alta,protótipo,169.15,1.49,2,2,49.33,1,12,82.74,prioritário,sim,sim,nenhuma,0.5333,1.68,1,hydroquinone,Paracetamol,41243
+Analog_0008,CC(=O)Nc1ccc(O)cc1F,Fluoração Aromática,3,alta,protótipo,169.15,1.49,2,2,49.33,1,12,81.74,prioritário,sim,sim,nenhuma,0.4839,1.75,1,hydroquinone,Paracetamol,41243
+Analog_0009,CC(=O)Nc1ccc(O)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,166.18,0.93,3,3,75.35,1,12,70.75,promissor,sim,sim,nenhuma,0.5333,1.84,3,aniline; catechol; hydroquinone,Paracetamol,41243
+Analog_0010,CC(=O)Nc1ccc(O)cc1N,Aminação Aromática (-NH2),4,média,protótipo,166.18,0.93,3,3,75.35,1,12,73.95,promissor,sim,sim,nenhuma,0.4839,1.91,2,aniline; hydroquinone,Paracetamol,41243
+Analog_0011,O=C(CO)Nc1ccc(O)cc1,Hidroxilação Alifática,4,média,protótipo,167.16,0.32,3,3,69.56,2,12,79.85,promissor,sim,sim,nenhuma,0.5556,1.67,1,hydroquinone,Paracetamol,41243
+Analog_0012,CC(=O)Nc1ccc(O)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,152.15,0.75,3,2,62.22,1,11,81.99,prioritário,sim,sim,nenhuma,0.5,2.03,0,nenhum,Paracetamol,41243
+Analog_0013,CC(=O)Nc1ccc(O)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,152.15,0.75,3,2,62.22,1,11,82.52,prioritário,sim,sim,nenhuma,0.5517,2.29,0,nenhum,Paracetamol,41243
+Analog_0014,CC(=O)Nc1ccc(O)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,176.17,1.22,3,2,73.12,1,13,78.35,promissor,sim,sim,nenhuma,0.4848,2.01,1,hydroquinone,Paracetamol,41243
+Analog_0015,CC(=O)Nc1ccc(O)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,176.17,1.22,3,2,73.12,1,13,77.5,promissor,sim,sim,nenhuma,0.4412,2.05,1,hydroquinone,Paracetamol,41243
+Analog_0016,CC(=O)Nc1ccc(O)c(Cl)c1,Cloração Aromática,5,média,protótipo,185.61,2.0,2,2,49.33,1,12,79.91,promissor,sim,sim,nenhuma,0.5333,1.65,1,hydroquinone,Paracetamol,41243
+Analog_0017,CC(=O)Nc1ccc(O)cc1Cl,Cloração Aromática,5,média,protótipo,185.61,2.0,2,2,49.33,1,12,78.89,promissor,sim,sim,nenhuma,0.4839,1.73,1,hydroquinone,Paracetamol,41243
+Analog_0018,CC(=O)Nc1cc(C#N)c(O)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,177.16,0.62,4,2,86.01,1,13,78.6,promissor,sim,sim,nenhuma,0.3077,2.52,0,nenhum,Paracetamol,41243
+Analog_0019,CC(=O)Nc1ccc(N)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,151.17,0.62,3,2,68.01,1,11,79.37,promissor,sim,sim,nenhuma,0.3529,1.99,0,nenhum,Paracetamol,41243
+Analog_0020,CC(=O)Nc1ccc(N)nc1,Bioisostero: Benzeno->Piridina,5,média,exploração,151.17,0.62,3,2,68.01,1,11,81.9,prioritário,sim,sim,nenhuma,0.4839,1.88,0,nenhum,Paracetamol,41243
+Analog_0021,CC(=O)Nc1ccc(O)c(C#N)n1,Bioisostero: Benzeno->Piridina,5,média,exploração,177.16,0.62,4,2,86.01,1,13,79.32,promissor,sim,sim,nenhuma,0.3514,2.56,0,nenhum,Paracetamol,41243
+Analog_0022,CC(=O)Nc1cnc(O)c(C#N)c1,Bioisostero: Benzeno->Piridina,5,média,exploração,177.16,0.62,4,2,86.01,1,13,79.84,promissor,sim,sim,nenhuma,0.3784,2.54,0,nenhum,Paracetamol,41243
+Analog_0023,COc1ccc(NC(C)=O)nc1,Bioisostero: Benzeno->Piridina,5,média,exploração,166.18,1.05,3,1,51.22,2,12,79.8,promissor,sim,sim,nenhuma,0.3333,1.81,0,nenhum,Paracetamol,41243
+Analog_0024,CC(=O)Nc1cc(C(F)(F)F)c(O)cc1Cl,Cloração Aromática,5,média,exploração,253.61,3.02,2,2,49.33,1,16,74.98,promissor,sim,sim,nenhuma,0.3077,2.21,1,hydroquinone,Paracetamol,41243
+Analog_0025,CC(=O)Nc1ccc(O)c(C(F)(F)F)c1Cl,Cloração Aromática,5,média,exploração,253.61,3.02,2,2,49.33,1,16,75.28,promissor,sim,sim,nenhuma,0.3421,2.41,1,hydroquinone,Paracetamol,41243
+Analog_0026,CC(=O)Nc1ccc(O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,219.16,2.37,2,2,49.33,1,15,74.64,promissor,sim,sim,nenhuma,0.4848,1.93,1,hydroquinone,Paracetamol,41243
+Analog_0027,CC(=O)Nc1ccc(O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,219.16,2.37,2,2,49.33,1,15,73.78,promissor,sim,sim,nenhuma,0.4412,1.98,1,hydroquinone,Paracetamol,41243
+Analog_0028,CC(=O)Nc1cc(Cl)c(O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,exploração,253.61,3.02,2,2,49.33,1,16,72.4,promissor,sim,sim,nenhuma,0.3784,2.14,1,hydroquinone,Paracetamol,41243
+Analog_0029,CC(=O)Nc1cc(Cl)c(O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,253.61,3.02,2,2,49.33,1,16,70.99,promissor,sim,sim,nenhuma,0.3077,2.23,1,hydroquinone,Paracetamol,41243
+Analog_0030,CC(=O)Nc1ccc(O)c(Cl)c1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,253.61,3.02,2,2,49.33,1,16,71.26,promissor,sim,sim,nenhuma,0.3421,2.45,1,hydroquinone,Paracetamol,41243
+Analog_0001,CC(=O)N(C)c1ccc(O)cc1,N-Metilação,1,muito alta,protótipo,165.19,1.37,2,1,40.54,1,12,87.6,prioritário,sim,sim,nenhuma,0.4138,1.87,0,nenhum,Paracetamol,41244
+Analog_0002,COc1ccc(NC(C)=O)cc1,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,165.19,1.65,2,1,38.33,2,12,91.83,prioritário,sim,sim,nenhuma,0.5926,1.22,0,nenhum,Paracetamol,41244
+Analog_0003,CC(=O)Nc1ccc(N)cc1,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,150.18,1.23,2,2,55.12,1,11,80.17,prioritário,sim,sim,nenhuma,0.64,1.46,2,anil_no_alk(40); aniline,Paracetamol,41244
+Analog_0004,CC(=O)Nc1ccc(O)c(C)c1,Metilação Aromática (-CH3),2,alta,protótipo,165.19,1.66,2,2,49.33,1,12,83.02,prioritário,sim,sim,nenhuma,0.5517,1.63,1,hydroquinone,Paracetamol,41244
+Analog_0005,CC(=O)Nc1ccc(O)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,165.19,1.66,2,2,49.33,1,12,83.0,prioritário,sim,sim,nenhuma,0.5517,1.64,1,hydroquinone,Paracetamol,41244
+Analog_0006,CC(=O)Nc1c(C)cc(O)cc1Cl,Metilação Aromática (-CH3),2,alta,exploração,199.64,2.31,2,2,49.33,1,13,80.58,prioritário,sim,sim,nenhuma,0.4242,2.04,1,hydroquinone,Paracetamol,41244
+Analog_0007,CC(=O)Nc1cc(C)c(O)cc1Cl,Metilação Aromática (-CH3),2,alta,exploração,199.64,2.31,2,2,49.33,1,13,79.27,promissor,sim,sim,nenhuma,0.3429,1.94,1,hydroquinone,Paracetamol,41244
+Analog_0008,CC(=O)Nc1ccc(O)c(C)c1Cl,Metilação Aromática (-CH3),2,alta,exploração,199.64,2.31,2,2,49.33,1,13,79.61,promissor,sim,sim,nenhuma,0.3824,2.18,1,hydroquinone,Paracetamol,41244
+Analog_0009,CC(=O)Nc1ccc(O)c(F)c1,Fluoração Aromática,3,alta,protótipo,169.15,1.49,2,2,49.33,1,12,82.74,prioritário,sim,sim,nenhuma,0.5333,1.68,1,hydroquinone,Paracetamol,41244
+Analog_0010,CC(=O)Nc1ccc(O)cc1F,Fluoração Aromática,3,alta,protótipo,169.15,1.49,2,2,49.33,1,12,81.74,prioritário,sim,sim,nenhuma,0.4839,1.75,1,hydroquinone,Paracetamol,41244
+Analog_0011,CC(=O)Nc1ccc(O)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,166.18,0.93,3,3,75.35,1,12,70.75,promissor,sim,sim,nenhuma,0.5333,1.84,3,aniline; catechol; hydroquinone,Paracetamol,41244
+Analog_0012,CC(=O)Nc1ccc(O)cc1N,Aminação Aromática (-NH2),4,média,protótipo,166.18,0.93,3,3,75.35,1,12,73.95,promissor,sim,sim,nenhuma,0.4839,1.91,2,aniline; hydroquinone,Paracetamol,41244
+Analog_0013,O=C(CO)Nc1ccc(O)cc1,Hidroxilação Alifática,4,média,protótipo,167.16,0.32,3,3,69.56,2,12,79.85,promissor,sim,sim,nenhuma,0.5556,1.67,1,hydroquinone,Paracetamol,41244
+Analog_0014,N#Cc1cc(O)cnc1NC(=O)CO,Hidroxilação Alifática,4,média,exploração,193.16,-0.41,5,3,106.24,2,14,75.34,promissor,sim,sim,nenhuma,0.2045,2.69,0,nenhum,Paracetamol,41244
+Analog_0015,CC(=O)Nc1ccc(O)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,152.15,0.75,3,2,62.22,1,11,81.99,prioritário,sim,sim,nenhuma,0.5,2.03,0,nenhum,Paracetamol,41244
+Analog_0016,CC(=O)Nc1ccc(O)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,152.15,0.75,3,2,62.22,1,11,82.52,prioritário,sim,sim,nenhuma,0.5517,2.29,0,nenhum,Paracetamol,41244
+Analog_0017,CC(=O)Nc1ccc(O)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,176.17,1.22,3,2,73.12,1,13,78.35,promissor,sim,sim,nenhuma,0.4848,2.01,1,hydroquinone,Paracetamol,41244
+Analog_0018,CC(=O)Nc1ccc(O)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,176.17,1.22,3,2,73.12,1,13,77.5,promissor,sim,sim,nenhuma,0.4412,2.05,1,hydroquinone,Paracetamol,41244
+Analog_0019,CC(=O)Nc1ccc(O)c(Cl)c1,Cloração Aromática,5,média,protótipo,185.61,2.0,2,2,49.33,1,12,79.91,promissor,sim,sim,nenhuma,0.5333,1.65,1,hydroquinone,Paracetamol,41244
+Analog_0020,CC(=O)Nc1ccc(O)cc1Cl,Cloração Aromática,5,média,protótipo,185.61,2.0,2,2,49.33,1,12,78.89,promissor,sim,sim,nenhuma,0.4839,1.73,1,hydroquinone,Paracetamol,41244
+Analog_0021,O=C(CO)Nc1ccc(O)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,168.15,-0.28,4,3,82.45,2,12,77.87,promissor,sim,sim,nenhuma,0.3056,2.23,0,nenhum,Paracetamol,41244
+Analog_0022,O=C(CO)Nc1ccc(O)nc1,Bioisostero: Benzeno->Piridina,5,média,exploração,168.15,-0.28,4,3,82.45,2,12,77.5,promissor,sim,sim,nenhuma,0.3056,2.47,0,nenhum,Paracetamol,41244
+Analog_0023,CC(=O)N(C)c1ccc(O)cc1Cl,Cloração Aromática,5,média,exploração,199.64,2.03,2,1,40.54,1,13,79.12,promissor,sim,sim,nenhuma,0.3056,2.22,0,nenhum,Paracetamol,41244
+Analog_0024,CC(=O)Nc1c(Cl)cc(O)cc1Cl,Cloração Aromática,5,média,exploração,220.05,2.66,2,2,49.33,1,13,77.42,promissor,sim,sim,nenhuma,0.4333,2.09,1,hydroquinone,Paracetamol,41244
+Analog_0025,CC(=O)Nc1cc(Cl)c(O)cc1Cl,Cloração Aromática,5,média,exploração,220.05,2.66,2,2,49.33,1,13,76.36,promissor,sim,sim,nenhuma,0.3636,1.97,1,hydroquinone,Paracetamol,41244
+Analog_0026,CC(=O)Nc1ccc(O)c(Cl)c1Cl,Cloração Aromática,5,média,exploração,220.06,2.66,2,2,49.33,1,13,76.94,promissor,sim,sim,nenhuma,0.4062,2.09,1,hydroquinone,Paracetamol,41244
+Analog_0027,CC(=O)Nc1ccc(O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,219.16,2.37,2,2,49.33,1,15,74.64,promissor,sim,sim,nenhuma,0.4848,1.93,1,hydroquinone,Paracetamol,41244
+Analog_0028,CC(=O)Nc1ccc(O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,219.16,2.37,2,2,49.33,1,15,73.78,promissor,sim,sim,nenhuma,0.4412,1.98,1,hydroquinone,Paracetamol,41244
+Analog_0029,CC(=O)Nc1cnc(O)cc1C#N,Bioisostero: Benzeno->Pirimidina,7,baixa,exploração,177.16,0.62,4,2,86.01,1,13,74.13,promissor,sim,sim,nenhuma,0.3077,2.85,0,nenhum,Paracetamol,41244
+Analog_0030,CC(=O)Nc1ncc(O)cc1C#N,Bioisostero: Benzeno->Pirimidina,7,baixa,exploração,177.16,0.62,4,2,86.01,1,13,75.23,promissor,sim,sim,nenhuma,0.3421,2.54,0,nenhum,Paracetamol,41244
+Analog_0001,COC(=O)c1ccccc1OC(C)=O,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,194.19,1.4,4,0,52.6,2,14,88.87,prioritário,sim,sim,nenhuma,0.6667,1.6,1,phenol_ester,Aspirin,41242
+Analog_0002,CC(=O)Oc1ccccc1C(N)=O,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,179.17,0.71,3,1,69.39,2,13,85.94,prioritário,sim,sim,nenhuma,0.6897,1.65,1,phenol_ester,Aspirin,41242
+Analog_0003,CC(=O)Oc1c(C)cccc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,83.04,prioritário,sim,sim,nenhuma,0.5455,1.86,1,phenol_ester,Aspirin,41242
+Analog_0004,CC(=O)Oc1cc(C)ccc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,84.07,prioritário,sim,sim,nenhuma,0.5938,1.76,1,phenol_ester,Aspirin,41242
+Analog_0005,CC(=O)Oc1ccc(C)cc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,84.14,prioritário,sim,sim,nenhuma,0.5938,1.71,1,phenol_ester,Aspirin,41242
+Analog_0006,CC(=O)Oc1cccc(C)c1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,83.01,prioritário,sim,sim,nenhuma,0.5455,1.88,1,phenol_ester,Aspirin,41242
+Analog_0007,CC(=O)Oc1c(F)cccc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,82.6,prioritário,sim,sim,nenhuma,0.5294,1.96,1,phenol_ester,Aspirin,41242
+Analog_0008,CC(=O)Oc1cc(F)ccc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,84.52,prioritário,sim,sim,nenhuma,0.625,1.83,1,phenol_ester,Aspirin,41242
+Analog_0009,CC(=O)Oc1ccc(F)cc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,84.63,prioritário,sim,sim,nenhuma,0.625,1.76,1,phenol_ester,Aspirin,41242
+Analog_0010,CC(=O)Oc1cccc(F)c1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,82.67,prioritário,sim,sim,nenhuma,0.5294,1.91,1,phenol_ester,Aspirin,41242
+Analog_0011,CC(=O)Oc1c(N)cccc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.05,promissor,sim,sim,nenhuma,0.5294,2.03,2,aniline; phenol_ester,Aspirin,41242
+Analog_0012,CC(=O)Oc1cc(N)ccc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.99,promissor,sim,sim,nenhuma,0.5758,1.96,2,aniline; phenol_ester,Aspirin,41242
+Analog_0013,CC(=O)Oc1ccc(N)cc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,76.1,promissor,sim,sim,nenhuma,0.5758,1.89,2,aniline; phenol_ester,Aspirin,41242
+Analog_0014,CC(=O)Oc1cccc(N)c1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.03,promissor,sim,sim,nenhuma,0.5294,2.04,2,aniline; phenol_ester,Aspirin,41242
+Analog_0015,CC(=O)Nc1ccccc1C(=O)O,Bioisostero: Éster->Amida,4,média,protótipo,179.17,1.34,2,2,66.4,2,13,83.0,prioritário,sim,sim,nenhuma,0.4545,1.43,0,nenhum,Aspirin,41242
+Analog_0016,O=C(CO)Oc1ccccc1C(=O)O,Hidroxilação Alifática,4,média,protótipo,196.16,0.28,4,2,83.83,3,14,81.0,prioritário,sim,sim,nenhuma,0.6129,1.87,1,phenol_ester,Aspirin,41242
+Analog_0017,CC(=O)Oc1cccnc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,83.45,prioritário,sim,sim,nenhuma,0.5294,2.03,0,nenhum,Aspirin,41242
+Analog_0018,CC(=O)Oc1ccncc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,84.2,prioritário,sim,sim,nenhuma,0.5758,2.08,0,nenhum,Aspirin,41242
+Analog_0019,CC(=O)Oc1cnccc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,84.11,prioritário,sim,sim,nenhuma,0.5758,2.14,0,nenhum,Aspirin,41242
+Analog_0020,CC(=O)Oc1ncccc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,83.4,prioritário,sim,sim,nenhuma,0.5294,2.06,0,nenhum,Aspirin,41242
+Analog_0021,CC(=O)Oc1c(C#N)cccc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,78.26,promissor,sim,sim,nenhuma,0.4865,2.17,1,phenol_ester,Aspirin,41242
+Analog_0022,CC(=O)Oc1cc(C#N)ccc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,79.22,promissor,sim,sim,nenhuma,0.5278,2.03,1,phenol_ester,Aspirin,41242
+Analog_0023,CC(=O)Oc1ccc(C#N)cc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,79.28,promissor,sim,sim,nenhuma,0.5278,1.99,1,phenol_ester,Aspirin,41242
+Analog_0024,CC(=O)Oc1cccc(C#N)c1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,78.18,promissor,sim,sim,nenhuma,0.4865,2.22,1,phenol_ester,Aspirin,41242
+Analog_0025,CC(=O)Oc1c(Cl)cccc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,79.46,promissor,sim,sim,nenhuma,0.5294,1.89,1,phenol_ester,Aspirin,41242
+Analog_0026,CC(=O)Oc1cc(Cl)ccc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,80.42,prioritário,sim,sim,nenhuma,0.5758,1.81,1,phenol_ester,Aspirin,41242
+Analog_0027,CC(=O)Oc1ccc(Cl)cc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,80.55,prioritário,sim,sim,nenhuma,0.5758,1.73,1,phenol_ester,Aspirin,41242
+Analog_0028,CC(=O)Oc1cccc(Cl)c1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,79.46,promissor,sim,sim,nenhuma,0.5294,1.89,1,phenol_ester,Aspirin,41242
+Analog_0029,CC(=O)Oc1c(C(=O)O)cccc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,248.16,2.33,3,1,63.6,2,17,74.33,promissor,sim,sim,nenhuma,0.4865,2.15,1,phenol_ester,Aspirin,41242
+Analog_0030,CC(=O)Oc1cc(C(F)(F)F)ccc1C(=O)O,Trifluorometilação (-CF3),6,baixa,protótipo,248.16,2.33,3,1,63.6,2,17,75.32,promissor,sim,sim,nenhuma,0.5278,1.99,1,phenol_ester,Aspirin,41242
+Analog_0001,COC(=O)c1ccccc1OC(C)=O,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,194.19,1.4,4,0,52.6,2,14,88.87,prioritário,sim,sim,nenhuma,0.6667,1.6,1,phenol_ester,Aspirin,41243
+Analog_0002,CC(=O)Oc1ccccc1C(N)=O,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,179.17,0.71,3,1,69.39,2,13,85.94,prioritário,sim,sim,nenhuma,0.6897,1.65,1,phenol_ester,Aspirin,41243
+Analog_0003,CC(=O)Oc1c(C)cccc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,83.04,prioritário,sim,sim,nenhuma,0.5455,1.86,1,phenol_ester,Aspirin,41243
+Analog_0004,CC(=O)Oc1cc(C)ccc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,84.07,prioritário,sim,sim,nenhuma,0.5938,1.76,1,phenol_ester,Aspirin,41243
+Analog_0005,CC(=O)Oc1ccc(C)cc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,84.14,prioritário,sim,sim,nenhuma,0.5938,1.71,1,phenol_ester,Aspirin,41243
+Analog_0006,CC(=O)Oc1cccc(C)c1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,83.01,prioritário,sim,sim,nenhuma,0.5455,1.88,1,phenol_ester,Aspirin,41243
+Analog_0007,CC(=O)Oc1c(F)cccc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,82.6,prioritário,sim,sim,nenhuma,0.5294,1.96,1,phenol_ester,Aspirin,41243
+Analog_0008,CC(=O)Oc1cc(F)ccc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,84.52,prioritário,sim,sim,nenhuma,0.625,1.83,1,phenol_ester,Aspirin,41243
+Analog_0009,CC(=O)Oc1ccc(F)cc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,84.63,prioritário,sim,sim,nenhuma,0.625,1.76,1,phenol_ester,Aspirin,41243
+Analog_0010,CC(=O)Oc1cccc(F)c1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,82.67,prioritário,sim,sim,nenhuma,0.5294,1.91,1,phenol_ester,Aspirin,41243
+Analog_0011,CC(=O)Oc1c(N)cccc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.05,promissor,sim,sim,nenhuma,0.5294,2.03,2,aniline; phenol_ester,Aspirin,41243
+Analog_0012,CC(=O)Oc1cc(N)ccc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.99,promissor,sim,sim,nenhuma,0.5758,1.96,2,aniline; phenol_ester,Aspirin,41243
+Analog_0013,CC(=O)Oc1ccc(N)cc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,76.1,promissor,sim,sim,nenhuma,0.5758,1.89,2,aniline; phenol_ester,Aspirin,41243
+Analog_0014,CC(=O)Oc1cccc(N)c1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.03,promissor,sim,sim,nenhuma,0.5294,2.04,2,aniline; phenol_ester,Aspirin,41243
+Analog_0015,CC(=O)Nc1ccccc1C(=O)O,Bioisostero: Éster->Amida,4,média,protótipo,179.17,1.34,2,2,66.4,2,13,83.0,prioritário,sim,sim,nenhuma,0.4545,1.43,0,nenhum,Aspirin,41243
+Analog_0016,O=C(CO)Oc1ccccc1C(=O)O,Hidroxilação Alifática,4,média,protótipo,196.16,0.28,4,2,83.83,3,14,81.0,prioritário,sim,sim,nenhuma,0.6129,1.87,1,phenol_ester,Aspirin,41243
+Analog_0017,CC(=O)Oc1cccnc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,83.45,prioritário,sim,sim,nenhuma,0.5294,2.03,0,nenhum,Aspirin,41243
+Analog_0018,CC(=O)Oc1ccncc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,84.2,prioritário,sim,sim,nenhuma,0.5758,2.08,0,nenhum,Aspirin,41243
+Analog_0019,CC(=O)Oc1cnccc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,84.11,prioritário,sim,sim,nenhuma,0.5758,2.14,0,nenhum,Aspirin,41243
+Analog_0020,CC(=O)Oc1ncccc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,83.4,prioritário,sim,sim,nenhuma,0.5294,2.06,0,nenhum,Aspirin,41243
+Analog_0021,CC(=O)Oc1c(C#N)cccc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,78.26,promissor,sim,sim,nenhuma,0.4865,2.17,1,phenol_ester,Aspirin,41243
+Analog_0022,CC(=O)Oc1cc(C#N)ccc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,79.22,promissor,sim,sim,nenhuma,0.5278,2.03,1,phenol_ester,Aspirin,41243
+Analog_0023,CC(=O)Oc1ccc(C#N)cc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,79.28,promissor,sim,sim,nenhuma,0.5278,1.99,1,phenol_ester,Aspirin,41243
+Analog_0024,CC(=O)Oc1cccc(C#N)c1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,78.18,promissor,sim,sim,nenhuma,0.4865,2.22,1,phenol_ester,Aspirin,41243
+Analog_0025,CC(=O)Oc1c(Cl)cccc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,79.46,promissor,sim,sim,nenhuma,0.5294,1.89,1,phenol_ester,Aspirin,41243
+Analog_0026,CC(=O)Oc1cc(Cl)ccc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,80.42,prioritário,sim,sim,nenhuma,0.5758,1.81,1,phenol_ester,Aspirin,41243
+Analog_0027,CC(=O)Oc1ccc(Cl)cc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,80.55,prioritário,sim,sim,nenhuma,0.5758,1.73,1,phenol_ester,Aspirin,41243
+Analog_0028,CC(=O)Oc1cccc(Cl)c1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,79.46,promissor,sim,sim,nenhuma,0.5294,1.89,1,phenol_ester,Aspirin,41243
+Analog_0029,CC(=O)Oc1c(C(=O)O)cccc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,248.16,2.33,3,1,63.6,2,17,74.33,promissor,sim,sim,nenhuma,0.4865,2.15,1,phenol_ester,Aspirin,41243
+Analog_0030,CC(=O)Oc1cc(C(F)(F)F)ccc1C(=O)O,Trifluorometilação (-CF3),6,baixa,protótipo,248.16,2.33,3,1,63.6,2,17,75.32,promissor,sim,sim,nenhuma,0.5278,1.99,1,phenol_ester,Aspirin,41243
+Analog_0001,COC(=O)c1ccccc1OC(C)=O,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,194.19,1.4,4,0,52.6,2,14,88.87,prioritário,sim,sim,nenhuma,0.6667,1.6,1,phenol_ester,Aspirin,41244
+Analog_0002,CC(=O)Oc1ccccc1C(N)=O,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,179.17,0.71,3,1,69.39,2,13,85.94,prioritário,sim,sim,nenhuma,0.6897,1.65,1,phenol_ester,Aspirin,41244
+Analog_0003,CC(=O)Oc1c(C)cccc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,83.04,prioritário,sim,sim,nenhuma,0.5455,1.86,1,phenol_ester,Aspirin,41244
+Analog_0004,CC(=O)Oc1cc(C)ccc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,84.07,prioritário,sim,sim,nenhuma,0.5938,1.76,1,phenol_ester,Aspirin,41244
+Analog_0005,CC(=O)Oc1ccc(C)cc1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,84.14,prioritário,sim,sim,nenhuma,0.5938,1.71,1,phenol_ester,Aspirin,41244
+Analog_0006,CC(=O)Oc1cccc(C)c1C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,194.19,1.62,3,1,63.6,2,14,83.01,prioritário,sim,sim,nenhuma,0.5455,1.88,1,phenol_ester,Aspirin,41244
+Analog_0007,CC(=O)Oc1c(F)cccc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,82.6,prioritário,sim,sim,nenhuma,0.5294,1.96,1,phenol_ester,Aspirin,41244
+Analog_0008,CC(=O)Oc1cc(F)ccc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,84.52,prioritário,sim,sim,nenhuma,0.625,1.83,1,phenol_ester,Aspirin,41244
+Analog_0009,CC(=O)Oc1ccc(F)cc1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,84.63,prioritário,sim,sim,nenhuma,0.625,1.76,1,phenol_ester,Aspirin,41244
+Analog_0010,CC(=O)Oc1cccc(F)c1C(=O)O,Fluoração Aromática,3,alta,protótipo,198.15,1.45,3,1,63.6,2,14,82.67,prioritário,sim,sim,nenhuma,0.5294,1.91,1,phenol_ester,Aspirin,41244
+Analog_0011,CC(=O)Oc1c(N)cccc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.05,promissor,sim,sim,nenhuma,0.5294,2.03,2,aniline; phenol_ester,Aspirin,41244
+Analog_0012,CC(=O)Oc1cc(N)ccc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.99,promissor,sim,sim,nenhuma,0.5758,1.96,2,aniline; phenol_ester,Aspirin,41244
+Analog_0013,CC(=O)Oc1ccc(N)cc1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,76.1,promissor,sim,sim,nenhuma,0.5758,1.89,2,aniline; phenol_ester,Aspirin,41244
+Analog_0014,CC(=O)Oc1cccc(N)c1C(=O)O,Aminação Aromática (-NH2),4,média,protótipo,195.17,0.89,4,2,89.62,2,14,75.03,promissor,sim,sim,nenhuma,0.5294,2.04,2,aniline; phenol_ester,Aspirin,41244
+Analog_0015,CC(=O)Nc1ccccc1C(=O)O,Bioisostero: Éster->Amida,4,média,protótipo,179.17,1.34,2,2,66.4,2,13,83.0,prioritário,sim,sim,nenhuma,0.4545,1.43,0,nenhum,Aspirin,41244
+Analog_0016,O=C(CO)Oc1ccccc1C(=O)O,Hidroxilação Alifática,4,média,protótipo,196.16,0.28,4,2,83.83,3,14,81.0,prioritário,sim,sim,nenhuma,0.6129,1.87,1,phenol_ester,Aspirin,41244
+Analog_0017,CC(=O)Oc1cccnc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,83.45,prioritário,sim,sim,nenhuma,0.5294,2.03,0,nenhum,Aspirin,41244
+Analog_0018,CC(=O)Oc1ccncc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,84.2,prioritário,sim,sim,nenhuma,0.5758,2.08,0,nenhum,Aspirin,41244
+Analog_0019,CC(=O)Oc1cnccc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,84.11,prioritário,sim,sim,nenhuma,0.5758,2.14,0,nenhum,Aspirin,41244
+Analog_0020,CC(=O)Oc1ncccc1C(=O)O,Bioisostero: Benzeno->Piridina,5,média,protótipo,181.15,0.71,4,1,76.49,2,13,83.4,prioritário,sim,sim,nenhuma,0.5294,2.06,0,nenhum,Aspirin,41244
+Analog_0021,CC(=O)Oc1c(C#N)cccc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,78.26,promissor,sim,sim,nenhuma,0.4865,2.17,1,phenol_ester,Aspirin,41244
+Analog_0022,CC(=O)Oc1cc(C#N)ccc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,79.22,promissor,sim,sim,nenhuma,0.5278,2.03,1,phenol_ester,Aspirin,41244
+Analog_0023,CC(=O)Oc1ccc(C#N)cc1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,79.28,promissor,sim,sim,nenhuma,0.5278,1.99,1,phenol_ester,Aspirin,41244
+Analog_0024,CC(=O)Oc1cccc(C#N)c1C(=O)O,Cianação Aromática (-CN),5,média,protótipo,205.17,1.18,4,1,87.39,2,15,78.18,promissor,sim,sim,nenhuma,0.4865,2.22,1,phenol_ester,Aspirin,41244
+Analog_0025,CC(=O)Oc1c(Cl)cccc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,79.46,promissor,sim,sim,nenhuma,0.5294,1.89,1,phenol_ester,Aspirin,41244
+Analog_0026,CC(=O)Oc1cc(Cl)ccc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,80.42,prioritário,sim,sim,nenhuma,0.5758,1.81,1,phenol_ester,Aspirin,41244
+Analog_0027,CC(=O)Oc1ccc(Cl)cc1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,80.55,prioritário,sim,sim,nenhuma,0.5758,1.73,1,phenol_ester,Aspirin,41244
+Analog_0028,CC(=O)Oc1cccc(Cl)c1C(=O)O,Cloração Aromática,5,média,protótipo,214.6,1.96,3,1,63.6,2,14,79.46,promissor,sim,sim,nenhuma,0.5294,1.89,1,phenol_ester,Aspirin,41244
+Analog_0029,CC(=O)Oc1c(C(=O)O)cccc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,248.16,2.33,3,1,63.6,2,17,74.33,promissor,sim,sim,nenhuma,0.4865,2.15,1,phenol_ester,Aspirin,41244
+Analog_0030,CC(=O)Oc1cc(C(F)(F)F)ccc1C(=O)O,Trifluorometilação (-CF3),6,baixa,protótipo,248.16,2.33,3,1,63.6,2,17,75.32,promissor,sim,sim,nenhuma,0.5278,1.99,1,phenol_ester,Aspirin,41244
+Analog_0001,COC(=O)[C@@H](C)c1ccc(CC(C)C)cc1,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,220.31,3.16,2,0,26.3,4,16,91.87,prioritário,sim,sim,nenhuma,0.6562,2.25,0,nenhum,Ibuprofen,41242
+Analog_0002,COC(=O)[C@@H](C)c1cnc(CC(C)C)cc1Cl,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,255.74,3.21,3,0,39.19,4,17,83.93,prioritário,sim,sim,nenhuma,0.2766,2.96,0,nenhum,Ibuprofen,41242
+Analog_0003,CC(C)Cc1ccc([C@H](C)C(N)=O)cc1,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,205.3,2.47,1,1,43.09,4,15,89.31,prioritário,sim,sim,nenhuma,0.7,2.32,0,nenhum,Ibuprofen,41242
+Analog_0004,Cc1cc(CC(C)C)ccc1[C@H](C)C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,220.31,3.38,1,1,37.3,4,16,86.77,prioritário,sim,sim,nenhuma,0.5714,2.46,0,nenhum,Ibuprofen,41242
+Analog_0005,Cc1cc([C@H](C)C(=O)O)ccc1CC(C)C,Metilação Aromática (-CH3),2,alta,protótipo,220.31,3.38,1,1,37.3,4,16,86.77,prioritário,sim,sim,nenhuma,0.5714,2.46,0,nenhum,Ibuprofen,41242
+Analog_0006,CC(C)Cc1ccc([C@H](C)C(=O)O)c(F)c1,Fluoração Aromática,3,alta,protótipo,224.27,3.21,1,1,37.3,4,16,86.38,prioritário,sim,sim,nenhuma,0.5556,2.53,0,nenhum,Ibuprofen,41242
+Analog_0007,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1F,Fluoração Aromática,3,alta,protótipo,224.27,3.21,1,1,37.3,4,16,86.46,prioritário,sim,sim,nenhuma,0.5556,2.48,0,nenhum,Ibuprofen,41242
+Analog_0008,CC(C)Cc1ccc([C@H](C)C(=O)O)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,221.3,2.66,2,2,63.32,4,16,78.69,promissor,sim,sim,nenhuma,0.5556,2.69,1,aniline,Ibuprofen,41242
+Analog_0009,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1N,Aminação Aromática (-NH2),4,média,protótipo,221.3,2.66,2,2,63.32,4,16,78.74,promissor,sim,sim,nenhuma,0.5556,2.66,1,aniline,Ibuprofen,41242
+Analog_0010,CC(C)C(O)c1ccc([C@H](C)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.56,2,2,57.53,4,16,82.67,prioritário,sim,sim,nenhuma,0.5484,2.75,0,nenhum,Ibuprofen,41242
+Analog_0011,CC(C)Cc1ccc([C@H](CO)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.05,2,2,57.53,5,16,85.11,prioritário,sim,sim,nenhuma,0.6562,2.43,0,nenhum,Ibuprofen,41242
+Analog_0012,CC(CO)Cc1ccc([C@H](C)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.05,2,2,57.53,5,16,85.63,prioritário,sim,sim,nenhuma,0.7097,2.71,0,nenhum,Ibuprofen,41242
+Analog_0013,C[C@H](C(=O)O)c1ccc(CC(C)(C)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.19,2,2,57.53,4,16,84.02,prioritário,sim,sim,nenhuma,0.6061,2.55,0,nenhum,Ibuprofen,41242
+Analog_0014,CC(C)Cc1ccc([C@H](C)C(=O)O)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,207.27,2.47,2,1,50.19,4,15,83.15,prioritário,sim,sim,nenhuma,0.5714,2.71,0,nenhum,Ibuprofen,41242
+Analog_0015,CC(C)Cc1ccc([C@H](C)C(=O)O)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,207.27,2.47,2,1,50.19,4,15,83.18,prioritário,sim,sim,nenhuma,0.5714,2.69,0,nenhum,Ibuprofen,41242
+Analog_0016,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,231.29,2.94,2,1,61.09,4,17,82.0,prioritário,sim,sim,nenhuma,0.5128,2.77,0,nenhum,Ibuprofen,41242
+Analog_0017,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,231.29,2.94,2,1,61.09,4,17,82.01,prioritário,sim,sim,nenhuma,0.5128,2.76,0,nenhum,Ibuprofen,41242
+Analog_0018,CC(C)Cc1ccc([C@H](C)C(=O)O)c(Cl)c1,Cloração Aromática,5,média,protótipo,240.73,3.73,1,1,37.3,4,16,83.2,prioritário,sim,sim,nenhuma,0.5556,2.49,0,nenhum,Ibuprofen,41242
+Analog_0019,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1Cl,Cloração Aromática,5,média,protótipo,240.73,3.73,1,1,37.3,4,16,83.25,prioritário,sim,sim,nenhuma,0.5556,2.46,0,nenhum,Ibuprofen,41242
+Analog_0020,CC(C)Cc1cc(Cl)c([C@H](C)C(=O)O)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,241.72,3.12,2,1,50.19,4,16,79.53,promissor,sim,sim,nenhuma,0.3902,2.94,0,nenhum,Ibuprofen,41242
+Analog_0021,CC(C)Cc1ccc([C@H](C)C(=O)O)c(Cl)n1,Bioisostero: Benzeno->Piridina,5,média,exploração,241.72,3.12,2,1,50.19,4,16,76.16,promissor,sim,sim,nenhuma,0.4359,2.93,1,2-halo_pyridine,Ibuprofen,41242
+Analog_0022,CC(C)Cc1cnc([C@H](C)C(=O)O)c(Cl)c1,Bioisostero: Benzeno->Piridina,5,média,exploração,241.72,3.12,2,1,50.19,4,16,80.68,prioritário,sim,sim,nenhuma,0.45,2.89,0,nenhum,Ibuprofen,41242
+Analog_0023,CC(C)Cc1ccc([C@H](CO)C(=O)O)c(C#N)c1,Cianação Aromática (-CN),5,média,exploração,247.29,1.92,3,2,81.32,5,18,79.88,promissor,sim,sim,nenhuma,0.4091,2.93,0,nenhum,Ibuprofen,41242
+Analog_0024,CC(C)Cc1ccc([C@H](CO)C(=O)O)cc1C#N,Cianação Aromática (-CN),5,média,exploração,247.29,1.92,3,2,81.32,5,18,79.27,promissor,sim,sim,nenhuma,0.3778,2.96,0,nenhum,Ibuprofen,41242
+Analog_0025,CC(C)C(O)c1ccc([C@H](C)C(=O)O)c(Cl)c1,Cloração Aromática,5,média,exploração,256.73,3.22,2,2,57.53,4,17,79.13,promissor,sim,sim,nenhuma,0.375,3.02,0,nenhum,Ibuprofen,41242
+Analog_0026,CC(C)C(O)c1ccc([C@H](C)C(=O)O)cc1Cl,Cloração Aromática,5,média,exploração,256.73,3.22,2,2,57.53,4,17,79.64,promissor,sim,sim,nenhuma,0.4,2.98,0,nenhum,Ibuprofen,41242
+Analog_0027,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,274.28,4.09,1,1,37.3,4,19,78.11,promissor,sim,sim,nenhuma,0.5128,2.72,0,nenhum,Ibuprofen,41242
+Analog_0028,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,274.28,4.09,1,1,37.3,4,19,78.18,promissor,sim,sim,nenhuma,0.5128,2.68,0,nenhum,Ibuprofen,41242
+Analog_0029,CC(C)C(O)c1ccc([C@H](C)C(=O)O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,exploração,290.28,3.58,2,2,57.53,4,20,74.39,promissor,sim,sim,nenhuma,0.3488,3.22,0,nenhum,Ibuprofen,41242
+Analog_0030,CC(C)C(O)c1ccc([C@H](C)C(=O)O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,290.28,3.58,2,2,57.53,4,20,74.9,promissor,sim,sim,nenhuma,0.3721,3.16,0,nenhum,Ibuprofen,41242
+Analog_0001,COC(=O)[C@@H](C)c1ccc(CC(C)C)cc1,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,220.31,3.16,2,0,26.3,4,16,91.87,prioritário,sim,sim,nenhuma,0.6562,2.25,0,nenhum,Ibuprofen,41243
+Analog_0002,CC(C)Cc1ccc([C@H](C)C(N)=O)cc1,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,205.3,2.47,1,1,43.09,4,15,89.31,prioritário,sim,sim,nenhuma,0.7,2.32,0,nenhum,Ibuprofen,41243
+Analog_0003,Cc1cc(CC(C)C)ccc1[C@H](C)C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,220.31,3.38,1,1,37.3,4,16,86.77,prioritário,sim,sim,nenhuma,0.5714,2.46,0,nenhum,Ibuprofen,41243
+Analog_0004,Cc1cc([C@H](C)C(=O)O)ccc1CC(C)C,Metilação Aromática (-CH3),2,alta,protótipo,220.31,3.38,1,1,37.3,4,16,86.77,prioritário,sim,sim,nenhuma,0.5714,2.46,0,nenhum,Ibuprofen,41243
+Analog_0005,CC(C)Cc1ccc([C@H](C)C(=O)O)c(F)c1,Fluoração Aromática,3,alta,protótipo,224.27,3.21,1,1,37.3,4,16,86.38,prioritário,sim,sim,nenhuma,0.5556,2.53,0,nenhum,Ibuprofen,41243
+Analog_0006,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1F,Fluoração Aromática,3,alta,protótipo,224.27,3.21,1,1,37.3,4,16,86.46,prioritário,sim,sim,nenhuma,0.5556,2.48,0,nenhum,Ibuprofen,41243
+Analog_0007,CC(C)Cc1ccc([C@H](C)C(=O)O)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,221.3,2.66,2,2,63.32,4,16,78.69,promissor,sim,sim,nenhuma,0.5556,2.69,1,aniline,Ibuprofen,41243
+Analog_0008,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1N,Aminação Aromática (-NH2),4,média,protótipo,221.3,2.66,2,2,63.32,4,16,78.74,promissor,sim,sim,nenhuma,0.5556,2.66,1,aniline,Ibuprofen,41243
+Analog_0009,CC(C)C(O)c1ccc([C@H](C)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.56,2,2,57.53,4,16,82.67,prioritário,sim,sim,nenhuma,0.5484,2.75,0,nenhum,Ibuprofen,41243
+Analog_0010,CC(C)Cc1ccc([C@H](CO)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.05,2,2,57.53,5,16,85.11,prioritário,sim,sim,nenhuma,0.6562,2.43,0,nenhum,Ibuprofen,41243
+Analog_0011,CC(CO)Cc1ccc([C@H](C)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.05,2,2,57.53,5,16,85.63,prioritário,sim,sim,nenhuma,0.7097,2.71,0,nenhum,Ibuprofen,41243
+Analog_0012,C[C@H](C(=O)O)c1ccc(CC(C)(C)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.19,2,2,57.53,4,16,84.02,prioritário,sim,sim,nenhuma,0.6061,2.55,0,nenhum,Ibuprofen,41243
+Analog_0013,CC(C)C(O)c1cc(C#N)c([C@H](C)C(=O)O)c(C(F)(F)F)c1,Hidroxilação Alifática,4,média,exploração,315.29,3.45,3,2,81.32,4,22,76.09,promissor,sim,sim,nenhuma,0.2549,3.58,0,nenhum,Ibuprofen,41243
+Analog_0014,CC(C)Cc1cc(C#N)c([C@H](CO)C(=O)O)c(C(F)(F)F)c1,Hidroxilação Alifática,4,média,exploração,315.29,2.94,3,2,81.32,5,22,77.68,promissor,sim,sim,nenhuma,0.3137,3.24,0,nenhum,Ibuprofen,41243
+Analog_0015,CC(CO)Cc1cc(C#N)c([C@H](C)C(=O)O)c(C(F)(F)F)c1,Hidroxilação Alifática,4,média,exploração,315.29,2.94,3,2,81.32,5,22,76.81,promissor,sim,sim,nenhuma,0.2885,3.51,0,nenhum,Ibuprofen,41243
+Analog_0016,C[C@H](C(=O)O)c1c(C#N)cc(CC(C)(C)O)cc1C(F)(F)F,Hidroxilação Alifática,4,média,exploração,315.29,3.08,3,2,81.32,4,22,76.71,promissor,sim,sim,nenhuma,0.2692,3.35,0,nenhum,Ibuprofen,41243
+Analog_0017,CC(C)Cc1ccc([C@H](C)C(=O)O)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,207.27,2.47,2,1,50.19,4,15,83.15,prioritário,sim,sim,nenhuma,0.5714,2.71,0,nenhum,Ibuprofen,41243
+Analog_0018,CC(C)Cc1ccc([C@H](C)C(=O)O)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,207.27,2.47,2,1,50.19,4,15,83.18,prioritário,sim,sim,nenhuma,0.5714,2.69,0,nenhum,Ibuprofen,41243
+Analog_0019,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,231.29,2.94,2,1,61.09,4,17,82.0,prioritário,sim,sim,nenhuma,0.5128,2.77,0,nenhum,Ibuprofen,41243
+Analog_0020,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,231.29,2.94,2,1,61.09,4,17,82.01,prioritário,sim,sim,nenhuma,0.5128,2.76,0,nenhum,Ibuprofen,41243
+Analog_0021,CC(C)Cc1ccc([C@H](C)C(=O)O)c(Cl)c1,Cloração Aromática,5,média,protótipo,240.73,3.73,1,1,37.3,4,16,83.2,prioritário,sim,sim,nenhuma,0.5556,2.49,0,nenhum,Ibuprofen,41243
+Analog_0022,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1Cl,Cloração Aromática,5,média,protótipo,240.73,3.73,1,1,37.3,4,16,83.25,prioritário,sim,sim,nenhuma,0.5556,2.46,0,nenhum,Ibuprofen,41243
+Analog_0023,CC(C)Cc1ccc([C@H](C)C(=O)O)c(Cl)c1Cl,Cloração Aromática,5,média,exploração,275.17,4.38,1,1,37.3,4,17,80.68,prioritário,sim,sim,nenhuma,0.4474,2.86,0,nenhum,Ibuprofen,41243
+Analog_0024,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,274.28,4.09,1,1,37.3,4,19,78.11,promissor,sim,sim,nenhuma,0.5128,2.72,0,nenhum,Ibuprofen,41243
+Analog_0025,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,274.28,4.09,1,1,37.3,4,19,78.18,promissor,sim,sim,nenhuma,0.5128,2.68,0,nenhum,Ibuprofen,41243
+Analog_0026,CC(C)Cc1cc(C#N)c([C@H](C)C(=O)O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,exploração,299.29,3.96,2,1,61.09,4,21,75.34,promissor,sim,sim,nenhuma,0.3913,3.1,0,nenhum,Ibuprofen,41243
+Analog_0027,CC(C)Cc1cc(C#N)c([C@H](C)C(=O)O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,299.29,3.96,2,1,61.09,4,21,74.18,promissor,sim,sim,nenhuma,0.3333,3.17,0,nenhum,Ibuprofen,41243
+Analog_0028,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C#N)c1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,299.29,3.96,2,1,61.09,4,21,74.78,promissor,sim,sim,nenhuma,0.3696,3.21,0,nenhum,Ibuprofen,41243
+Analog_0029,Cc1cc(CC(C)C)cnc1[C@H](C)C(=O)O,Bioisostero: Benzeno->Pirimidina,7,baixa,exploração,221.3,2.78,2,1,50.19,4,16,76.88,promissor,sim,sim,nenhuma,0.4615,2.92,0,nenhum,Ibuprofen,41243
+Analog_0030,Cc1cc(CC(C)C)ncc1[C@H](C)C(=O)O,Bioisostero: Benzeno->Pirimidina,7,baixa,exploração,221.3,2.78,2,1,50.19,4,16,75.8,promissor,sim,sim,nenhuma,0.4,2.9,0,nenhum,Ibuprofen,41243
+Analog_0001,COC(=O)[C@@H](C)c1ccc(CC(C)C)cc1,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,220.31,3.16,2,0,26.3,4,16,91.87,prioritário,sim,sim,nenhuma,0.6562,2.25,0,nenhum,Ibuprofen,41244
+Analog_0002,COC(=O)[C@@H](C)c1ccc(CC(C)C)cc1N,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,235.33,2.74,3,1,52.32,4,17,82.4,prioritário,sim,sim,nenhuma,0.4048,2.73,1,aniline,Ibuprofen,41244
+Analog_0003,CC(C)Cc1ccc([C@H](C)C(N)=O)cc1,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,205.3,2.47,1,1,43.09,4,15,89.31,prioritário,sim,sim,nenhuma,0.7,2.32,0,nenhum,Ibuprofen,41244
+Analog_0004,Cc1cc(CC(C)C)ccc1[C@H](C)C(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,220.31,3.38,1,1,37.3,4,16,86.77,prioritário,sim,sim,nenhuma,0.5714,2.46,0,nenhum,Ibuprofen,41244
+Analog_0005,Cc1cc([C@H](C)C(=O)O)ccc1CC(C)C,Metilação Aromática (-CH3),2,alta,protótipo,220.31,3.38,1,1,37.3,4,16,86.77,prioritário,sim,sim,nenhuma,0.5714,2.46,0,nenhum,Ibuprofen,41244
+Analog_0006,Cc1c([C@H](C)C(=O)O)ccc(CC(C)C)c1C#N,Metilação Aromática (-CH3),2,alta,exploração,245.32,3.25,2,1,61.09,4,18,82.8,prioritário,sim,sim,nenhuma,0.4048,3.09,0,nenhum,Ibuprofen,41244
+Analog_0007,Cc1cc(CC(C)C)c(C#N)cc1[C@H](C)C(=O)O,Metilação Aromática (-CH3),2,alta,exploração,245.32,3.25,2,1,61.09,4,18,82.21,prioritário,sim,sim,nenhuma,0.3636,2.99,0,nenhum,Ibuprofen,41244
+Analog_0008,Cc1cc([C@H](C)C(=O)O)cc(C#N)c1CC(C)C,Metilação Aromática (-CH3),2,alta,exploração,245.32,3.25,2,1,61.09,4,18,83.35,prioritário,sim,sim,nenhuma,0.4286,3.01,0,nenhum,Ibuprofen,41244
+Analog_0009,CC(C)Cc1ccc([C@H](C)C(=O)O)c(F)c1,Fluoração Aromática,3,alta,protótipo,224.27,3.21,1,1,37.3,4,16,86.38,prioritário,sim,sim,nenhuma,0.5556,2.53,0,nenhum,Ibuprofen,41244
+Analog_0010,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1F,Fluoração Aromática,3,alta,protótipo,224.27,3.21,1,1,37.3,4,16,86.46,prioritário,sim,sim,nenhuma,0.5556,2.48,0,nenhum,Ibuprofen,41244
+Analog_0011,CC(C)Cc1ccc([C@H](C)C(=O)O)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,221.3,2.66,2,2,63.32,4,16,78.69,promissor,sim,sim,nenhuma,0.5556,2.69,1,aniline,Ibuprofen,41244
+Analog_0012,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1N,Aminação Aromática (-NH2),4,média,protótipo,221.3,2.66,2,2,63.32,4,16,78.74,promissor,sim,sim,nenhuma,0.5556,2.66,1,aniline,Ibuprofen,41244
+Analog_0013,CC(C)C(O)c1ccc([C@H](C)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.56,2,2,57.53,4,16,82.67,prioritário,sim,sim,nenhuma,0.5484,2.75,0,nenhum,Ibuprofen,41244
+Analog_0014,CC(C)Cc1ccc([C@H](CO)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.05,2,2,57.53,5,16,85.11,prioritário,sim,sim,nenhuma,0.6562,2.43,0,nenhum,Ibuprofen,41244
+Analog_0015,CC(CO)Cc1ccc([C@H](C)C(=O)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.05,2,2,57.53,5,16,85.63,prioritário,sim,sim,nenhuma,0.7097,2.71,0,nenhum,Ibuprofen,41244
+Analog_0016,C[C@H](C(=O)O)c1ccc(CC(C)(C)O)cc1,Hidroxilação Alifática,4,média,protótipo,222.28,2.19,2,2,57.53,4,16,84.02,prioritário,sim,sim,nenhuma,0.6061,2.55,0,nenhum,Ibuprofen,41244
+Analog_0017,CC(C)Cc1ccc([C@H](C)C(=O)O)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,207.27,2.47,2,1,50.19,4,15,83.15,prioritário,sim,sim,nenhuma,0.5714,2.71,0,nenhum,Ibuprofen,41244
+Analog_0018,CC(C)Cc1ccc([C@H](C)C(=O)O)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,207.27,2.47,2,1,50.19,4,15,83.18,prioritário,sim,sim,nenhuma,0.5714,2.69,0,nenhum,Ibuprofen,41244
+Analog_0019,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,231.29,2.94,2,1,61.09,4,17,82.0,prioritário,sim,sim,nenhuma,0.5128,2.77,0,nenhum,Ibuprofen,41244
+Analog_0020,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,231.29,2.94,2,1,61.09,4,17,82.01,prioritário,sim,sim,nenhuma,0.5128,2.76,0,nenhum,Ibuprofen,41244
+Analog_0021,CC(C)Cc1ccc([C@H](C)C(=O)O)c(Cl)c1,Cloração Aromática,5,média,protótipo,240.73,3.73,1,1,37.3,4,16,83.2,prioritário,sim,sim,nenhuma,0.5556,2.49,0,nenhum,Ibuprofen,41244
+Analog_0022,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1Cl,Cloração Aromática,5,média,protótipo,240.73,3.73,1,1,37.3,4,16,83.25,prioritário,sim,sim,nenhuma,0.5556,2.46,0,nenhum,Ibuprofen,41244
+Analog_0023,CC(C)Cc1ccc([C@H](CO)C(=O)O)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,223.27,1.44,3,2,70.42,5,16,80.07,prioritário,sim,sim,nenhuma,0.4146,2.87,0,nenhum,Ibuprofen,41244
+Analog_0024,CC(C)Cc1ccc([C@H](CO)C(=O)O)nc1,Bioisostero: Benzeno->Piridina,5,média,exploração,223.27,1.44,3,2,70.42,5,16,80.73,prioritário,sim,sim,nenhuma,0.45,2.86,0,nenhum,Ibuprofen,41244
+Analog_0025,COC(=O)[C@@H](C)c1ccc(CC(C)C)c(Cl)c1,Cloração Aromática,5,média,exploração,254.76,3.82,2,0,26.3,4,17,79.87,promissor,sim,sim,nenhuma,0.3721,2.51,0,nenhum,Ibuprofen,41244
+Analog_0026,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,274.28,4.09,1,1,37.3,4,19,78.11,promissor,sim,sim,nenhuma,0.5128,2.72,0,nenhum,Ibuprofen,41244
+Analog_0027,CC(C)Cc1ccc([C@H](C)C(=O)O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,274.28,4.09,1,1,37.3,4,19,78.18,promissor,sim,sim,nenhuma,0.5128,2.68,0,nenhum,Ibuprofen,41244
+Analog_0028,CC(C)Cc1c(C#N)cc([C@H](C)C(=O)O)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,299.29,3.96,2,1,61.09,4,21,75.21,promissor,sim,sim,nenhuma,0.3913,3.18,0,nenhum,Ibuprofen,41244
+Analog_0029,CC(C)Cc1cc(C(F)(F)F)c([C@H](C)C(=O)O)cc1C#N,Trifluorometilação (-CF3),6,baixa,exploração,299.29,3.96,2,1,61.09,4,21,74.23,promissor,sim,sim,nenhuma,0.3333,3.14,0,nenhum,Ibuprofen,41244
+Analog_0030,CC(C)Cc1ccc([C@H](C)C(=O)O)c(C(F)(F)F)c1C#N,Trifluorometilação (-CF3),6,baixa,exploração,299.29,3.96,2,1,61.09,4,21,74.59,promissor,sim,sim,nenhuma,0.3617,3.24,0,nenhum,Ibuprofen,41244
+Analog_0001,CNc1nc2c(c(=O)n(C)c(=O)n2C)n1C,N-Metilação,1,muito alta,exploração,223.24,-0.99,4,1,73.85,1,16,84.63,prioritário,sim,sim,nenhuma,0.4444,2.54,0,nenhum,Caffeine,41242
+Analog_0002,COCn1c(C#N)nc2c1c(=O)n(C)c(=O)n2C,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,249.23,-1.09,5,0,94.84,2,18,82.38,prioritário,sim,sim,nenhuma,0.3636,2.86,0,nenhum,Caffeine,41242
+Analog_0003,Cc1nc2c(c(=O)n(C)c(=O)n2C)n1C,Metilação Aromática (-CH3),2,alta,protótipo,208.22,-0.72,3,0,61.82,0,15,83.2,prioritário,sim,sim,nenhuma,0.4848,2.37,0,nenhum,Caffeine,41242
+Analog_0004,Cn1c(=O)c2c(nc(C#N)n2CN)n(C)c1=O,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,234.22,-1.78,5,1,111.63,1,17,77.05,promissor,sim,sim,nenhuma,0.3721,2.97,0,nenhum,Caffeine,41242
+Analog_0005,Cn1c(=O)c2c(nc(Cl)n2C)n(CN)c1=O,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,243.65,-1.0,4,1,87.84,1,16,78.71,promissor,sim,sim,nenhuma,0.3333,2.96,0,nenhum,Caffeine,41242
+Analog_0006,Cn1c(=O)c2c(nc(F)n2C)n(C)c1=O,Fluoração Aromática,3,alta,protótipo,212.18,-0.89,3,0,61.82,0,15,81.98,prioritário,sim,sim,nenhuma,0.4706,2.66,0,nenhum,Caffeine,41242
+Analog_0007,Cn1c(=O)c2c(nc(F)n2C)n(CO)c1=O,Fluoração Aromática,3,alta,exploração,228.18,-1.48,4,1,82.05,1,16,77.21,promissor,sim,sim,nenhuma,0.3333,3.0,0,nenhum,Caffeine,41242
+Analog_0008,Cn1c(=O)c2c(nc(N)n2C)n(C)c1=O,Aminação Aromática (-NH2),4,média,protótipo,209.21,-1.45,4,1,87.84,0,15,77.32,promissor,sim,sim,nenhuma,0.4706,2.49,0,nenhum,Caffeine,41242
+Analog_0009,Cn1c(=O)c2c(ncn2C)n(CO)c1=O,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.69,promissor,sim,sim,nenhuma,0.6471,2.68,0,nenhum,Caffeine,41242
+Analog_0010,Cn1c(=O)c2c(ncn2CO)n(C)c1=O,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.35,promissor,sim,sim,nenhuma,0.6176,2.56,0,nenhum,Caffeine,41242
+Analog_0011,Cn1cnc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.79,promissor,sim,sim,nenhuma,0.6471,2.62,0,nenhum,Caffeine,41242
+Analog_0012,Cn1c(=O)c2c(nc(C#N)n2C(O)O)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,251.2,-2.25,6,2,126.07,1,18,68.28,promissor,sim,sim,nenhuma,0.3721,3.11,1,het-C-het_not_in_ring,Caffeine,41242
+Analog_0013,Cn1c(=O)c2c(nc(C#N)n2CO)n(CO)c1=O,Hidroxilação Alifática,4,média,exploração,251.2,-2.33,6,2,126.07,2,18,71.26,promissor,sim,sim,nenhuma,0.3111,3.19,0,nenhum,Caffeine,41242
+Analog_0014,Cn1c(=O)c2c(nc(C(F)(F)F)n2CO)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,278.19,-0.6,4,1,82.05,1,19,77.73,promissor,sim,sim,nenhuma,0.3721,2.73,0,nenhum,Caffeine,41242
+Analog_0015,Cn1c(=O)c2c(nc(F)n2CO)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,228.18,-1.48,4,1,82.05,1,16,75.37,promissor,sim,sim,nenhuma,0.4,2.87,0,nenhum,Caffeine,41242
+Analog_0016,Cn1c(=O)c2c(nc(N)n2C)n(CO)c1=O,Hidroxilação Alifática,4,média,exploração,225.21,-2.03,5,2,108.07,1,16,72.66,promissor,sim,sim,nenhuma,0.3333,2.84,0,nenhum,Caffeine,41242
+Analog_0017,Cn1c(=O)c2c(nc(N)n2CO)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,225.21,-2.03,5,2,108.07,1,16,74.11,promissor,sim,sim,nenhuma,0.4,2.68,0,nenhum,Caffeine,41242
+Analog_0018,Cn1c(=O)n(CO)c(=O)c2c1nc(C#N)n2CO,Hidroxilação Alifática,4,média,exploração,251.2,-2.33,6,2,126.07,2,18,70.82,promissor,sim,sim,nenhuma,0.2826,3.14,0,nenhum,Caffeine,41242
+Analog_0019,Cn1c(=O)n(CO)c(=O)c2c1ncn2CO,Hidroxilação Alifática,4,média,exploração,226.19,-2.2,5,2,102.28,2,16,74.95,promissor,sim,sim,nenhuma,0.4615,2.85,0,nenhum,Caffeine,41242
+Analog_0020,Cn1c(F)nc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,228.18,-1.48,4,1,82.05,1,16,73.49,promissor,sim,sim,nenhuma,0.3023,2.95,0,nenhum,Caffeine,41242
+Analog_0021,Cn1c(N)nc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,225.21,-2.03,5,2,108.07,1,16,72.18,promissor,sim,sim,nenhuma,0.3023,2.79,0,nenhum,Caffeine,41242
+Analog_0022,Cn1cnc2c1c(=O)n(C(O)O)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,226.19,-2.13,5,2,102.28,1,16,74.04,promissor,sim,sim,nenhuma,0.6471,2.88,1,het-C-het_not_in_ring,Caffeine,41242
+Analog_0023,Cn1cnc2c1c(=O)n(CO)c(=O)n2CO,Hidroxilação Alifática,4,média,exploração,226.19,-2.2,5,2,102.28,2,16,75.99,promissor,sim,sim,nenhuma,0.5278,2.95,0,nenhum,Caffeine,41242
+Analog_0024,Cn1c(=O)c2c(nnn2C)n(C)c1=O,Bioisostero: Benzeno->Piridina,5,média,protótipo,195.18,-1.63,4,0,74.71,0,14,76.71,promissor,sim,sim,nenhuma,0.4848,2.7,0,nenhum,Caffeine,41242
+Analog_0025,Cn1c(=O)c2c(nc(C#N)n2C)n(C)c1=O,Cianação Aromática (-CN),5,média,protótipo,219.2,-1.16,4,0,85.61,0,16,77.15,promissor,sim,sim,nenhuma,0.4324,2.72,0,nenhum,Caffeine,41242
+Analog_0026,Cn1c(=O)c2c(nc(Cl)n2C)n(C)c1=O,Cloração Aromática,5,média,protótipo,228.64,-0.38,3,0,61.82,0,15,80.49,prioritário,sim,sim,nenhuma,0.4706,2.52,0,nenhum,Caffeine,41242
+Analog_0027,Cn1c(=O)c2c(nc(C#N)n2CO)n(C)c1=O,Cianação Aromática (-CN),5,média,exploração,235.2,-1.74,5,1,105.84,1,17,74.04,promissor,sim,sim,nenhuma,0.3721,2.9,0,nenhum,Caffeine,41242
+Analog_0028,Cn1c(=O)c2c(nc(Cl)n2C)n(CO)c1=O,Cloração Aromática,5,média,exploração,244.64,-0.96,4,1,82.05,1,16,75.73,promissor,sim,sim,nenhuma,0.3333,2.87,0,nenhum,Caffeine,41242
+Analog_0029,Cn1c(=O)c2c(nc(C(F)(F)F)n2C)n(C)c1=O,Trifluorometilação (-CF3),6,baixa,protótipo,262.19,-0.01,3,0,61.82,0,18,76.82,promissor,sim,sim,nenhuma,0.4324,2.6,0,nenhum,Caffeine,41242
+Analog_0030,Cn1c(=O)c2c(nc(C(F)(F)F)n2C)n(CO)c1=O,Trifluorometilação (-CF3),6,baixa,exploração,278.19,-0.6,4,1,82.05,1,19,72.39,promissor,sim,sim,nenhuma,0.3111,2.91,0,nenhum,Caffeine,41242
+Analog_0001,CNc1nc2c(c(=O)n(C)c(=O)n2C)n1C,N-Metilação,1,muito alta,exploração,223.24,-0.99,4,1,73.85,1,16,84.63,prioritário,sim,sim,nenhuma,0.4444,2.54,0,nenhum,Caffeine,41243
+Analog_0002,COCn1c(C)nc2c1c(=O)n(C)c(=O)n2C,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,238.25,-0.65,4,0,71.05,2,17,84.71,prioritário,sim,sim,nenhuma,0.3902,2.52,0,nenhum,Caffeine,41243
+Analog_0003,Cc1nc2c(c(=O)n(C)c(=O)n2C)n1C,Metilação Aromática (-CH3),2,alta,protótipo,208.22,-0.72,3,0,61.82,0,15,83.2,prioritário,sim,sim,nenhuma,0.4848,2.37,0,nenhum,Caffeine,41243
+Analog_0004,Cn1c(=O)c2c(nc(F)n2CN)n(C)c1=O,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,227.2,-1.51,4,1,87.84,1,16,78.4,promissor,sim,sim,nenhuma,0.4,2.95,0,nenhum,Caffeine,41243
+Analog_0005,Cn1c(=O)c2c(ncn2C)n(CN)c1=O,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,209.21,-1.65,4,1,87.84,1,15,82.72,prioritário,sim,sim,nenhuma,0.6471,2.76,0,nenhum,Caffeine,41243
+Analog_0006,Cc1nc2c(c(=O)n(C)c(=O)n2C)n1CO,Metilação Aromática (-CH3),2,alta,exploração,224.22,-1.31,4,1,82.05,1,16,79.77,promissor,sim,sim,nenhuma,0.4103,2.57,0,nenhum,Caffeine,41243
+Analog_0007,Cn1c(=O)c2c(nc(F)n2C)n(C)c1=O,Fluoração Aromática,3,alta,protótipo,212.18,-0.89,3,0,61.82,0,15,81.98,prioritário,sim,sim,nenhuma,0.4706,2.66,0,nenhum,Caffeine,41243
+Analog_0008,Cn1c(=O)c2c(nc(N)n2C)n(C)c1=O,Aminação Aromática (-NH2),4,média,protótipo,209.21,-1.45,4,1,87.84,0,15,77.32,promissor,sim,sim,nenhuma,0.4706,2.49,0,nenhum,Caffeine,41243
+Analog_0009,Cn1c(=O)c2c(ncn2C)n(CO)c1=O,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.69,promissor,sim,sim,nenhuma,0.6471,2.68,0,nenhum,Caffeine,41243
+Analog_0010,Cn1c(=O)c2c(ncn2CO)n(C)c1=O,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.35,promissor,sim,sim,nenhuma,0.6176,2.56,0,nenhum,Caffeine,41243
+Analog_0011,Cn1cnc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.79,promissor,sim,sim,nenhuma,0.6471,2.62,0,nenhum,Caffeine,41243
+Analog_0012,Cn1c(=O)c2c(nc(C(F)(F)F)n2C(O)O)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,294.19,-1.11,5,2,102.28,1,20,71.69,promissor,sim,sim,nenhuma,0.3721,2.93,1,het-C-het_not_in_ring,Caffeine,41243
+Analog_0013,Cn1c(=O)c2c(nc(C(F)(F)F)n2CO)n(CO)c1=O,Hidroxilação Alifática,4,média,exploração,294.19,-1.18,5,2,102.28,2,20,74.44,promissor,sim,sim,nenhuma,0.3111,3.02,0,nenhum,Caffeine,41243
+Analog_0014,Cn1c(=O)c2c(nc(F)n2C)n(CO)c1=O,Hidroxilação Alifática,4,média,exploração,228.18,-1.48,4,1,82.05,1,16,73.97,promissor,sim,sim,nenhuma,0.3333,3.0,0,nenhum,Caffeine,41243
+Analog_0015,Cn1c(=O)c2c(nc(F)n2CO)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,228.18,-1.48,4,1,82.05,1,16,75.37,promissor,sim,sim,nenhuma,0.4,2.87,0,nenhum,Caffeine,41243
+Analog_0016,Cn1c(=O)c2c(nc(N)n2C)n(CO)c1=O,Hidroxilação Alifática,4,média,exploração,225.21,-2.03,5,2,108.07,1,16,72.66,promissor,sim,sim,nenhuma,0.3333,2.84,0,nenhum,Caffeine,41243
+Analog_0017,Cn1c(=O)c2c(nc(N)n2CO)n(C)c1=O,Hidroxilação Alifática,4,média,exploração,225.21,-2.03,5,2,108.07,1,16,74.11,promissor,sim,sim,nenhuma,0.4,2.68,0,nenhum,Caffeine,41243
+Analog_0018,Cn1c(=O)c2c(ncn2C)n(C(O)O)c1=O,Hidroxilação Alifática,4,média,exploração,226.19,-2.13,5,2,102.28,1,16,73.93,promissor,sim,sim,nenhuma,0.6471,2.95,1,het-C-het_not_in_ring,Caffeine,41243
+Analog_0019,Cn1c(=O)c2c(ncn2CO)n(CO)c1=O,Hidroxilação Alifática,4,média,exploração,226.19,-2.2,5,2,102.28,2,16,74.87,promissor,sim,sim,nenhuma,0.4615,2.9,0,nenhum,Caffeine,41243
+Analog_0020,Cn1c(=O)n(CO)c(=O)c2c1nc(C(F)(F)F)n2CO,Hidroxilação Alifática,4,média,exploração,294.19,-1.18,5,2,102.28,2,20,74.0,promissor,sim,sim,nenhuma,0.2826,2.97,0,nenhum,Caffeine,41243
+Analog_0021,Cn1c(F)nc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,228.18,-1.48,4,1,82.05,1,16,73.49,promissor,sim,sim,nenhuma,0.3023,2.95,0,nenhum,Caffeine,41243
+Analog_0022,Cn1c(N)nc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,225.21,-2.03,5,2,108.07,1,16,72.18,promissor,sim,sim,nenhuma,0.3023,2.79,0,nenhum,Caffeine,41243
+Analog_0023,Cn1cnc2c1c(=O)n(CO)c(=O)n2CO,Hidroxilação Alifática,4,média,exploração,226.19,-2.2,5,2,102.28,2,16,75.99,promissor,sim,sim,nenhuma,0.5278,2.95,0,nenhum,Caffeine,41243
+Analog_0024,Cn1c(=O)c2c(nnn2C)n(C)c1=O,Bioisostero: Benzeno->Piridina,5,média,protótipo,195.18,-1.63,4,0,74.71,0,14,76.71,promissor,sim,sim,nenhuma,0.4848,2.7,0,nenhum,Caffeine,41243
+Analog_0025,Cn1c(=O)c2c(nc(C#N)n2C)n(C)c1=O,Cianação Aromática (-CN),5,média,protótipo,219.2,-1.16,4,0,85.61,0,16,77.15,promissor,sim,sim,nenhuma,0.4324,2.72,0,nenhum,Caffeine,41243
+Analog_0026,Cn1c(=O)c2c(nc(Cl)n2C)n(C)c1=O,Cloração Aromática,5,média,protótipo,228.64,-0.38,3,0,61.82,0,15,80.49,prioritário,sim,sim,nenhuma,0.4706,2.52,0,nenhum,Caffeine,41243
+Analog_0027,Cn1c(=O)c2c(nnn2C)n(CO)c1=O,Bioisostero: Benzeno->Piridina,5,média,exploração,211.18,-2.22,5,1,94.94,1,15,72.46,promissor,sim,sim,nenhuma,0.3415,3.06,0,nenhum,Caffeine,41243
+Analog_0028,Cn1nnc2c1c(=O)n(CO)c(=O)n2C,Bioisostero: Benzeno->Piridina,5,média,exploração,211.18,-2.22,5,1,94.94,1,15,72.0,promissor,sim,sim,nenhuma,0.3095,2.99,0,nenhum,Caffeine,41243
+Analog_0029,Cn1c(=O)c2c(nc(C(F)(F)F)n2C)n(C)c1=O,Trifluorometilação (-CF3),6,baixa,protótipo,262.19,-0.01,3,0,61.82,0,18,76.82,promissor,sim,sim,nenhuma,0.4324,2.6,0,nenhum,Caffeine,41243
+Analog_0030,Cn1c(=O)c2c(nc(C(F)(F)F)n2CO)n(C)c1=O,Trifluorometilação (-CF3),6,baixa,exploração,278.19,-0.6,4,1,82.05,1,19,73.77,promissor,sim,sim,nenhuma,0.3721,2.73,0,nenhum,Caffeine,41243
+Analog_0001,CNCn1c(=O)c2c(nc(N)n2C)n(C)c1=O,N-Metilação,1,muito alta,exploração,238.25,-1.81,5,2,99.87,2,17,78.72,promissor,sim,sim,nenhuma,0.2889,2.96,0,nenhum,Caffeine,41244
+Analog_0002,CNc1nc2c(c(=O)n(CN)c(=O)n2C)n1C,N-Metilação,1,muito alta,exploração,238.25,-1.61,5,2,99.87,2,17,79.38,promissor,sim,sim,nenhuma,0.2889,2.92,0,nenhum,Caffeine,41244
+Analog_0003,CNc1nc2c(c(=O)n(CO)c(=O)n2C)n1C,N-Metilação,1,muito alta,exploração,239.23,-1.57,5,2,94.08,2,17,79.66,promissor,sim,sim,nenhuma,0.2889,2.82,0,nenhum,Caffeine,41244
+Analog_0004,COCn1c(=O)n(C)c(=O)c2c1ncn2C,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,224.22,-0.96,4,0,71.05,2,16,87.6,prioritário,sim,sim,nenhuma,0.6111,2.62,0,nenhum,Caffeine,41244
+Analog_0005,Cc1nc2c(c(=O)n(C)c(=O)n2C)n1C,Metilação Aromática (-CH3),2,alta,protótipo,208.22,-0.72,3,0,61.82,0,15,83.2,prioritário,sim,sim,nenhuma,0.4848,2.37,0,nenhum,Caffeine,41244
+Analog_0006,Cn1c(N)nc2c1c(=O)n(CN)c(=O)n2C,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,224.22,-2.07,5,2,113.86,1,16,75.38,promissor,sim,sim,nenhuma,0.3095,2.9,0,nenhum,Caffeine,41244
+Analog_0007,Cn1cnc2c1c(=O)n(CN)c(=O)n2C,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,209.21,-1.65,4,1,87.84,1,15,82.75,prioritário,sim,sim,nenhuma,0.6471,2.74,0,nenhum,Caffeine,41244
+Analog_0008,Cc1nc2c(c(=O)n(C)c(=O)n2C)n1CO,Metilação Aromática (-CH3),2,alta,exploração,224.22,-1.31,4,1,82.05,1,16,79.77,promissor,sim,sim,nenhuma,0.4103,2.57,0,nenhum,Caffeine,41244
+Analog_0009,Cc1nc2c(c(=O)n(CO)c(=O)n2C)n1C,Metilação Aromática (-CH3),2,alta,exploração,224.22,-1.31,4,1,82.05,1,16,77.79,promissor,sim,sim,nenhuma,0.3095,2.68,0,nenhum,Caffeine,41244
+Analog_0010,Cn1c(=O)c2c(nc(F)n2C)n(C)c1=O,Fluoração Aromática,3,alta,protótipo,212.18,-0.89,3,0,61.82,0,15,81.98,prioritário,sim,sim,nenhuma,0.4706,2.66,0,nenhum,Caffeine,41244
+Analog_0011,Cn1c(=O)c2c(nc(N)n2C)n(C)c1=O,Aminação Aromática (-NH2),4,média,protótipo,209.21,-1.45,4,1,87.84,0,15,77.32,promissor,sim,sim,nenhuma,0.4706,2.49,0,nenhum,Caffeine,41244
+Analog_0012,Cn1c(=O)c2c(ncn2C)n(CO)c1=O,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.69,promissor,sim,sim,nenhuma,0.6471,2.68,0,nenhum,Caffeine,41244
+Analog_0013,Cn1c(=O)c2c(ncn2CO)n(C)c1=O,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.35,promissor,sim,sim,nenhuma,0.6176,2.56,0,nenhum,Caffeine,41244
+Analog_0014,Cn1cnc2c1c(=O)n(CO)c(=O)n2C,Hidroxilação Alifática,4,média,protótipo,210.19,-1.62,4,1,82.05,1,15,79.79,promissor,sim,sim,nenhuma,0.6471,2.62,0,nenhum,Caffeine,41244
+Analog_0015,Cn1c(N)nc2c1c(=O)n(CO)c(=O)n2C,Aminação Aromática (-NH2),4,média,exploração,225.21,-2.03,5,2,108.07,1,16,72.18,promissor,sim,sim,nenhuma,0.3023,2.79,0,nenhum,Caffeine,41244
+Analog_0016,Cn1c(=O)n(CO)c(=O)c2c1nc(N)n2CO,Hidroxilação Alifática,4,média,exploração,241.21,-2.62,6,3,128.3,2,17,71.31,promissor,sim,sim,nenhuma,0.3023,2.95,0,nenhum,Caffeine,41244
+Analog_0017,Cn1c(=O)n(CO)c(=O)c2c1nnn2CO,Hidroxilação Alifática,4,média,exploração,227.18,-2.81,6,2,115.17,2,16,71.65,promissor,sim,sim,nenhuma,0.3023,3.13,0,nenhum,Caffeine,41244
+Analog_0018,Cn1c(N)nc2c1c(=O)n(C(O)O)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,241.21,-2.54,6,3,128.3,1,17,66.98,promissor,sim,sim,nenhuma,0.3023,3.03,1,het-C-het_not_in_ring,Caffeine,41244
+Analog_0019,Cn1nnc2c1c(=O)n(C(O)O)c(=O)n2C,Hidroxilação Alifática,4,média,exploração,227.18,-2.73,6,2,115.17,1,16,67.42,promissor,sim,sim,nenhuma,0.3095,3.23,1,het-C-het_not_in_ring,Caffeine,41244
+Analog_0020,Cn1nnc2c1c(=O)n(CO)c(=O)n2CO,Hidroxilação Alifática,4,média,exploração,227.18,-2.81,6,2,115.17,2,16,70.53,promissor,sim,sim,nenhuma,0.2558,3.31,0,nenhum,Caffeine,41244
+Analog_0021,Cn1c(=O)c2c(nnn2C)n(C)c1=O,Bioisostero: Benzeno->Piridina,5,média,protótipo,195.18,-1.63,4,0,74.71,0,14,76.71,promissor,sim,sim,nenhuma,0.4848,2.7,0,nenhum,Caffeine,41244
+Analog_0022,Cn1c(=O)c2c(nc(C#N)n2C)n(C)c1=O,Cianação Aromática (-CN),5,média,protótipo,219.2,-1.16,4,0,85.61,0,16,77.15,promissor,sim,sim,nenhuma,0.4324,2.72,0,nenhum,Caffeine,41244
+Analog_0023,Cn1c(=O)c2c(nc(Cl)n2C)n(C)c1=O,Cloração Aromática,5,média,protótipo,228.64,-0.38,3,0,61.82,0,15,80.49,prioritário,sim,sim,nenhuma,0.4706,2.52,0,nenhum,Caffeine,41244
+Analog_0024,Cn1c(=O)c2c(nnn2C)n(CO)c1=O,Bioisostero: Benzeno->Piridina,5,média,exploração,211.18,-2.22,5,1,94.94,1,15,72.46,promissor,sim,sim,nenhuma,0.3415,3.06,0,nenhum,Caffeine,41244
+Analog_0025,Cn1c(=O)c2c(nnn2CO)n(C)c1=O,Bioisostero: Benzeno->Piridina,5,média,exploração,211.18,-2.22,5,1,94.94,1,15,74.21,promissor,sim,sim,nenhuma,0.4211,2.86,0,nenhum,Caffeine,41244
+Analog_0026,Cn1nnc2c1c(=O)n(CO)c(=O)n2C,Bioisostero: Benzeno->Piridina,5,média,exploração,211.18,-2.22,5,1,94.94,1,15,72.0,promissor,sim,sim,nenhuma,0.3095,2.99,0,nenhum,Caffeine,41244
+Analog_0027,Cn1c(=O)c2c(nc(C#N)n2C)n(CO)c1=O,Cianação Aromática (-CN),5,média,exploração,235.2,-1.74,5,1,105.84,1,17,72.74,promissor,sim,sim,nenhuma,0.3111,3.03,0,nenhum,Caffeine,41244
+Analog_0028,Cn1c(C#N)nc2c1c(=O)n(CO)c(=O)n2C,Cianação Aromática (-CN),5,média,exploração,235.2,-1.74,5,1,105.84,1,17,72.29,promissor,sim,sim,nenhuma,0.2826,2.99,0,nenhum,Caffeine,41244
+Analog_0029,Cn1c(=O)c2c(nc(C(F)(F)F)n2C)n(C)c1=O,Trifluorometilação (-CF3),6,baixa,protótipo,262.19,-0.01,3,0,61.82,0,18,76.82,promissor,sim,sim,nenhuma,0.4324,2.6,0,nenhum,Caffeine,41244
+Analog_0030,Cn1c(C(F)(F)F)nc2c1c(=O)n(CO)c(=O)n2C,Trifluorometilação (-CF3),6,baixa,exploração,278.19,-0.6,4,1,82.05,1,19,71.95,promissor,sim,sim,nenhuma,0.2826,2.86,0,nenhum,Caffeine,41244
+Analog_0001,CCN(CC)CC(=O)N(C)c1c(C)cccc1C,N-Metilação,1,muito alta,protótipo,248.37,2.61,2,0,23.55,5,18,89.58,prioritário,sim,sim,nenhuma,0.5263,2.22,0,nenhum,Lidocaine,41242
+Analog_0002,CCN(CC)CC(=O)Nc1c(C)cc(C#N)cc1COC,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,289.38,2.29,4,1,65.36,7,21,88.26,prioritário,sim,sim,nenhuma,0.4694,2.41,0,nenhum,Lidocaine,41242
+Analog_0003,CCN(CC)CC(=O)Nc1c(C)cc(C)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,248.37,2.89,2,1,32.34,5,18,90.02,prioritário,sim,sim,nenhuma,0.7059,1.93,0,nenhum,Lidocaine,41242
+Analog_0004,CCN(CC)CC(=O)Nc1c(C)ccc(C)c1C,Metilação Aromática (-CH3),2,alta,protótipo,248.37,2.89,2,1,32.34,5,18,90.47,prioritário,sim,sim,nenhuma,0.7353,1.98,0,nenhum,Lidocaine,41242
+Analog_0005,CCN(CC)C(N)C(=O)Nc1c(C)ccc(C(F)(F)F)c1C,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,317.35,2.89,3,2,58.36,5,22,77.01,promissor,sim,sim,nenhuma,0.3269,3.21,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0006,CCN(CC)CC(=O)Nc1c(C)cc(F)cc1C,Fluoração Aromática,3,alta,protótipo,252.33,2.72,2,1,32.34,5,18,89.19,prioritário,sim,sim,nenhuma,0.6667,2.01,0,nenhum,Lidocaine,41242
+Analog_0007,CCN(CC)CC(=O)Nc1c(C)ccc(F)c1C,Fluoração Aromática,3,alta,protótipo,252.33,2.72,2,1,32.34,5,18,88.88,prioritário,sim,sim,nenhuma,0.6579,2.11,0,nenhum,Lidocaine,41242
+Analog_0008,CCN(CC)CC(=O)Nc1c(C)cc(N)cc1C,Aminação Aromática (-NH2),4,média,protótipo,249.36,2.17,3,2,58.36,5,18,81.59,prioritário,sim,sim,nenhuma,0.6667,2.11,1,aniline,Lidocaine,41242
+Analog_0009,CCN(CC)CC(=O)Nc1c(C)ccc(N)c1C,Aminação Aromática (-NH2),4,média,protótipo,249.36,2.17,3,2,58.36,5,18,81.4,prioritário,sim,sim,nenhuma,0.6579,2.13,1,aniline,Lidocaine,41242
+Analog_0010,CCN(CC(=O)Nc1c(C)cccc1C)C(C)O,Hidroxilação Alifática,4,média,protótipo,250.34,1.9,3,2,52.57,5,18,80.69,prioritário,sim,sim,nenhuma,0.6579,2.59,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0011,CCN(CC)C(O)C(=O)Nc1c(C)cccc1C,Hidroxilação Alifática,4,média,protótipo,250.34,1.9,3,2,52.57,5,18,78.23,promissor,sim,sim,nenhuma,0.5385,2.79,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0012,CCN(CC)CC(=O)Nc1c(C)cccc1CO,Hidroxilação Alifática,4,média,protótipo,250.34,1.77,3,2,52.57,6,18,87.9,prioritário,sim,sim,nenhuma,0.7778,2.04,0,nenhum,Lidocaine,41242
+Analog_0013,CCN(CCO)CC(=O)Nc1c(C)cccc1C,Hidroxilação Alifática,4,média,protótipo,250.34,1.56,3,2,52.57,6,18,88.44,prioritário,sim,sim,nenhuma,0.8,1.95,0,nenhum,Lidocaine,41242
+Analog_0014,CCN(CC)CC(=O)Nc1c(C)ccnc1C,Bioisostero: Benzeno->Piridina,5,média,protótipo,235.33,1.98,3,1,45.23,5,17,85.8,prioritário,sim,sim,nenhuma,0.6757,2.21,0,nenhum,Lidocaine,41242
+Analog_0015,CCN(CC)CC(=O)Nc1c(C)cncc1C,Bioisostero: Benzeno->Piridina,5,média,protótipo,235.33,1.98,3,1,45.23,5,17,85.93,prioritário,sim,sim,nenhuma,0.6857,2.24,0,nenhum,Lidocaine,41242
+Analog_0016,CCN(CC)CC(=O)Nc1c(C)cc(C#N)cc1C,Cianação Aromática (-CN),5,média,protótipo,259.35,2.46,3,1,56.13,5,19,84.73,prioritário,sim,sim,nenhuma,0.6154,2.2,0,nenhum,Lidocaine,41242
+Analog_0017,CCN(CC)CC(=O)Nc1c(C)ccc(C#N)c1C,Cianação Aromática (-CN),5,média,protótipo,259.35,2.46,3,1,56.13,5,19,84.51,prioritário,sim,sim,nenhuma,0.6098,2.28,0,nenhum,Lidocaine,41242
+Analog_0018,CCN(CC)CC(=O)Nc1c(C)cc(Cl)cc1C,Cloração Aromática,5,média,protótipo,268.79,3.24,2,1,32.34,5,18,85.97,prioritário,sim,sim,nenhuma,0.6667,2.0,0,nenhum,Lidocaine,41242
+Analog_0019,CCN(CC)CC(=O)Nc1c(C)ccc(Cl)c1C,Cloração Aromática,5,média,protótipo,268.79,3.24,2,1,32.34,5,18,85.7,prioritário,sim,sim,nenhuma,0.6579,2.07,0,nenhum,Lidocaine,41242
+Analog_0020,CCN(CC)CC(=O)Nc1c(C)cnc(Cl)c1C,Bioisostero: Benzeno->Piridina,5,média,exploração,269.78,2.63,3,1,45.23,5,18,78.98,promissor,sim,sim,nenhuma,0.5476,2.41,1,2-halo_pyridine,Lidocaine,41242
+Analog_0021,CCN(CC)CC(=O)Nc1c(C)ncc(Cl)c1C,Bioisostero: Benzeno->Piridina,5,média,exploração,269.78,2.63,3,1,45.23,5,18,82.52,prioritário,sim,sim,nenhuma,0.5116,2.42,0,nenhum,Lidocaine,41242
+Analog_0022,CCN(CC)CC(=O)Nc1c(C)cc(C#N)cc1CO,Cianação Aromática (-CN),5,média,exploração,275.35,1.64,4,2,76.36,6,20,82.34,prioritário,sim,sim,nenhuma,0.5,2.4,0,nenhum,Lidocaine,41242
+Analog_0023,CCN(CC)CC(=O)Nc1c(C)ccc(C#N)c1CO,Cianação Aromática (-CN),5,média,exploração,275.35,1.64,4,2,76.36,6,20,83.46,prioritário,sim,sim,nenhuma,0.5682,2.47,0,nenhum,Lidocaine,41242
+Analog_0024,CCN(CC)CC(=O)Nc1c(CO)ccc(C#N)c1C,Cianação Aromática (-CN),5,média,exploração,275.35,1.64,4,2,76.36,6,20,82.14,prioritário,sim,sim,nenhuma,0.5,2.53,0,nenhum,Lidocaine,41242
+Analog_0025,CCN(CC)C(O)C(=O)Nc1c(C)cc(Cl)cc1C,Cloração Aromática,5,média,exploração,284.79,2.56,3,2,52.57,5,19,74.55,promissor,sim,sim,nenhuma,0.3478,2.95,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0026,CCN(CC)C(O)C(=O)Nc1c(C)ccc(Cl)c1C,Cloração Aromática,5,média,exploração,284.79,2.56,3,2,52.57,5,19,74.55,promissor,sim,sim,nenhuma,0.3542,3.02,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0027,CCN(CC)CC(=O)Nc1c(C)cc(C(F)(F)F)cc1C,Trifluorometilação (-CF3),6,baixa,protótipo,302.34,3.6,2,1,32.34,5,21,81.12,prioritário,sim,sim,nenhuma,0.6316,2.16,0,nenhum,Lidocaine,41242
+Analog_0028,CCN(CC)CC(=O)Nc1c(C)ccc(C(F)(F)F)c1C,Trifluorometilação (-CF3),6,baixa,protótipo,302.34,3.6,2,1,32.34,5,21,80.51,prioritário,sim,sim,nenhuma,0.6098,2.3,0,nenhum,Lidocaine,41242
+Analog_0029,CCN(CC)C(O)C(=O)Nc1c(C)cc(C(F)(F)F)cc1C,Trifluorometilação (-CF3),6,baixa,exploração,318.34,2.92,3,2,52.57,5,22,70.17,promissor,sim,sim,nenhuma,0.3333,3.05,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0030,CCN(CC)C(O)C(=O)Nc1c(C)ccc(C(F)(F)F)c1C,Trifluorometilação (-CF3),6,baixa,exploração,318.34,2.92,3,2,52.57,5,22,69.97,promissor,sim,sim,nenhuma,0.3333,3.18,1,het-C-het_not_in_ring,Lidocaine,41242
+Analog_0001,CCN(CC)CC(=O)N(C)c1c(C)cccc1C,N-Metilação,1,muito alta,protótipo,248.37,2.61,2,0,23.55,5,18,89.58,prioritário,sim,sim,nenhuma,0.5263,2.22,0,nenhum,Lidocaine,41243
+Analog_0002,CCN(CC)CC(=O)Nc1c(C)cc(C)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,248.37,2.89,2,1,32.34,5,18,90.02,prioritário,sim,sim,nenhuma,0.7059,1.93,0,nenhum,Lidocaine,41243
+Analog_0003,CCN(CC)CC(=O)Nc1c(C)ccc(C)c1C,Metilação Aromática (-CH3),2,alta,protótipo,248.37,2.89,2,1,32.34,5,18,90.47,prioritário,sim,sim,nenhuma,0.7353,1.98,0,nenhum,Lidocaine,41243
+Analog_0004,CCN(CC)CC(=O)Nc1c(C)cc(F)cc1C,Fluoração Aromática,3,alta,protótipo,252.33,2.72,2,1,32.34,5,18,89.19,prioritário,sim,sim,nenhuma,0.6667,2.01,0,nenhum,Lidocaine,41243
+Analog_0005,CCN(CC)CC(=O)Nc1c(C)ccc(F)c1C,Fluoração Aromática,3,alta,protótipo,252.33,2.72,2,1,32.34,5,18,88.88,prioritário,sim,sim,nenhuma,0.6579,2.11,0,nenhum,Lidocaine,41243
+Analog_0006,CCN(CC)CC(=O)Nc1c(C)c(F)c(C(F)(F)F)c(C#N)c1C,Fluoração Aromática,3,alta,exploração,345.34,3.61,3,1,56.13,5,24,83.36,prioritário,sim,sim,nenhuma,0.42,2.9,0,nenhum,Lidocaine,41243
+Analog_0007,CCN(CC)CC(=O)Nc1c(C)cc(N)cc1C,Aminação Aromática (-NH2),4,média,protótipo,249.36,2.17,3,2,58.36,5,18,81.59,prioritário,sim,sim,nenhuma,0.6667,2.11,1,aniline,Lidocaine,41243
+Analog_0008,CCN(CC)CC(=O)Nc1c(C)ccc(N)c1C,Aminação Aromática (-NH2),4,média,protótipo,249.36,2.17,3,2,58.36,5,18,81.4,prioritário,sim,sim,nenhuma,0.6579,2.13,1,aniline,Lidocaine,41243
+Analog_0009,CCN(CC(=O)Nc1c(C)cccc1C)C(C)O,Hidroxilação Alifática,4,média,protótipo,250.34,1.9,3,2,52.57,5,18,80.69,prioritário,sim,sim,nenhuma,0.6579,2.59,1,het-C-het_not_in_ring,Lidocaine,41243
+Analog_0010,CCN(CC)C(O)C(=O)Nc1c(C)cccc1C,Hidroxilação Alifática,4,média,protótipo,250.34,1.9,3,2,52.57,5,18,78.23,promissor,sim,sim,nenhuma,0.5385,2.79,1,het-C-het_not_in_ring,Lidocaine,41243
+Analog_0011,CCN(CC)CC(=O)Nc1c(C)cccc1CO,Hidroxilação Alifática,4,média,protótipo,250.34,1.77,3,2,52.57,6,18,87.9,prioritário,sim,sim,nenhuma,0.7778,2.04,0,nenhum,Lidocaine,41243
+Analog_0012,CCN(CCO)CC(=O)Nc1c(C)cccc1C,Hidroxilação Alifática,4,média,protótipo,250.34,1.56,3,2,52.57,6,18,88.44,prioritário,sim,sim,nenhuma,0.8,1.95,0,nenhum,Lidocaine,41243
+Analog_0013,CCN(CC)CC(=O)Nc1c(C)ncc(CO)c1C,Hidroxilação Alifática,4,média,exploração,265.36,1.47,4,2,65.46,6,19,82.16,prioritário,sim,sim,nenhuma,0.5,2.52,0,nenhum,Lidocaine,41243
+Analog_0014,CCN(CC)CC(=O)Nc1c(CO)ncc(C)c1C,Hidroxilação Alifática,4,média,exploração,265.36,1.47,4,2,65.46,6,19,82.71,prioritário,sim,sim,nenhuma,0.5349,2.57,0,nenhum,Lidocaine,41243
+Analog_0015,CCN(CC)CC(=O)Nc1c(C)ccnc1C,Bioisostero: Benzeno->Piridina,5,média,protótipo,235.33,1.98,3,1,45.23,5,17,85.8,prioritário,sim,sim,nenhuma,0.6757,2.21,0,nenhum,Lidocaine,41243
+Analog_0016,CCN(CC)CC(=O)Nc1c(C)cncc1C,Bioisostero: Benzeno->Piridina,5,média,protótipo,235.33,1.98,3,1,45.23,5,17,85.93,prioritário,sim,sim,nenhuma,0.6857,2.24,0,nenhum,Lidocaine,41243
+Analog_0017,CCN(CC)CC(=O)Nc1c(C)cc(C#N)cc1C,Cianação Aromática (-CN),5,média,protótipo,259.35,2.46,3,1,56.13,5,19,84.73,prioritário,sim,sim,nenhuma,0.6154,2.2,0,nenhum,Lidocaine,41243
+Analog_0018,CCN(CC)CC(=O)Nc1c(C)ccc(C#N)c1C,Cianação Aromática (-CN),5,média,protótipo,259.35,2.46,3,1,56.13,5,19,84.51,prioritário,sim,sim,nenhuma,0.6098,2.28,0,nenhum,Lidocaine,41243
+Analog_0019,CCN(CC)CC(=O)Nc1c(C)cc(Cl)cc1C,Cloração Aromática,5,média,protótipo,268.79,3.24,2,1,32.34,5,18,85.97,prioritário,sim,sim,nenhuma,0.6667,2.0,0,nenhum,Lidocaine,41243
+Analog_0020,CCN(CC)CC(=O)Nc1c(C)ccc(Cl)c1C,Cloração Aromática,5,média,protótipo,268.79,3.24,2,1,32.34,5,18,85.7,prioritário,sim,sim,nenhuma,0.6579,2.07,0,nenhum,Lidocaine,41243
+Analog_0021,CCN(CC)CC(=O)Nc1c(C)cc(C)nc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,249.36,2.29,3,1,45.23,5,18,84.25,prioritário,sim,sim,nenhuma,0.5897,2.21,0,nenhum,Lidocaine,41243
+Analog_0022,CCN(CC)CC(=O)Nc1c(C)cnc(C)c1C,Bioisostero: Benzeno->Piridina,5,média,exploração,249.36,2.29,3,1,45.23,5,18,83.83,prioritário,sim,sim,nenhuma,0.575,2.31,0,nenhum,Lidocaine,41243
+Analog_0023,CCN(CC)CC(=O)Nc1c(C)cnnc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,236.32,1.37,4,1,58.12,5,17,83.49,prioritário,sim,sim,nenhuma,0.575,2.53,0,nenhum,Lidocaine,41243
+Analog_0024,CCN(CC)CC(=O)Nc1c(C)ncc(C)c1C,Bioisostero: Benzeno->Piridina,5,média,exploração,249.36,2.29,3,1,45.23,5,18,83.75,prioritário,sim,sim,nenhuma,0.575,2.36,0,nenhum,Lidocaine,41243
+Analog_0025,CCN(CC)CC(=O)Nc1c(C)c(Cl)cc(Cl)c1C,Cloração Aromática,5,média,exploração,303.23,3.89,2,1,32.34,5,19,83.81,prioritário,sim,sim,nenhuma,0.5789,2.37,0,nenhum,Lidocaine,41243
+Analog_0026,CCN(CC)CC(=O)Nc1c(C)cc(Cl)c(Cl)c1C,Cloração Aromática,5,média,exploração,303.23,3.89,2,1,32.34,5,19,83.6,prioritário,sim,sim,nenhuma,0.561,2.3,0,nenhum,Lidocaine,41243
+Analog_0027,CCN(CC)CC(=O)Nc1c(C)cc(C(F)(F)F)cc1C,Trifluorometilação (-CF3),6,baixa,protótipo,302.34,3.6,2,1,32.34,5,21,81.12,prioritário,sim,sim,nenhuma,0.6316,2.16,0,nenhum,Lidocaine,41243
+Analog_0028,CCN(CC)CC(=O)Nc1c(C)ccc(C(F)(F)F)c1C,Trifluorometilação (-CF3),6,baixa,protótipo,302.34,3.6,2,1,32.34,5,21,80.51,prioritário,sim,sim,nenhuma,0.6098,2.3,0,nenhum,Lidocaine,41243
+Analog_0029,CCN(CC)CC(=O)Nc1c(C)c(C#N)cc(C(F)(F)F)c1C,Trifluorometilação (-CF3),6,baixa,exploração,327.35,3.47,3,1,56.13,5,23,77.0,promissor,sim,sim,nenhuma,0.449,2.7,0,nenhum,Lidocaine,41243
+Analog_0030,CCN(CC)CC(=O)Nc1c(C)cc(C(F)(F)F)c(C#N)c1C,Trifluorometilação (-CF3),6,baixa,exploração,327.35,3.47,3,1,56.13,5,23,77.57,promissor,sim,sim,nenhuma,0.4694,2.57,0,nenhum,Lidocaine,41243
+Analog_0001,CCN(CC)CC(=O)N(C)c1c(C)cccc1C,N-Metilação,1,muito alta,protótipo,248.37,2.61,2,0,23.55,5,18,89.58,prioritário,sim,sim,nenhuma,0.5263,2.22,0,nenhum,Lidocaine,41244
+Analog_0002,CCN(CC)CC(=O)Nc1c(C)cc(C)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,248.37,2.89,2,1,32.34,5,18,90.02,prioritário,sim,sim,nenhuma,0.7059,1.93,0,nenhum,Lidocaine,41244
+Analog_0003,CCN(CC)CC(=O)Nc1c(C)ccc(C)c1C,Metilação Aromática (-CH3),2,alta,protótipo,248.37,2.89,2,1,32.34,5,18,90.47,prioritário,sim,sim,nenhuma,0.7353,1.98,0,nenhum,Lidocaine,41244
+Analog_0004,CCN(CC)CC(=O)Nc1c(C)cc(Cl)c(C)c1C,Metilação Aromática (-CH3),2,alta,exploração,282.81,3.55,2,1,32.34,5,19,87.17,prioritário,sim,sim,nenhuma,0.575,2.25,0,nenhum,Lidocaine,41244
+Analog_0005,CCN(CC)CC(=O)Nc1c(C)cc(F)cc1C,Fluoração Aromática,3,alta,protótipo,252.33,2.72,2,1,32.34,5,18,89.19,prioritário,sim,sim,nenhuma,0.6667,2.01,0,nenhum,Lidocaine,41244
+Analog_0006,CCN(CC)CC(=O)Nc1c(C)ccc(F)c1C,Fluoração Aromática,3,alta,protótipo,252.33,2.72,2,1,32.34,5,18,88.88,prioritário,sim,sim,nenhuma,0.6579,2.11,0,nenhum,Lidocaine,41244
+Analog_0007,CCN(CC)CC(=O)Nc1c(C)cc(C(F)(F)F)c(F)c1C,Fluoração Aromática,3,alta,exploração,320.33,3.74,2,1,32.34,5,22,85.6,prioritário,sim,sim,nenhuma,0.5111,2.52,0,nenhum,Lidocaine,41244
+Analog_0008,CCN(CC)CC(=O)Nc1c(C)cc(N)cc1C,Aminação Aromática (-NH2),4,média,protótipo,249.36,2.17,3,2,58.36,5,18,81.59,prioritário,sim,sim,nenhuma,0.6667,2.11,1,aniline,Lidocaine,41244
+Analog_0009,CCN(CC)CC(=O)Nc1c(C)ccc(N)c1C,Aminação Aromática (-NH2),4,média,protótipo,249.36,2.17,3,2,58.36,5,18,81.4,prioritário,sim,sim,nenhuma,0.6579,2.13,1,aniline,Lidocaine,41244
+Analog_0010,CCN(CC(=O)Nc1c(C)cccc1C)C(C)O,Hidroxilação Alifática,4,média,protótipo,250.34,1.9,3,2,52.57,5,18,80.69,prioritário,sim,sim,nenhuma,0.6579,2.59,1,het-C-het_not_in_ring,Lidocaine,41244
+Analog_0011,CCN(CC)C(O)C(=O)Nc1c(C)cccc1C,Hidroxilação Alifática,4,média,protótipo,250.34,1.9,3,2,52.57,5,18,78.23,promissor,sim,sim,nenhuma,0.5385,2.79,1,het-C-het_not_in_ring,Lidocaine,41244
+Analog_0012,CCN(CC)CC(=O)Nc1c(C)cccc1CO,Hidroxilação Alifática,4,média,protótipo,250.34,1.77,3,2,52.57,6,18,87.9,prioritário,sim,sim,nenhuma,0.7778,2.04,0,nenhum,Lidocaine,41244
+Analog_0013,CCN(CCO)CC(=O)Nc1c(C)cccc1C,Hidroxilação Alifática,4,média,protótipo,250.34,1.56,3,2,52.57,6,18,88.44,prioritário,sim,sim,nenhuma,0.8,1.95,0,nenhum,Lidocaine,41244
+Analog_0014,CCN(CC)CC(=O)Nc1c(C)ccnc1C,Bioisostero: Benzeno->Piridina,5,média,protótipo,235.33,1.98,3,1,45.23,5,17,85.8,prioritário,sim,sim,nenhuma,0.6757,2.21,0,nenhum,Lidocaine,41244
+Analog_0015,CCN(CC)CC(=O)Nc1c(C)cncc1C,Bioisostero: Benzeno->Piridina,5,média,protótipo,235.33,1.98,3,1,45.23,5,17,85.93,prioritário,sim,sim,nenhuma,0.6857,2.24,0,nenhum,Lidocaine,41244
+Analog_0016,CCN(CC)CC(=O)Nc1c(C)cc(C#N)cc1C,Cianação Aromática (-CN),5,média,protótipo,259.35,2.46,3,1,56.13,5,19,84.73,prioritário,sim,sim,nenhuma,0.6154,2.2,0,nenhum,Lidocaine,41244
+Analog_0017,CCN(CC)CC(=O)Nc1c(C)ccc(C#N)c1C,Cianação Aromática (-CN),5,média,protótipo,259.35,2.46,3,1,56.13,5,19,84.51,prioritário,sim,sim,nenhuma,0.6098,2.28,0,nenhum,Lidocaine,41244
+Analog_0018,CCN(CC)CC(=O)Nc1c(C)cc(Cl)cc1C,Cloração Aromática,5,média,protótipo,268.79,3.24,2,1,32.34,5,18,85.97,prioritário,sim,sim,nenhuma,0.6667,2.0,0,nenhum,Lidocaine,41244
+Analog_0019,CCN(CC)CC(=O)Nc1c(C)ccc(Cl)c1C,Cloração Aromática,5,média,protótipo,268.79,3.24,2,1,32.34,5,18,85.7,prioritário,sim,sim,nenhuma,0.6579,2.07,0,nenhum,Lidocaine,41244
+Analog_0020,CCN(CC)CC(=O)Nc1c(C)ccnc1CO,Bioisostero: Benzeno->Piridina,5,média,exploração,251.33,1.16,4,2,65.46,6,18,84.29,prioritário,sim,sim,nenhuma,0.6098,2.42,0,nenhum,Lidocaine,41244
+Analog_0021,CCN(CC)CC(=O)Nc1c(C)cncc1CO,Bioisostero: Benzeno->Piridina,5,média,exploração,251.33,1.16,4,2,65.46,6,18,83.23,prioritário,sim,sim,nenhuma,0.5476,2.38,0,nenhum,Lidocaine,41244
+Analog_0022,CCN(CC)CC(=O)Nc1c(C)cnnc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,236.32,1.37,4,1,58.12,5,17,83.49,prioritário,sim,sim,nenhuma,0.575,2.53,0,nenhum,Lidocaine,41244
+Analog_0023,CCN(CC)CC(=O)Nc1c(C)ncnc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,236.32,1.37,4,1,58.12,5,17,84.05,prioritário,sim,sim,nenhuma,0.5946,2.4,0,nenhum,Lidocaine,41244
+Analog_0024,CCN(CC)CC(=O)Nc1c(CO)ccnc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,251.33,1.16,4,2,65.46,6,18,82.92,prioritário,sim,sim,nenhuma,0.5349,2.43,0,nenhum,Lidocaine,41244
+Analog_0025,CCN(CC)CC(=O)N(C)c1c(C)cc(Cl)cc1C,Cloração Aromática,5,média,exploração,282.81,3.26,2,0,23.55,5,19,80.04,prioritário,sim,sim,nenhuma,0.3721,2.4,0,nenhum,Lidocaine,41244
+Analog_0026,CCN(CC)CC(=O)N(C)c1c(C)ccc(Cl)c1C,Cloração Aromática,5,média,exploração,282.81,3.26,2,0,23.55,5,19,80.0,promissor,sim,sim,nenhuma,0.3696,2.4,0,nenhum,Lidocaine,41244
+Analog_0027,CCN(CC)CC(=O)Nc1c(C)cc(Cl)c(Cl)c1C,Cloração Aromática,5,média,exploração,303.23,3.89,2,1,32.34,5,19,83.6,prioritário,sim,sim,nenhuma,0.561,2.3,0,nenhum,Lidocaine,41244
+Analog_0028,CCN(CC)CC(=O)Nc1c(C)cc(C(F)(F)F)cc1C,Trifluorometilação (-CF3),6,baixa,protótipo,302.34,3.6,2,1,32.34,5,21,81.12,prioritário,sim,sim,nenhuma,0.6316,2.16,0,nenhum,Lidocaine,41244
+Analog_0029,CCN(CC)CC(=O)Nc1c(C)ccc(C(F)(F)F)c1C,Trifluorometilação (-CF3),6,baixa,protótipo,302.34,3.6,2,1,32.34,5,21,80.51,prioritário,sim,sim,nenhuma,0.6098,2.3,0,nenhum,Lidocaine,41244
+Analog_0030,CCN(CC)CC(=O)N(C)c1c(C)cc(C(F)(F)F)c(Cl)c1C,Trifluorometilação (-CF3),6,baixa,exploração,350.81,4.28,2,0,23.55,5,23,74.28,promissor,sim,sim,nenhuma,0.3077,2.81,0,nenhum,Lidocaine,41244
+Analog_0001,CCOC(=O)c1ccc(NC)cc1,N-Metilação,1,muito alta,protótipo,179.22,1.91,3,1,38.33,3,13,92.21,prioritário,sim,sim,nenhuma,0.6129,1.51,0,nenhum,Benzocaine,41242
+Analog_0002,COCCOC(=O)c1ccc(N)c(C#N)c1,O-Metilação (-OH -> -OCH3),1,muito alta,exploração,220.23,0.94,5,1,85.34,4,16,78.37,promissor,sim,sim,nenhuma,0.3636,2.14,2,Aliphatic_long_chain; aniline,Benzocaine,41242
+Analog_0003,CCOC(=O)c1ccc(N)c(C)c1,Metilação Aromática (-CH3),2,alta,protótipo,179.22,1.75,3,1,52.32,2,13,84.79,prioritário,sim,sim,nenhuma,0.625,1.64,1,aniline,Benzocaine,41242
+Analog_0004,CCOC(=O)c1ccc(N)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,179.22,1.75,3,1,52.32,2,13,84.66,prioritário,sim,sim,nenhuma,0.625,1.72,1,aniline,Benzocaine,41242
+Analog_0005,CC(N)OC(=O)c1ccc(N)c(C(F)(F)F)c1,Hidroxila->Amino (-OH -> -NH2),2,alta,exploração,248.2,1.75,4,2,78.34,2,17,72.76,promissor,sim,sim,nenhuma,0.2889,2.8,2,aniline; het-C-het_not_in_ring,Benzocaine,41242
+Analog_0006,CCOC(=O)c1ccc(N)c(F)c1,Fluoração Aromática,3,alta,protótipo,183.18,1.58,3,1,52.32,2,13,84.03,prioritário,sim,sim,nenhuma,0.5882,1.72,1,aniline,Benzocaine,41242
+Analog_0007,CCOC(=O)c1ccc(N)cc1F,Fluoração Aromática,3,alta,protótipo,183.18,1.58,3,1,52.32,2,13,83.15,prioritário,sim,sim,nenhuma,0.5429,1.76,1,aniline,Benzocaine,41242
+Analog_0008,CCOC(=O)c1ccc(N)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,180.21,1.03,4,2,78.34,2,13,81.64,prioritário,sim,sim,nenhuma,0.6452,1.83,1,aniline,Benzocaine,41242
+Analog_0009,CCOC(=O)c1ccc(N)cc1N,Aminação Aromática (-NH2),4,média,protótipo,180.21,1.03,4,2,78.34,2,13,80.36,prioritário,sim,sim,nenhuma,0.5758,1.85,1,aniline,Benzocaine,41242
+Analog_0010,CCNC(=O)c1ccc(N)cc1,Bioisostero: Éster->Amida,4,média,protótipo,164.21,1.02,2,2,55.12,2,12,78.98,promissor,sim,sim,nenhuma,0.5,1.52,1,aniline,Benzocaine,41242
+Analog_0011,CC(O)OC(=O)c1ccc(N)cc1,Hidroxilação Alifática,4,média,protótipo,181.19,0.76,4,2,72.55,2,13,74.53,promissor,sim,sim,nenhuma,0.5312,2.38,2,aniline; het-C-het_not_in_ring,Benzocaine,41242
+Analog_0012,Nc1ccc(C(=O)OCCO)cc1,Hidroxilação Alifática,4,média,protótipo,181.19,0.42,4,2,72.55,3,13,81.6,prioritário,sim,sim,nenhuma,0.6333,1.72,1,aniline,Benzocaine,41242
+Analog_0013,CCOC(=O)c1ccc(N)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,166.18,0.84,4,1,65.21,2,12,83.59,prioritário,sim,sim,nenhuma,0.5588,1.98,0,nenhum,Benzocaine,41242
+Analog_0014,CCOC(=O)c1ccc(N)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,166.18,0.84,4,1,65.21,2,12,84.68,prioritário,sim,sim,nenhuma,0.6061,1.83,0,nenhum,Benzocaine,41242
+Analog_0015,CCOC(=O)c1ccc(N)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,190.2,1.32,4,1,76.11,2,14,79.48,promissor,sim,sim,nenhuma,0.5405,2.01,1,aniline,Benzocaine,41242
+Analog_0016,CCOC(=O)c1ccc(N)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,190.2,1.32,4,1,76.11,2,14,78.67,promissor,sim,sim,nenhuma,0.5,2.06,1,aniline,Benzocaine,41242
+Analog_0017,CCOC(=O)c1ccc(N)c(Cl)c1,Cloração Aromática,5,média,protótipo,199.64,2.1,3,1,52.32,2,13,80.82,prioritário,sim,sim,nenhuma,0.5882,1.7,1,aniline,Benzocaine,41242
+Analog_0018,CCOC(=O)c1ccc(N)cc1Cl,Cloração Aromática,5,média,protótipo,199.64,2.1,3,1,52.32,2,13,79.96,promissor,sim,sim,nenhuma,0.5429,1.73,1,aniline,Benzocaine,41242
+Analog_0019,CCOC(=O)c1cc(C(F)(F)F)c(N)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,234.18,1.86,4,1,65.21,2,16,80.01,prioritário,sim,sim,nenhuma,0.3721,2.42,0,nenhum,Benzocaine,41242
+Analog_0020,CCOC(=O)c1ccc(N)c(C(F)(F)F)n1,Bioisostero: Benzeno->Piridina,5,média,exploração,234.18,1.86,4,1,65.21,2,16,80.76,prioritário,sim,sim,nenhuma,0.4146,2.43,0,nenhum,Benzocaine,41242
+Analog_0021,CCOC(=O)c1cnc(N)c(C(F)(F)F)c1,Bioisostero: Benzeno->Piridina,5,média,exploração,234.18,1.86,4,1,65.21,2,16,81.6,prioritário,sim,sim,nenhuma,0.439,2.17,0,nenhum,Benzocaine,41242
+Analog_0022,N#Cc1cc(C(=O)OCCO)ccc1N,Cianação Aromática (-CN),5,média,exploração,206.2,0.29,5,2,96.34,3,15,75.72,promissor,sim,sim,nenhuma,0.3488,2.21,1,aniline,Benzocaine,41242
+Analog_0023,N#Cc1cc(N)ccc1C(=O)OCCO,Cianação Aromática (-CN),5,média,exploração,206.2,0.29,5,2,96.34,3,15,75.09,promissor,sim,sim,nenhuma,0.3182,2.26,1,aniline,Benzocaine,41242
+Analog_0024,CC(O)OC(=O)c1ccc(N)c(Cl)c1,Cloração Aromática,5,média,exploração,215.64,1.42,4,2,72.55,2,14,70.2,promissor,sim,sim,nenhuma,0.3095,2.6,2,aniline; het-C-het_not_in_ring,Benzocaine,41242
+Analog_0025,CC(O)OC(=O)c1ccc(N)cc1Cl,Cloração Aromática,5,média,exploração,215.64,1.42,4,2,72.55,2,14,70.17,promissor,sim,sim,nenhuma,0.3095,2.62,2,aniline; het-C-het_not_in_ring,Benzocaine,41242
+Analog_0026,CCOC(=O)c1ccc(N)c(Cl)n1,Cloração Aromática,5,média,exploração,200.62,1.49,4,1,65.21,2,13,77.43,promissor,sim,sim,nenhuma,0.4474,2.25,1,2-halo_pyridine,Benzocaine,41242
+Analog_0027,CCOC(=O)c1ccc(N)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,233.19,2.46,3,1,52.32,2,16,75.63,promissor,sim,sim,nenhuma,0.5405,1.94,1,aniline,Benzocaine,41242
+Analog_0028,CCOC(=O)c1ccc(N)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,233.19,2.46,3,1,52.32,2,16,74.79,promissor,sim,sim,nenhuma,0.5,2.01,1,aniline,Benzocaine,41242
+Analog_0029,CC(O)OC(=O)c1ccc(N)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,exploração,249.19,1.78,4,2,72.55,2,17,65.62,promissor,sim,sim,nenhuma,0.2889,2.76,2,aniline; het-C-het_not_in_ring,Benzocaine,41242
+Analog_0030,CC(O)OC(=O)c1ccc(N)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,249.19,1.78,4,2,72.55,2,17,65.51,promissor,sim,sim,nenhuma,0.2889,2.83,2,aniline; het-C-het_not_in_ring,Benzocaine,41242
+Analog_0001,CCOC(=O)c1ccc(NC)cc1,N-Metilação,1,muito alta,protótipo,179.22,1.91,3,1,38.33,3,13,92.21,prioritário,sim,sim,nenhuma,0.6129,1.51,0,nenhum,Benzocaine,41243
+Analog_0002,CCOC(=O)c1ccc(N)c(C)c1,Metilação Aromática (-CH3),2,alta,protótipo,179.22,1.75,3,1,52.32,2,13,84.79,prioritário,sim,sim,nenhuma,0.625,1.64,1,aniline,Benzocaine,41243
+Analog_0003,CCOC(=O)c1ccc(N)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,179.22,1.75,3,1,52.32,2,13,84.66,prioritário,sim,sim,nenhuma,0.625,1.72,1,aniline,Benzocaine,41243
+Analog_0004,CCOC(=O)c1ccc(N)c(F)c1,Fluoração Aromática,3,alta,protótipo,183.18,1.58,3,1,52.32,2,13,84.03,prioritário,sim,sim,nenhuma,0.5882,1.72,1,aniline,Benzocaine,41243
+Analog_0005,CCOC(=O)c1ccc(N)cc1F,Fluoração Aromática,3,alta,protótipo,183.18,1.58,3,1,52.32,2,13,83.15,prioritário,sim,sim,nenhuma,0.5429,1.76,1,aniline,Benzocaine,41243
+Analog_0006,CCOC(=O)c1ccc(N)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,180.21,1.03,4,2,78.34,2,13,81.64,prioritário,sim,sim,nenhuma,0.6452,1.83,1,aniline,Benzocaine,41243
+Analog_0007,CCOC(=O)c1ccc(N)cc1N,Aminação Aromática (-NH2),4,média,protótipo,180.21,1.03,4,2,78.34,2,13,80.36,prioritário,sim,sim,nenhuma,0.5758,1.85,1,aniline,Benzocaine,41243
+Analog_0008,CCNC(=O)c1ccc(N)cc1,Bioisostero: Éster->Amida,4,média,protótipo,164.21,1.02,2,2,55.12,2,12,78.98,promissor,sim,sim,nenhuma,0.5,1.52,1,aniline,Benzocaine,41243
+Analog_0009,CC(O)OC(=O)c1ccc(N)cc1,Hidroxilação Alifática,4,média,protótipo,181.19,0.76,4,2,72.55,2,13,74.53,promissor,sim,sim,nenhuma,0.5312,2.38,2,aniline; het-C-het_not_in_ring,Benzocaine,41243
+Analog_0010,Nc1ccc(C(=O)OCCO)cc1,Hidroxilação Alifática,4,média,protótipo,181.19,0.42,4,2,72.55,3,13,81.6,prioritário,sim,sim,nenhuma,0.6333,1.72,1,aniline,Benzocaine,41243
+Analog_0011,CCOC(=O)c1ccc(N)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,166.18,0.84,4,1,65.21,2,12,83.59,prioritário,sim,sim,nenhuma,0.5588,1.98,0,nenhum,Benzocaine,41243
+Analog_0012,CCOC(=O)c1ccc(N)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,166.18,0.84,4,1,65.21,2,12,84.68,prioritário,sim,sim,nenhuma,0.6061,1.83,0,nenhum,Benzocaine,41243
+Analog_0013,CCOC(=O)c1ccc(N)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,190.2,1.32,4,1,76.11,2,14,79.48,promissor,sim,sim,nenhuma,0.5405,2.01,1,aniline,Benzocaine,41243
+Analog_0014,CCOC(=O)c1ccc(N)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,190.2,1.32,4,1,76.11,2,14,78.67,promissor,sim,sim,nenhuma,0.5,2.06,1,aniline,Benzocaine,41243
+Analog_0015,CCOC(=O)c1ccc(N)c(Cl)c1,Cloração Aromática,5,média,protótipo,199.64,2.1,3,1,52.32,2,13,80.82,prioritário,sim,sim,nenhuma,0.5882,1.7,1,aniline,Benzocaine,41243
+Analog_0016,CCOC(=O)c1ccc(N)cc1Cl,Cloração Aromática,5,média,protótipo,199.64,2.1,3,1,52.32,2,13,79.96,promissor,sim,sim,nenhuma,0.5429,1.73,1,aniline,Benzocaine,41243
+Analog_0017,CCOC(=O)c1cc(C#N)c(N)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,191.19,0.71,5,1,89.0,2,14,79.92,promissor,sim,sim,nenhuma,0.3721,2.48,0,nenhum,Benzocaine,41243
+Analog_0018,CCOC(=O)c1ccc(N)c(C#N)n1,Bioisostero: Benzeno->Piridina,5,média,exploração,191.19,0.71,5,1,89.0,2,14,80.77,prioritário,sim,sim,nenhuma,0.4146,2.42,0,nenhum,Benzocaine,41243
+Analog_0019,CCOC(=O)c1ccc(N)c(C)n1,Bioisostero: Benzeno->Piridina,5,média,exploração,180.21,1.15,4,1,65.21,2,13,82.2,prioritário,sim,sim,nenhuma,0.4722,2.17,0,nenhum,Benzocaine,41243
+Analog_0020,CCOC(=O)c1ccc(N)nc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,180.21,1.15,4,1,65.21,2,13,82.53,prioritário,sim,sim,nenhuma,0.4722,1.96,0,nenhum,Benzocaine,41243
+Analog_0021,CCOC(=O)c1cnc(N)c(C#N)c1,Bioisostero: Benzeno->Piridina,5,média,exploração,191.19,0.71,5,1,89.0,2,14,81.49,prioritário,sim,sim,nenhuma,0.439,2.24,0,nenhum,Benzocaine,41243
+Analog_0022,CCOC(=O)c1cnc(N)cc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,180.21,1.15,4,1,65.21,2,13,82.08,prioritário,sim,sim,nenhuma,0.4595,2.1,0,nenhum,Benzocaine,41243
+Analog_0023,CCOC(=O)c1ncc(N)cc1C,Bioisostero: Benzeno->Piridina,5,média,exploração,180.21,1.15,4,1,65.21,2,13,81.91,prioritário,sim,sim,nenhuma,0.4595,2.21,0,nenhum,Benzocaine,41243
+Analog_0024,CCOC(=O)c1cc(C(F)(F)F)c(N)cc1Cl,Cloração Aromática,5,média,exploração,267.63,3.12,3,1,52.32,2,17,76.17,promissor,sim,sim,nenhuma,0.3721,2.19,1,aniline,Benzocaine,41243
+Analog_0025,CCOC(=O)c1ccc(N)c(C(F)(F)F)c1Cl,Cloração Aromática,5,média,exploração,267.63,3.12,3,1,52.32,2,17,76.46,promissor,sim,sim,nenhuma,0.4048,2.38,1,aniline,Benzocaine,41243
+Analog_0026,CCOC(=O)c1ccc(N)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,233.19,2.46,3,1,52.32,2,16,75.63,promissor,sim,sim,nenhuma,0.5405,1.94,1,aniline,Benzocaine,41243
+Analog_0027,CCOC(=O)c1ccc(N)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,233.19,2.46,3,1,52.32,2,16,74.79,promissor,sim,sim,nenhuma,0.5,2.01,1,aniline,Benzocaine,41243
+Analog_0028,CCOC(=O)c1cc(Cl)c(N)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,exploração,267.63,3.12,3,1,52.32,2,17,73.54,promissor,sim,sim,nenhuma,0.439,2.11,1,aniline,Benzocaine,41243
+Analog_0029,CCOC(=O)c1cc(Cl)c(N)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,267.63,3.12,3,1,52.32,2,17,72.16,promissor,sim,sim,nenhuma,0.3721,2.22,1,aniline,Benzocaine,41243
+Analog_0030,CCOC(=O)c1ccc(N)c(Cl)c1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,exploração,267.63,3.12,3,1,52.32,2,17,72.57,promissor,sim,sim,nenhuma,0.4146,2.45,1,aniline,Benzocaine,41243
+Analog_0001,CCOC(=O)c1ccc(NC)cc1,N-Metilação,1,muito alta,protótipo,179.22,1.91,3,1,38.33,3,13,92.21,prioritário,sim,sim,nenhuma,0.6129,1.51,0,nenhum,Benzocaine,41244
+Analog_0002,CCOC(=O)c1ccc(N)c(C)c1,Metilação Aromática (-CH3),2,alta,protótipo,179.22,1.75,3,1,52.32,2,13,84.79,prioritário,sim,sim,nenhuma,0.625,1.64,1,aniline,Benzocaine,41244
+Analog_0003,CCOC(=O)c1ccc(N)cc1C,Metilação Aromática (-CH3),2,alta,protótipo,179.22,1.75,3,1,52.32,2,13,84.66,prioritário,sim,sim,nenhuma,0.625,1.72,1,aniline,Benzocaine,41244
+Analog_0004,CCOC(=O)c1c(C)cc(N)cc1Cl,Metilação Aromática (-CH3),2,alta,exploração,213.66,2.41,3,1,52.32,2,14,81.12,prioritário,sim,sim,nenhuma,0.4595,2.1,1,aniline,Benzocaine,41244
+Analog_0005,CCOC(=O)c1cc(C)c(N)cc1Cl,Metilação Aromática (-CH3),2,alta,exploração,213.66,2.41,3,1,52.32,2,14,80.71,prioritário,sim,sim,nenhuma,0.4211,1.92,1,aniline,Benzocaine,41244
+Analog_0006,CCOC(=O)c1ccc(N)c(C)c1Cl,Metilação Aromática (-CH3),2,alta,exploração,213.66,2.41,3,1,52.32,2,14,81.21,prioritário,sim,sim,nenhuma,0.4595,2.04,1,aniline,Benzocaine,41244
+Analog_0007,CCOC(=O)c1ccc(N)c(F)c1,Fluoração Aromática,3,alta,protótipo,183.18,1.58,3,1,52.32,2,13,84.03,prioritário,sim,sim,nenhuma,0.5882,1.72,1,aniline,Benzocaine,41244
+Analog_0008,CCOC(=O)c1ccc(N)cc1F,Fluoração Aromática,3,alta,protótipo,183.18,1.58,3,1,52.32,2,13,83.15,prioritário,sim,sim,nenhuma,0.5429,1.76,1,aniline,Benzocaine,41244
+Analog_0009,CCOC(=O)c1ccc(N)c(N)c1,Aminação Aromática (-NH2),4,média,protótipo,180.21,1.03,4,2,78.34,2,13,81.64,prioritário,sim,sim,nenhuma,0.6452,1.83,1,aniline,Benzocaine,41244
+Analog_0010,CCOC(=O)c1ccc(N)cc1N,Aminação Aromática (-NH2),4,média,protótipo,180.21,1.03,4,2,78.34,2,13,80.36,prioritário,sim,sim,nenhuma,0.5758,1.85,1,aniline,Benzocaine,41244
+Analog_0011,CCNC(=O)c1ccc(N)cc1,Bioisostero: Éster->Amida,4,média,protótipo,164.21,1.02,2,2,55.12,2,12,78.98,promissor,sim,sim,nenhuma,0.5,1.52,1,aniline,Benzocaine,41244
+Analog_0012,CC(O)OC(=O)c1ccc(N)cc1,Hidroxilação Alifática,4,média,protótipo,181.19,0.76,4,2,72.55,2,13,74.53,promissor,sim,sim,nenhuma,0.5312,2.38,2,aniline; het-C-het_not_in_ring,Benzocaine,41244
+Analog_0013,Nc1ccc(C(=O)OCCO)cc1,Hidroxilação Alifática,4,média,protótipo,181.19,0.42,4,2,72.55,3,13,81.6,prioritário,sim,sim,nenhuma,0.6333,1.72,1,aniline,Benzocaine,41244
+Analog_0014,CC(O)OC(=O)c1ncc(N)cc1C#N,Hidroxilação Alifática,4,média,exploração,207.19,0.03,6,2,109.23,2,15,71.77,promissor,sim,sim,nenhuma,0.2245,3.31,1,het-C-het_not_in_ring,Benzocaine,41244
+Analog_0015,N#Cc1cc(N)cnc1C(=O)OCCO,Hidroxilação Alifática,4,média,exploração,207.19,-0.32,6,2,109.23,3,15,76.49,promissor,sim,sim,nenhuma,0.25,2.65,0,nenhum,Benzocaine,41244
+Analog_0016,CCOC(=O)c1ccc(N)cn1,Bioisostero: Benzeno->Piridina,5,média,protótipo,166.18,0.84,4,1,65.21,2,12,83.59,prioritário,sim,sim,nenhuma,0.5588,1.98,0,nenhum,Benzocaine,41244
+Analog_0017,CCOC(=O)c1ccc(N)nc1,Bioisostero: Benzeno->Piridina,5,média,protótipo,166.18,0.84,4,1,65.21,2,12,84.68,prioritário,sim,sim,nenhuma,0.6061,1.83,0,nenhum,Benzocaine,41244
+Analog_0018,CCOC(=O)c1ccc(N)c(C#N)c1,Cianação Aromática (-CN),5,média,protótipo,190.2,1.32,4,1,76.11,2,14,79.48,promissor,sim,sim,nenhuma,0.5405,2.01,1,aniline,Benzocaine,41244
+Analog_0019,CCOC(=O)c1ccc(N)cc1C#N,Cianação Aromática (-CN),5,média,protótipo,190.2,1.32,4,1,76.11,2,14,78.67,promissor,sim,sim,nenhuma,0.5,2.06,1,aniline,Benzocaine,41244
+Analog_0020,CCOC(=O)c1ccc(N)c(Cl)c1,Cloração Aromática,5,média,protótipo,199.64,2.1,3,1,52.32,2,13,80.82,prioritário,sim,sim,nenhuma,0.5882,1.7,1,aniline,Benzocaine,41244
+Analog_0021,CCOC(=O)c1ccc(N)cc1Cl,Cloração Aromática,5,média,protótipo,199.64,2.1,3,1,52.32,2,13,79.96,promissor,sim,sim,nenhuma,0.5429,1.73,1,aniline,Benzocaine,41244
+Analog_0022,Nc1ccc(C(=O)OCCO)cn1,Bioisostero: Benzeno->Piridina,5,média,exploração,182.18,-0.19,5,2,85.44,3,13,80.21,prioritário,sim,sim,nenhuma,0.3846,2.07,0,nenhum,Benzocaine,41244
+Analog_0023,Nc1ccc(C(=O)OCCO)nc1,Bioisostero: Benzeno->Piridina,5,média,exploração,182.18,-0.19,5,2,85.44,3,13,79.38,promissor,sim,sim,nenhuma,0.35,2.2,0,nenhum,Benzocaine,41244
+Analog_0024,CCOC(=O)c1c(Cl)cc(N)cc1Cl,Cloração Aromática,5,média,exploração,234.08,2.75,3,1,52.32,2,14,78.66,promissor,sim,sim,nenhuma,0.5,2.07,1,aniline,Benzocaine,41244
+Analog_0025,CCOC(=O)c1cc(Cl)c(N)cc1Cl,Cloração Aromática,5,média,exploração,234.08,2.75,3,1,52.32,2,14,77.64,promissor,sim,sim,nenhuma,0.4324,1.94,1,aniline,Benzocaine,41244
+Analog_0026,CCOC(=O)c1ccc(N)c(Cl)c1Cl,Cloração Aromática,5,média,exploração,234.08,2.75,3,1,52.32,2,14,78.12,promissor,sim,sim,nenhuma,0.4722,2.09,1,aniline,Benzocaine,41244
+Analog_0027,CCOC(=O)c1ccc(N)c(C(F)(F)F)c1,Trifluorometilação (-CF3),6,baixa,protótipo,233.19,2.46,3,1,52.32,2,16,75.63,promissor,sim,sim,nenhuma,0.5405,1.94,1,aniline,Benzocaine,41244
+Analog_0028,CCOC(=O)c1ccc(N)cc1C(F)(F)F,Trifluorometilação (-CF3),6,baixa,protótipo,233.19,2.46,3,1,52.32,2,16,74.79,promissor,sim,sim,nenhuma,0.5,2.01,1,aniline,Benzocaine,41244
+Analog_0029,CCOC(=O)c1cnc(N)cc1C#N,Bioisostero: Benzeno->Pirimidina,7,baixa,exploração,191.19,0.71,5,1,89.0,2,14,76.05,promissor,sim,sim,nenhuma,0.3721,2.42,0,nenhum,Benzocaine,41244
+Analog_0030,CCOC(=O)c1ncc(N)cc1C#N,Bioisostero: Benzeno->Pirimidina,7,baixa,exploração,191.19,0.71,5,1,89.0,2,14,76.54,promissor,sim,sim,nenhuma,0.4048,2.48,0,nenhum,Benzocaine,41244
+Analog_0001,CC(C)N(C)CC(O)COc1cccc2ccccc12,N-Metilação,1,muito alta,protótipo,273.38,2.92,3,1,32.7,6,20,90.82,prioritário,sim,sim,nenhuma,0.6136,2.43,0,nenhum,Propranolol,41242
+Analog_0002,COC(CNC(C)C)COc1cccc2ccccc12,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,273.38,3.23,3,1,30.49,7,20,92.05,prioritário,sim,sim,nenhuma,0.6905,2.53,0,nenhum,Propranolol,41242
+Analog_0003,CC(C)NCC(N)COc1cccc2ccccc12,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,258.37,2.54,3,2,47.28,6,19,89.52,prioritário,sim,sim,nenhuma,0.725,2.47,0,nenhum,Propranolol,41242
+Analog_0004,Cc1cc(OCC(O)CNC(C)C)c2ccccc2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.47,prioritário,sim,sim,nenhuma,0.7209,2.46,0,nenhum,Propranolol,41242
+Analog_0005,Cc1ccc(OCC(O)CNC(C)C)c2ccccc12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.0,prioritário,sim,sim,nenhuma,0.6905,2.41,0,nenhum,Propranolol,41242
+Analog_0006,Cc1ccc2c(OCC(O)CNC(C)C)cccc2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.93,prioritário,sim,sim,nenhuma,0.7442,2.43,0,nenhum,Propranolol,41242
+Analog_0007,Cc1ccc2cccc(OCC(O)CNC(C)C)c2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.93,prioritário,sim,sim,nenhuma,0.7442,2.43,0,nenhum,Propranolol,41242
+Analog_0008,Cc1ccc2ccccc2c1OCC(O)CNC(C)C,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,88.31,prioritário,sim,sim,nenhuma,0.6591,2.49,0,nenhum,Propranolol,41242
+Analog_0009,Cc1cccc2c(OCC(O)CNC(C)C)cccc12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.71,prioritário,sim,sim,nenhuma,0.7317,2.43,0,nenhum,Propranolol,41242
+Analog_0010,Cc1cccc2cccc(OCC(O)CNC(C)C)c12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,88.49,prioritário,sim,sim,nenhuma,0.6744,2.55,0,nenhum,Propranolol,41242
+Analog_0011,CC(C)NCC(O)COc1c(F)ccc2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,87.9,prioritário,sim,sim,nenhuma,0.6444,2.58,0,nenhum,Propranolol,41242
+Analog_0012,CC(C)NCC(O)COc1cc(F)cc2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.39,prioritário,sim,sim,nenhuma,0.7209,2.51,0,nenhum,Propranolol,41242
+Analog_0013,CC(C)NCC(O)COc1ccc(F)c2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,88.64,prioritário,sim,sim,nenhuma,0.6744,2.45,0,nenhum,Propranolol,41242
+Analog_0014,CC(C)NCC(O)COc1cccc2c(F)cccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.33,prioritário,sim,sim,nenhuma,0.7143,2.47,0,nenhum,Propranolol,41242
+Analog_0015,CC(C)NCC(O)COc1cccc2cc(F)ccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.87,prioritário,sim,sim,nenhuma,0.7442,2.47,0,nenhum,Propranolol,41242
+Analog_0016,CC(C)NCC(O)COc1cccc2ccc(F)cc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.87,prioritário,sim,sim,nenhuma,0.7442,2.47,0,nenhum,Propranolol,41242
+Analog_0017,CC(C)NCC(O)COc1cccc2cccc(F)c12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,88.17,prioritário,sim,sim,nenhuma,0.6591,2.58,0,nenhum,Propranolol,41242
+Analog_0018,CC(C)NCC(O)COc1c(N)ccc2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,80.4,prioritário,sim,sim,nenhuma,0.6444,2.62,1,aniline,Propranolol,41242
+Analog_0019,CC(C)NCC(O)COc1cc(N)cc2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.53,prioritário,sim,sim,nenhuma,0.7045,2.59,1,aniline,Propranolol,41242
+Analog_0020,CC(C)NCC(O)COc1ccc(N)c2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.13,prioritário,sim,sim,nenhuma,0.6744,2.5,1,aniline,Propranolol,41242
+Analog_0021,CC(C)NCC(O)COc1cccc2c(N)cccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.8,prioritário,sim,sim,nenhuma,0.7143,2.53,1,aniline,Propranolol,41242
+Analog_0022,CC(C)NCC(O)COc1cccc2cc(N)ccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,82.0,prioritário,sim,sim,nenhuma,0.7273,2.55,1,aniline,Propranolol,41242
+Analog_0023,CC(C)NCC(O)COc1cccc2ccc(N)cc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.98,prioritário,sim,sim,nenhuma,0.7273,2.56,1,aniline,Propranolol,41242
+Analog_0024,CC(C)NCC(O)COc1cccc2cccc(N)c12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,80.62,prioritário,sim,sim,nenhuma,0.6591,2.65,1,aniline,Propranolol,41242
+Analog_0025,CC(C)(O)NCC(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,80.86,prioritário,sim,sim,nenhuma,0.6744,2.67,1,het-C-het_not_in_ring,Propranolol,41242
+Analog_0026,CC(C)NC(O)C(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.46,promissor,sim,sim,nenhuma,0.6279,3.03,1,het-C-het_not_in_ring,Propranolol,41242
+Analog_0027,CC(C)NCC(O)(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.56,promissor,sim,sim,nenhuma,0.5778,2.39,1,het-C-het_not_in_ring,Propranolol,41242
+Analog_0028,CC(C)NCC(O)C(O)Oc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.51,promissor,sim,sim,nenhuma,0.6279,3.0,1,het-C-het_not_in_ring,Propranolol,41242
+Analog_0029,CC(CO)NCC(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.55,4,3,61.72,7,20,86.92,prioritário,sim,sim,nenhuma,0.7805,2.7,0,nenhum,Propranolol,41242
+Analog_0030,CC(C)NCC(O)COc1cccc2cccnc12,Bioisostero: Benzeno->Piridina,5,média,protótipo,260.34,1.97,4,2,54.38,6,19,85.05,prioritário,sim,sim,nenhuma,0.6591,2.5,0,nenhum,Propranolol,41242
+Analog_0001,CC(C)N(C)CC(O)COc1cccc2ccccc12,N-Metilação,1,muito alta,protótipo,273.38,2.92,3,1,32.7,6,20,90.82,prioritário,sim,sim,nenhuma,0.6136,2.43,0,nenhum,Propranolol,41243
+Analog_0002,COC(CNC(C)C)COc1cccc2ccccc12,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,273.38,3.23,3,1,30.49,7,20,92.05,prioritário,sim,sim,nenhuma,0.6905,2.53,0,nenhum,Propranolol,41243
+Analog_0003,CC(C)NCC(N)COc1cccc2ccccc12,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,258.37,2.54,3,2,47.28,6,19,89.52,prioritário,sim,sim,nenhuma,0.725,2.47,0,nenhum,Propranolol,41243
+Analog_0004,Cc1cc(OCC(O)CNC(C)C)c2ccccc2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.47,prioritário,sim,sim,nenhuma,0.7209,2.46,0,nenhum,Propranolol,41243
+Analog_0005,Cc1ccc(OCC(O)CNC(C)C)c2ccccc12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.0,prioritário,sim,sim,nenhuma,0.6905,2.41,0,nenhum,Propranolol,41243
+Analog_0006,Cc1ccc2c(OCC(O)CNC(C)C)cccc2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.93,prioritário,sim,sim,nenhuma,0.7442,2.43,0,nenhum,Propranolol,41243
+Analog_0007,Cc1ccc2cccc(OCC(O)CNC(C)C)c2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.93,prioritário,sim,sim,nenhuma,0.7442,2.43,0,nenhum,Propranolol,41243
+Analog_0008,Cc1ccc2ccccc2c1OCC(O)CNC(C)C,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,88.31,prioritário,sim,sim,nenhuma,0.6591,2.49,0,nenhum,Propranolol,41243
+Analog_0009,Cc1cccc2c(OCC(O)CNC(C)C)cccc12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.71,prioritário,sim,sim,nenhuma,0.7317,2.43,0,nenhum,Propranolol,41243
+Analog_0010,Cc1cccc2cccc(OCC(O)CNC(C)C)c12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,88.49,prioritário,sim,sim,nenhuma,0.6744,2.55,0,nenhum,Propranolol,41243
+Analog_0011,CC(C)NCC(O)COc1c(F)ccc2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,87.9,prioritário,sim,sim,nenhuma,0.6444,2.58,0,nenhum,Propranolol,41243
+Analog_0012,CC(C)NCC(O)COc1cc(F)cc2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.39,prioritário,sim,sim,nenhuma,0.7209,2.51,0,nenhum,Propranolol,41243
+Analog_0013,CC(C)NCC(O)COc1ccc(F)c2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,88.64,prioritário,sim,sim,nenhuma,0.6744,2.45,0,nenhum,Propranolol,41243
+Analog_0014,CC(C)NCC(O)COc1cccc2c(F)cccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.33,prioritário,sim,sim,nenhuma,0.7143,2.47,0,nenhum,Propranolol,41243
+Analog_0015,CC(C)NCC(O)COc1cccc2cc(F)ccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.87,prioritário,sim,sim,nenhuma,0.7442,2.47,0,nenhum,Propranolol,41243
+Analog_0016,CC(C)NCC(O)COc1cccc2ccc(F)cc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.87,prioritário,sim,sim,nenhuma,0.7442,2.47,0,nenhum,Propranolol,41243
+Analog_0017,CC(C)NCC(O)COc1cccc2cccc(F)c12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,88.17,prioritário,sim,sim,nenhuma,0.6591,2.58,0,nenhum,Propranolol,41243
+Analog_0018,CC(C)NCC(O)COc1c(N)ccc2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,80.4,prioritário,sim,sim,nenhuma,0.6444,2.62,1,aniline,Propranolol,41243
+Analog_0019,CC(C)NCC(O)COc1cc(N)cc2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.53,prioritário,sim,sim,nenhuma,0.7045,2.59,1,aniline,Propranolol,41243
+Analog_0020,CC(C)NCC(O)COc1ccc(N)c2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.13,prioritário,sim,sim,nenhuma,0.6744,2.5,1,aniline,Propranolol,41243
+Analog_0021,CC(C)NCC(O)COc1cccc2c(N)cccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.8,prioritário,sim,sim,nenhuma,0.7143,2.53,1,aniline,Propranolol,41243
+Analog_0022,CC(C)NCC(O)COc1cccc2cc(N)ccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,82.0,prioritário,sim,sim,nenhuma,0.7273,2.55,1,aniline,Propranolol,41243
+Analog_0023,CC(C)NCC(O)COc1cccc2ccc(N)cc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.98,prioritário,sim,sim,nenhuma,0.7273,2.56,1,aniline,Propranolol,41243
+Analog_0024,CC(C)NCC(O)COc1cccc2cccc(N)c12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,80.62,prioritário,sim,sim,nenhuma,0.6591,2.65,1,aniline,Propranolol,41243
+Analog_0025,CC(C)(O)NCC(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,80.86,prioritário,sim,sim,nenhuma,0.6744,2.67,1,het-C-het_not_in_ring,Propranolol,41243
+Analog_0026,CC(C)NC(O)C(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.46,promissor,sim,sim,nenhuma,0.6279,3.03,1,het-C-het_not_in_ring,Propranolol,41243
+Analog_0027,CC(C)NCC(O)(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.56,promissor,sim,sim,nenhuma,0.5778,2.39,1,het-C-het_not_in_ring,Propranolol,41243
+Analog_0028,CC(C)NCC(O)C(O)Oc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.51,promissor,sim,sim,nenhuma,0.6279,3.0,1,het-C-het_not_in_ring,Propranolol,41243
+Analog_0029,CC(CO)NCC(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.55,4,3,61.72,7,20,86.92,prioritário,sim,sim,nenhuma,0.7805,2.7,0,nenhum,Propranolol,41243
+Analog_0030,CC(C)NCC(O)COc1cccc2cccnc12,Bioisostero: Benzeno->Piridina,5,média,protótipo,260.34,1.97,4,2,54.38,6,19,85.05,prioritário,sim,sim,nenhuma,0.6591,2.5,0,nenhum,Propranolol,41243
+Analog_0001,CC(C)N(C)CC(O)COc1cccc2ccccc12,N-Metilação,1,muito alta,protótipo,273.38,2.92,3,1,32.7,6,20,90.82,prioritário,sim,sim,nenhuma,0.6136,2.43,0,nenhum,Propranolol,41244
+Analog_0002,COC(CNC(C)C)COc1cccc2ccccc12,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,273.38,3.23,3,1,30.49,7,20,92.05,prioritário,sim,sim,nenhuma,0.6905,2.53,0,nenhum,Propranolol,41244
+Analog_0003,CC(C)NCC(N)COc1cccc2ccccc12,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,258.37,2.54,3,2,47.28,6,19,89.52,prioritário,sim,sim,nenhuma,0.725,2.47,0,nenhum,Propranolol,41244
+Analog_0004,Cc1cc(OCC(O)CNC(C)C)c2ccccc2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.47,prioritário,sim,sim,nenhuma,0.7209,2.46,0,nenhum,Propranolol,41244
+Analog_0005,Cc1ccc(OCC(O)CNC(C)C)c2ccccc12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.0,prioritário,sim,sim,nenhuma,0.6905,2.41,0,nenhum,Propranolol,41244
+Analog_0006,Cc1ccc2c(OCC(O)CNC(C)C)cccc2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.93,prioritário,sim,sim,nenhuma,0.7442,2.43,0,nenhum,Propranolol,41244
+Analog_0007,Cc1ccc2cccc(OCC(O)CNC(C)C)c2c1,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.93,prioritário,sim,sim,nenhuma,0.7442,2.43,0,nenhum,Propranolol,41244
+Analog_0008,Cc1ccc2ccccc2c1OCC(O)CNC(C)C,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,88.31,prioritário,sim,sim,nenhuma,0.6591,2.49,0,nenhum,Propranolol,41244
+Analog_0009,Cc1cccc2c(OCC(O)CNC(C)C)cccc12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,89.71,prioritário,sim,sim,nenhuma,0.7317,2.43,0,nenhum,Propranolol,41244
+Analog_0010,Cc1cccc2cccc(OCC(O)CNC(C)C)c12,Metilação Aromática (-CH3),2,alta,protótipo,273.38,2.89,3,2,41.49,6,20,88.49,prioritário,sim,sim,nenhuma,0.6744,2.55,0,nenhum,Propranolol,41244
+Analog_0011,CC(C)NCC(O)COc1c(F)ccc2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,87.9,prioritário,sim,sim,nenhuma,0.6444,2.58,0,nenhum,Propranolol,41244
+Analog_0012,CC(C)NCC(O)COc1cc(F)cc2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.39,prioritário,sim,sim,nenhuma,0.7209,2.51,0,nenhum,Propranolol,41244
+Analog_0013,CC(C)NCC(O)COc1ccc(F)c2ccccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,88.64,prioritário,sim,sim,nenhuma,0.6744,2.45,0,nenhum,Propranolol,41244
+Analog_0014,CC(C)NCC(O)COc1cccc2c(F)cccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.33,prioritário,sim,sim,nenhuma,0.7143,2.47,0,nenhum,Propranolol,41244
+Analog_0015,CC(C)NCC(O)COc1cccc2cc(F)ccc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.87,prioritário,sim,sim,nenhuma,0.7442,2.47,0,nenhum,Propranolol,41244
+Analog_0016,CC(C)NCC(O)COc1cccc2ccc(F)cc12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,89.87,prioritário,sim,sim,nenhuma,0.7442,2.47,0,nenhum,Propranolol,41244
+Analog_0017,CC(C)NCC(O)COc1cccc2cccc(F)c12,Fluoração Aromática,3,alta,protótipo,277.34,2.72,3,2,41.49,6,20,88.17,prioritário,sim,sim,nenhuma,0.6591,2.58,0,nenhum,Propranolol,41244
+Analog_0018,CC(C)NCC(O)COc1c(N)ccc2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,80.4,prioritário,sim,sim,nenhuma,0.6444,2.62,1,aniline,Propranolol,41244
+Analog_0019,CC(C)NCC(O)COc1cc(N)cc2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.53,prioritário,sim,sim,nenhuma,0.7045,2.59,1,aniline,Propranolol,41244
+Analog_0020,CC(C)NCC(O)COc1ccc(N)c2ccccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.13,prioritário,sim,sim,nenhuma,0.6744,2.5,1,aniline,Propranolol,41244
+Analog_0021,CC(C)NCC(O)COc1cccc2c(N)cccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.8,prioritário,sim,sim,nenhuma,0.7143,2.53,1,aniline,Propranolol,41244
+Analog_0022,CC(C)NCC(O)COc1cccc2cc(N)ccc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,82.0,prioritário,sim,sim,nenhuma,0.7273,2.55,1,aniline,Propranolol,41244
+Analog_0023,CC(C)NCC(O)COc1cccc2ccc(N)cc12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,81.98,prioritário,sim,sim,nenhuma,0.7273,2.56,1,aniline,Propranolol,41244
+Analog_0024,CC(C)NCC(O)COc1cccc2cccc(N)c12,Aminação Aromática (-NH2),4,média,protótipo,274.36,2.16,4,3,67.51,6,20,80.62,prioritário,sim,sim,nenhuma,0.6591,2.65,1,aniline,Propranolol,41244
+Analog_0025,CC(C)(O)NCC(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,80.86,prioritário,sim,sim,nenhuma,0.6744,2.67,1,het-C-het_not_in_ring,Propranolol,41244
+Analog_0026,CC(C)NC(O)C(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.46,promissor,sim,sim,nenhuma,0.6279,3.03,1,het-C-het_not_in_ring,Propranolol,41244
+Analog_0027,CC(C)NCC(O)(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.56,promissor,sim,sim,nenhuma,0.5778,2.39,1,het-C-het_not_in_ring,Propranolol,41244
+Analog_0028,CC(C)NCC(O)C(O)Oc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.9,4,3,61.72,6,20,79.51,promissor,sim,sim,nenhuma,0.6279,3.0,1,het-C-het_not_in_ring,Propranolol,41244
+Analog_0029,CC(CO)NCC(O)COc1cccc2ccccc12,Hidroxilação Alifática,4,média,protótipo,275.35,1.55,4,3,61.72,7,20,86.92,prioritário,sim,sim,nenhuma,0.7805,2.7,0,nenhum,Propranolol,41244
+Analog_0030,CC(C)NCC(O)COc1cccc2cccnc12,Bioisostero: Benzeno->Piridina,5,média,protótipo,260.34,1.97,4,2,54.38,6,19,85.05,prioritário,sim,sim,nenhuma,0.6591,2.5,0,nenhum,Propranolol,41244
+Analog_0001,CN(c1ccccc1CC(=O)O)c1c(Cl)cccc1Cl,N-Metilação,1,muito alta,protótipo,310.18,4.39,2,1,40.54,4,20,88.8,prioritário,sim,sim,nenhuma,0.4884,2.28,0,nenhum,Diclofenac,41242
+Analog_0002,COC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,310.18,4.45,3,1,38.33,4,20,93.37,prioritário,sim,sim,nenhuma,0.7105,1.91,0,nenhum,Diclofenac,41242
+Analog_0003,NC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,295.17,3.76,2,2,55.12,4,19,90.8,prioritário,sim,sim,nenhuma,0.75,1.94,0,nenhum,Diclofenac,41242
+Analog_0004,Cc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,89.93,prioritário,sim,sim,nenhuma,0.7368,2.02,0,nenhum,Diclofenac,41242
+Analog_0005,Cc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.81,prioritário,sim,sim,nenhuma,0.675,2.02,0,nenhum,Diclofenac,41242
+Analog_0006,Cc1ccc(Cl)c(Nc2ccccc2CC(=O)O)c1Cl,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,89.23,prioritário,sim,sim,nenhuma,0.7,2.04,0,nenhum,Diclofenac,41242
+Analog_0007,Cc1ccc(Nc2c(Cl)cccc2Cl)c(CC(=O)O)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.84,prioritário,sim,sim,nenhuma,0.675,2.0,0,nenhum,Diclofenac,41242
+Analog_0008,Cc1cccc(CC(=O)O)c1Nc1c(Cl)cccc1Cl,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.09,prioritário,sim,sim,nenhuma,0.641,2.09,0,nenhum,Diclofenac,41242
+Analog_0009,Cc1cccc(Nc2c(Cl)cccc2Cl)c1CC(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,87.82,prioritário,sim,sim,nenhuma,0.625,2.08,0,nenhum,Diclofenac,41242
+Analog_0010,O=C(O)Cc1c(F)cccc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,88.28,prioritário,sim,sim,nenhuma,0.625,2.11,0,nenhum,Diclofenac,41242
+Analog_0011,O=C(O)Cc1cc(F)ccc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,89.31,prioritário,sim,sim,nenhuma,0.675,2.03,0,nenhum,Diclofenac,41242
+Analog_0012,O=C(O)Cc1ccc(F)cc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,89.29,prioritário,sim,sim,nenhuma,0.675,2.04,0,nenhum,Diclofenac,41242
+Analog_0013,O=C(O)Cc1cccc(F)c1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,88.46,prioritário,sim,sim,nenhuma,0.641,2.18,0,nenhum,Diclofenac,41242
+Analog_0014,O=C(O)Cc1ccccc1Nc1c(Cl)cc(F)cc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,90.4,prioritário,sim,sim,nenhuma,0.7368,2.04,0,nenhum,Diclofenac,41242
+Analog_0015,O=C(O)Cc1ccccc1Nc1c(Cl)ccc(F)c1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,85.39,prioritário,sim,sim,nenhuma,0.7,2.14,1,halogenated_ring_1,Diclofenac,41242
+Analog_0016,Nc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,82.82,prioritário,sim,sim,nenhuma,0.7368,2.13,1,aniline,Diclofenac,41242
+Analog_0017,Nc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,81.7,prioritário,sim,sim,nenhuma,0.675,2.14,1,aniline,Diclofenac,41242
+Analog_0018,Nc1ccc(Cl)c(Nc2ccccc2CC(=O)O)c1Cl,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,82.04,prioritário,sim,sim,nenhuma,0.7,2.21,1,aniline,Diclofenac,41242
+Analog_0019,Nc1ccc(Nc2c(Cl)cccc2Cl)c(CC(=O)O)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,81.71,prioritário,sim,sim,nenhuma,0.675,2.13,1,aniline,Diclofenac,41242
+Analog_0020,Nc1cccc(CC(=O)O)c1Nc1c(Cl)cccc1Cl,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,80.9,prioritário,sim,sim,nenhuma,0.641,2.26,1,aniline,Diclofenac,41242
+Analog_0021,Nc1cccc(Nc2c(Cl)cccc2Cl)c1CC(=O)O,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,80.7,prioritário,sim,sim,nenhuma,0.625,2.2,1,aniline,Diclofenac,41242
+Analog_0022,O=C(O)C(O)c1ccccc1Nc1c(Cl)cccc1Cl,Hidroxilação Alifática,4,média,protótipo,312.15,3.86,3,3,69.56,4,20,82.74,prioritário,sim,sim,nenhuma,0.5366,2.57,0,nenhum,Diclofenac,41242
+Analog_0023,O=C(O)Cc1ccccc1Nc1c(Cl)ccnc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,82.04,prioritário,sim,sim,nenhuma,0.7,2.21,1,2-halo_pyridine,Diclofenac,41242
+Analog_0024,O=C(O)Cc1ccccc1Nc1c(Cl)cncc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,87.34,prioritário,sim,sim,nenhuma,0.7568,2.16,0,nenhum,Diclofenac,41242
+Analog_0025,O=C(O)Cc1cccnc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,84.71,prioritário,sim,sim,nenhuma,0.6098,2.15,0,nenhum,Diclofenac,41242
+Analog_0026,O=C(O)Cc1ccncc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,85.79,prioritário,sim,sim,nenhuma,0.675,2.21,0,nenhum,Diclofenac,41242
+Analog_0027,O=C(O)Cc1cnccc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,85.79,prioritário,sim,sim,nenhuma,0.675,2.21,0,nenhum,Diclofenac,41242
+Analog_0028,O=C(O)Cc1ncccc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,84.61,prioritário,sim,sim,nenhuma,0.6098,2.21,0,nenhum,Diclofenac,41242
+Analog_0029,N#Cc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Cianação Aromática (-CN),5,média,protótipo,321.16,4.24,3,2,73.12,4,21,85.93,prioritário,sim,sim,nenhuma,0.6829,2.21,0,nenhum,Diclofenac,41242
+Analog_0030,N#Cc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Cianação Aromática (-CN),5,média,protótipo,321.16,4.24,3,2,73.12,4,21,84.92,prioritário,sim,sim,nenhuma,0.6279,2.22,0,nenhum,Diclofenac,41242
+Analog_0001,CN(c1ccccc1CC(=O)O)c1c(Cl)cccc1Cl,N-Metilação,1,muito alta,protótipo,310.18,4.39,2,1,40.54,4,20,88.8,prioritário,sim,sim,nenhuma,0.4884,2.28,0,nenhum,Diclofenac,41243
+Analog_0002,COC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,310.18,4.45,3,1,38.33,4,20,93.37,prioritário,sim,sim,nenhuma,0.7105,1.91,0,nenhum,Diclofenac,41243
+Analog_0003,NC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,295.17,3.76,2,2,55.12,4,19,90.8,prioritário,sim,sim,nenhuma,0.75,1.94,0,nenhum,Diclofenac,41243
+Analog_0004,Cc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,89.93,prioritário,sim,sim,nenhuma,0.7368,2.02,0,nenhum,Diclofenac,41243
+Analog_0005,Cc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.81,prioritário,sim,sim,nenhuma,0.675,2.02,0,nenhum,Diclofenac,41243
+Analog_0006,Cc1ccc(Cl)c(Nc2ccccc2CC(=O)O)c1Cl,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,89.23,prioritário,sim,sim,nenhuma,0.7,2.04,0,nenhum,Diclofenac,41243
+Analog_0007,Cc1ccc(Nc2c(Cl)cccc2Cl)c(CC(=O)O)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.84,prioritário,sim,sim,nenhuma,0.675,2.0,0,nenhum,Diclofenac,41243
+Analog_0008,Cc1cccc(CC(=O)O)c1Nc1c(Cl)cccc1Cl,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.09,prioritário,sim,sim,nenhuma,0.641,2.09,0,nenhum,Diclofenac,41243
+Analog_0009,Cc1cccc(Nc2c(Cl)cccc2Cl)c1CC(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,87.82,prioritário,sim,sim,nenhuma,0.625,2.08,0,nenhum,Diclofenac,41243
+Analog_0010,O=C(O)Cc1c(F)cccc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,88.28,prioritário,sim,sim,nenhuma,0.625,2.11,0,nenhum,Diclofenac,41243
+Analog_0011,O=C(O)Cc1cc(F)ccc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,89.31,prioritário,sim,sim,nenhuma,0.675,2.03,0,nenhum,Diclofenac,41243
+Analog_0012,O=C(O)Cc1ccc(F)cc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,89.29,prioritário,sim,sim,nenhuma,0.675,2.04,0,nenhum,Diclofenac,41243
+Analog_0013,O=C(O)Cc1cccc(F)c1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,88.46,prioritário,sim,sim,nenhuma,0.641,2.18,0,nenhum,Diclofenac,41243
+Analog_0014,O=C(O)Cc1ccccc1Nc1c(Cl)cc(F)cc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,90.4,prioritário,sim,sim,nenhuma,0.7368,2.04,0,nenhum,Diclofenac,41243
+Analog_0015,O=C(O)Cc1ccccc1Nc1c(Cl)ccc(F)c1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,85.39,prioritário,sim,sim,nenhuma,0.7,2.14,1,halogenated_ring_1,Diclofenac,41243
+Analog_0016,Nc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,82.82,prioritário,sim,sim,nenhuma,0.7368,2.13,1,aniline,Diclofenac,41243
+Analog_0017,Nc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,81.7,prioritário,sim,sim,nenhuma,0.675,2.14,1,aniline,Diclofenac,41243
+Analog_0018,Nc1ccc(Cl)c(Nc2ccccc2CC(=O)O)c1Cl,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,82.04,prioritário,sim,sim,nenhuma,0.7,2.21,1,aniline,Diclofenac,41243
+Analog_0019,Nc1ccc(Nc2c(Cl)cccc2Cl)c(CC(=O)O)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,81.71,prioritário,sim,sim,nenhuma,0.675,2.13,1,aniline,Diclofenac,41243
+Analog_0020,Nc1cccc(CC(=O)O)c1Nc1c(Cl)cccc1Cl,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,80.9,prioritário,sim,sim,nenhuma,0.641,2.26,1,aniline,Diclofenac,41243
+Analog_0021,Nc1cccc(Nc2c(Cl)cccc2Cl)c1CC(=O)O,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,80.7,prioritário,sim,sim,nenhuma,0.625,2.2,1,aniline,Diclofenac,41243
+Analog_0022,O=C(O)C(O)c1ccccc1Nc1c(Cl)cccc1Cl,Hidroxilação Alifática,4,média,protótipo,312.15,3.86,3,3,69.56,4,20,82.74,prioritário,sim,sim,nenhuma,0.5366,2.57,0,nenhum,Diclofenac,41243
+Analog_0023,O=C(O)Cc1ccccc1Nc1c(Cl)ccnc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,82.04,prioritário,sim,sim,nenhuma,0.7,2.21,1,2-halo_pyridine,Diclofenac,41243
+Analog_0024,O=C(O)Cc1ccccc1Nc1c(Cl)cncc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,87.34,prioritário,sim,sim,nenhuma,0.7568,2.16,0,nenhum,Diclofenac,41243
+Analog_0025,O=C(O)Cc1cccnc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,84.71,prioritário,sim,sim,nenhuma,0.6098,2.15,0,nenhum,Diclofenac,41243
+Analog_0026,O=C(O)Cc1ccncc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,85.79,prioritário,sim,sim,nenhuma,0.675,2.21,0,nenhum,Diclofenac,41243
+Analog_0027,O=C(O)Cc1cnccc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,85.79,prioritário,sim,sim,nenhuma,0.675,2.21,0,nenhum,Diclofenac,41243
+Analog_0028,O=C(O)Cc1ncccc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,84.61,prioritário,sim,sim,nenhuma,0.6098,2.21,0,nenhum,Diclofenac,41243
+Analog_0029,N#Cc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Cianação Aromática (-CN),5,média,protótipo,321.16,4.24,3,2,73.12,4,21,85.93,prioritário,sim,sim,nenhuma,0.6829,2.21,0,nenhum,Diclofenac,41243
+Analog_0030,N#Cc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Cianação Aromática (-CN),5,média,protótipo,321.16,4.24,3,2,73.12,4,21,84.92,prioritário,sim,sim,nenhuma,0.6279,2.22,0,nenhum,Diclofenac,41243
+Analog_0001,CN(c1ccccc1CC(=O)O)c1c(Cl)cccc1Cl,N-Metilação,1,muito alta,protótipo,310.18,4.39,2,1,40.54,4,20,88.8,prioritário,sim,sim,nenhuma,0.4884,2.28,0,nenhum,Diclofenac,41244
+Analog_0002,COC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,O-Metilação (-OH -> -OCH3),1,muito alta,protótipo,310.18,4.45,3,1,38.33,4,20,93.37,prioritário,sim,sim,nenhuma,0.7105,1.91,0,nenhum,Diclofenac,41244
+Analog_0003,NC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,Hidroxila->Amino (-OH -> -NH2),2,alta,protótipo,295.17,3.76,2,2,55.12,4,19,90.8,prioritário,sim,sim,nenhuma,0.75,1.94,0,nenhum,Diclofenac,41244
+Analog_0004,Cc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,89.93,prioritário,sim,sim,nenhuma,0.7368,2.02,0,nenhum,Diclofenac,41244
+Analog_0005,Cc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.81,prioritário,sim,sim,nenhuma,0.675,2.02,0,nenhum,Diclofenac,41244
+Analog_0006,Cc1ccc(Cl)c(Nc2ccccc2CC(=O)O)c1Cl,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,89.23,prioritário,sim,sim,nenhuma,0.7,2.04,0,nenhum,Diclofenac,41244
+Analog_0007,Cc1ccc(Nc2c(Cl)cccc2Cl)c(CC(=O)O)c1,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.84,prioritário,sim,sim,nenhuma,0.675,2.0,0,nenhum,Diclofenac,41244
+Analog_0008,Cc1cccc(CC(=O)O)c1Nc1c(Cl)cccc1Cl,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,88.09,prioritário,sim,sim,nenhuma,0.641,2.09,0,nenhum,Diclofenac,41244
+Analog_0009,Cc1cccc(Nc2c(Cl)cccc2Cl)c1CC(=O)O,Metilação Aromática (-CH3),2,alta,protótipo,310.18,4.67,2,2,49.33,4,20,87.82,prioritário,sim,sim,nenhuma,0.625,2.08,0,nenhum,Diclofenac,41244
+Analog_0010,O=C(O)Cc1c(F)cccc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,88.28,prioritário,sim,sim,nenhuma,0.625,2.11,0,nenhum,Diclofenac,41244
+Analog_0011,O=C(O)Cc1cc(F)ccc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,89.31,prioritário,sim,sim,nenhuma,0.675,2.03,0,nenhum,Diclofenac,41244
+Analog_0012,O=C(O)Cc1ccc(F)cc1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,89.29,prioritário,sim,sim,nenhuma,0.675,2.04,0,nenhum,Diclofenac,41244
+Analog_0013,O=C(O)Cc1cccc(F)c1Nc1c(Cl)cccc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,88.46,prioritário,sim,sim,nenhuma,0.641,2.18,0,nenhum,Diclofenac,41244
+Analog_0014,O=C(O)Cc1ccccc1Nc1c(Cl)cc(F)cc1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,90.4,prioritário,sim,sim,nenhuma,0.7368,2.04,0,nenhum,Diclofenac,41244
+Analog_0015,O=C(O)Cc1ccccc1Nc1c(Cl)ccc(F)c1Cl,Fluoração Aromática,3,alta,protótipo,314.14,4.5,2,2,49.33,4,20,85.39,prioritário,sim,sim,nenhuma,0.7,2.14,1,halogenated_ring_1,Diclofenac,41244
+Analog_0016,Nc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,82.82,prioritário,sim,sim,nenhuma,0.7368,2.13,1,aniline,Diclofenac,41244
+Analog_0017,Nc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,81.7,prioritário,sim,sim,nenhuma,0.675,2.14,1,aniline,Diclofenac,41244
+Analog_0018,Nc1ccc(Cl)c(Nc2ccccc2CC(=O)O)c1Cl,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,82.04,prioritário,sim,sim,nenhuma,0.7,2.21,1,aniline,Diclofenac,41244
+Analog_0019,Nc1ccc(Nc2c(Cl)cccc2Cl)c(CC(=O)O)c1,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,81.71,prioritário,sim,sim,nenhuma,0.675,2.13,1,aniline,Diclofenac,41244
+Analog_0020,Nc1cccc(CC(=O)O)c1Nc1c(Cl)cccc1Cl,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,80.9,prioritário,sim,sim,nenhuma,0.641,2.26,1,aniline,Diclofenac,41244
+Analog_0021,Nc1cccc(Nc2c(Cl)cccc2Cl)c1CC(=O)O,Aminação Aromática (-NH2),4,média,protótipo,311.17,3.95,3,3,75.35,4,20,80.7,prioritário,sim,sim,nenhuma,0.625,2.2,1,aniline,Diclofenac,41244
+Analog_0022,O=C(O)C(O)c1ccccc1Nc1c(Cl)cccc1Cl,Hidroxilação Alifática,4,média,protótipo,312.15,3.86,3,3,69.56,4,20,82.74,prioritário,sim,sim,nenhuma,0.5366,2.57,0,nenhum,Diclofenac,41244
+Analog_0023,O=C(O)Cc1ccccc1Nc1c(Cl)ccnc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,82.04,prioritário,sim,sim,nenhuma,0.7,2.21,1,2-halo_pyridine,Diclofenac,41244
+Analog_0024,O=C(O)Cc1ccccc1Nc1c(Cl)cncc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,87.34,prioritário,sim,sim,nenhuma,0.7568,2.16,0,nenhum,Diclofenac,41244
+Analog_0025,O=C(O)Cc1cccnc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,84.71,prioritário,sim,sim,nenhuma,0.6098,2.15,0,nenhum,Diclofenac,41244
+Analog_0026,O=C(O)Cc1ccncc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,85.79,prioritário,sim,sim,nenhuma,0.675,2.21,0,nenhum,Diclofenac,41244
+Analog_0027,O=C(O)Cc1cnccc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,85.79,prioritário,sim,sim,nenhuma,0.675,2.21,0,nenhum,Diclofenac,41244
+Analog_0028,O=C(O)Cc1ncccc1Nc1c(Cl)cccc1Cl,Bioisostero: Benzeno->Piridina,5,média,protótipo,297.14,3.76,3,2,62.22,4,19,84.61,prioritário,sim,sim,nenhuma,0.6098,2.21,0,nenhum,Diclofenac,41244
+Analog_0029,N#Cc1cc(Cl)c(Nc2ccccc2CC(=O)O)c(Cl)c1,Cianação Aromática (-CN),5,média,protótipo,321.16,4.24,3,2,73.12,4,21,85.93,prioritário,sim,sim,nenhuma,0.6829,2.21,0,nenhum,Diclofenac,41244
+Analog_0030,N#Cc1ccc(CC(=O)O)c(Nc2c(Cl)cccc2Cl)c1,Cianação Aromática (-CN),5,média,protótipo,321.16,4.24,3,2,73.12,4,21,84.92,prioritário,sim,sim,nenhuma,0.6279,2.22,0,nenhum,Diclofenac,41244

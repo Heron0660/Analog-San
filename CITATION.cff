@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use Analog-San, please cite the software and its accompanying article. Complete author and DOI metadata when the public archival release is made."
+title: "Analog-San: heuristic generation and prioritization of molecular analogues"
+version: 1.3.0
+date-released: 2026-10-28
+license: MIT
+type: software
+keywords:
+  - cheminformatics
+  - molecular analogues
+  - drug discovery
+  - bioisosterism

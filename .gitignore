@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.pkl
+*.tmp
+*.tmp.docx
+.venv/
+venv/
+build/
+dist/
+*.spec
+.pytest_cache/
+.DS_Store
+Thumbs.db

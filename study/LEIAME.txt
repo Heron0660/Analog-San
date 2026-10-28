@@ -1,0 +1,9 @@
+Analog-San 1.3 – Arquivo adicional 2
+dados/     Arquivos CSV em nível de registro gravados pelo aplicativo (os nomes das colunas são os da saída do software).
+           records_main_benchmark.csv: 8 protótipos x 3 sementes x 30 registros (720 linhas, 357 SMILES distintos).
+           records_extended_panel.csv: 20 outros protótipos x 3 sementes. records_ten_seeds.csv: painel principal, sementes 41242 a 41251.
+           records_uniform_sampling_baseline.csv: exploração com todos os níveis fixados em 1. direct_enumeration_yield.csv: rendimento da enumeração direta.
+scripts/   run_benchmarks.py (geração), analyze.py (estatísticas, perturbação de pesos, linhas de base), make_figures_pt.py (Figuras 1 a 5).
+           Importam chem_engine e validation_engine e esperam results.pkl no diretório de trabalho (gravado por run_benchmarks.py).
+figuras/   Figuras 1 a 5 em PNG; Figuras 1 a 4 também em SVG editável.
+metadados_execucao.json  Versões, sementes, configurações e códigos SHA-256 dos arquivos CSV.
