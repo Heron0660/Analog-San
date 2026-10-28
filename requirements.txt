@@ -4,11 +4,11 @@
 # =============================================================================
 
 # Quimioinformática - manipulação molecular e cálculo de propriedades ADMET
-rdkit>=2022.09.1
+rdkit==2026.9.1
 
 # Interface gráfica moderna (dark/light mode) baseada em Tkinter
-customtkinter>=5.2.0
+customtkinter==6.0.0
 
 # Manipulação e renderização de imagens (visualização 2D de moléculas)
 # Também usada para gráficos científicos do módulo de validação
-Pillow>=9.0.0
+Pillow==13.0.0

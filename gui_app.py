@@ -301,6 +301,8 @@ class AnalogSanApp(ctk.CTk):
         self._veber_var    = ctk.BooleanVar(value=True)
         self._classic_route_var = ctk.BooleanVar(value=True)
         self._non_classic_route_var = ctk.BooleanVar(value=True)
+        self._multistep_var = ctk.BooleanVar(value=False)
+        self._max_sa_var = ctk.StringVar(value="6.0")
 
         ctk.CTkCheckBox(
             filter_frame,
@@ -330,6 +332,24 @@ class AnalogSanApp(ctk.CTk):
             filter_frame,
             text="Rota não clássica (bioisósteres funcionais)",
             variable=self._non_classic_route_var,
+            font=ctk.CTkFont(size=11), checkmark_color="white",
+            fg_color=Palette.ACCENT_BLUE,
+        ).pack(anchor="w", padx=10, pady=(0, 8))
+
+        quality_frame = ctk.CTkFrame(filter_frame, fg_color="transparent")
+        quality_frame.pack(fill="x", padx=10, pady=(0, 8))
+        ctk.CTkLabel(
+            quality_frame,
+            text="SA Score máximo (1-10; estimativa, não comprova síntese):",
+            font=ctk.CTkFont(size=11),
+        ).pack(side="left")
+        ctk.CTkEntry(
+            quality_frame, textvariable=self._max_sa_var, width=58, height=28,
+        ).pack(side="left", padx=(8, 0))
+        ctk.CTkCheckBox(
+            filter_frame,
+            text="Permitir combinações de modificações (exploração multietapas)",
+            variable=self._multistep_var,
             font=ctk.CTkFont(size=11), checkmark_color="white",
             fg_color=Palette.ACCENT_BLUE,
         ).pack(anchor="w", padx=10, pady=(0, 8))
@@ -752,6 +772,14 @@ class AnalogSanApp(ctk.CTk):
             )
             return
 
+        try:
+            max_sa_score = float(self._max_sa_var.get().strip())
+            if not 1.0 <= max_sa_score <= 10.0:
+                raise ValueError
+        except ValueError:
+            messagebox.showwarning("Parâmetro inválido", "O SA Score máximo deve ser um número entre 1 e 10.")
+            return
+
         # Reseta estado
         self._clear_table()
         self._clear_log()
@@ -774,6 +802,8 @@ class AnalogSanApp(ctk.CTk):
             "target_count": qty,
             "use_veber": self._veber_var.get(),
             "selected_routes": selected_routes,
+            "max_sa_score": max_sa_score,
+            "allow_multistep": self._multistep_var.get(),
             "seed": 0xA11A,
         }
 
@@ -782,7 +812,7 @@ class AnalogSanApp(ctk.CTk):
         # Inicia thread de geração (daemon: encerra com a janela)
         t = threading.Thread(
             target=self._generation_worker,
-            args=(smiles, qty, self._veber_var.get(), selected_routes),
+            args=(smiles, qty, self._veber_var.get(), selected_routes, max_sa_score, self._multistep_var.get()),
             daemon=True,
         )
         t.start()
@@ -874,6 +904,8 @@ class AnalogSanApp(ctk.CTk):
         qty: int,
         use_veber: bool,
         selected_routes: List[str],
+        max_sa_score: float,
+        allow_multistep: bool,
     ):
         """
         Executa a geração em thread separada.
@@ -885,6 +917,8 @@ class AnalogSanApp(ctk.CTk):
                 target_count=qty,
                 use_veber=use_veber,
                 selected_routes=selected_routes,
+                max_sa_score=max_sa_score,
+                allow_multistep=allow_multistep,
                 progress_callback=lambda cur, tot:
                     self._gui_queue.put(("progress", (cur, tot))),
                 log_callback=lambda msg:
@@ -930,10 +964,12 @@ class AnalogSanApp(ctk.CTk):
         self._analogs = analogs
         self._running = False
         self._populate_table(analogs)
-        self._progress_bar.set(1.0)
+        requested = int(self._last_generation_params.get("target_count", len(analogs)))
+        self._progress_bar.set(min(1.0, len(analogs) / requested) if requested else 1.0)
         self._progress_lbl.configure(
-            text=f"{len(analogs)} análogos gerados",
-            text_color=Palette.TEXT_GREEN,
+            text=(f"{len(analogs)}/{requested} candidatos aprovados" if len(analogs) < requested
+                  else f"{len(analogs)} candidatos aprovados"),
+            text_color=Palette.TEXT_GREEN if len(analogs) >= requested else Palette.TEXT_YELLOW,
         )
         self._stats_lbl.configure(
             text=f"Total: {len(analogs)} mol  |  "
@@ -949,7 +985,8 @@ class AnalogSanApp(ctk.CTk):
             self._report_btn.configure(state="normal")
         messagebox.showinfo(
             "Geração Concluída",
-            f"{len(analogs)} análogos foram gerados e filtrados com sucesso!\n\n"
+            f"{len(analogs)} candidatos passaram pelos filtros configurados (solicitados: {requested}).\n"
+            f"A viabilidade de rota sintética não foi avaliada pelo programa.\n\n"
             f"Use 'Exportar' para salvar CSV/SMI/MOL2 ou 'Relatório' para gerar figuras científicas.",
         )
 

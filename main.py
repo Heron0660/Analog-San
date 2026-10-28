@@ -98,6 +98,27 @@ def run_smoke_test(app) -> None:
     assert "SimilaridadeTanimoto" in generated[0]
     assert "Metilação" in generated[0]["Modificacao"]
 
+    quality_checked = ce.generate_analogs(
+        "c1ccccc1O",
+        100,
+        use_veber=True,
+        selected_routes=[ce.ROUTE_CLASSIC, ce.ROUTE_NON_CLASSIC],
+        max_sa_score=6.0,
+        allow_multistep=False,
+    )
+    assert quality_checked
+    assert all(a["EtapaGeracao"] == "protótipo" for a in quality_checked)
+    assert all(a["SAScore"] <= 6.0 for a in quality_checked)
+    for candidate in quality_checked:
+        candidate_mol = ce.Chem.MolFromSmiles(candidate["SMILES"])
+        alerts = ce.ve.chemical_alerts(candidate_mol)
+        assert not any(
+            any(token in alert.casefold() for token in (
+                "reativo", "epóxido tensionado", "energético", "michael acceptor"
+            ))
+            for alert in alerts
+        )
+
     csv_fd, csv_path = tempfile.mkstemp(suffix=".csv")
     mol2_fd, mol2_path = tempfile.mkstemp(suffix=".mol2")
     report_dir = tempfile.mkdtemp(prefix="analog_san_report_")

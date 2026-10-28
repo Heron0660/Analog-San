@@ -29,8 +29,8 @@ except Exception:
     sascorer = None
 
 
-VALIDATION_VERSION = "1.0"
-APP_VERSION = "1.3"
+VALIDATION_VERSION = "1.1"
+APP_VERSION = "1.4"
 DEFAULT_RANDOM_SEED = 0xA11A
 
 EASE_SCORE = {
@@ -628,6 +628,8 @@ def generate_scientific_report(
         "Parâmetros de reprodutibilidade:",
         f"- Seed padrão registrada: {params.get('seed', DEFAULT_RANDOM_SEED)}",
         f"- Filtro Veber: {'sim' if params.get('use_veber', True) else 'não'}",
+        f"- SA Score máximo: {params.get('max_sa_score', 6.0)} (estimativa heurística)",
+        f"- Exploração multietapas: {'sim' if params.get('allow_multistep', False) else 'não'}",
         f"- Rotas: {', '.join(params.get('selected_routes', [])) or 'não informado'}",
         "",
         "Metodologia resumida:",
@@ -635,8 +637,14 @@ def generate_scientific_report(
         "e Veber, similaridade Tanimoto por fingerprint Morgan, SA Score,",
         "alertas químicos PAINS/Brenk quando disponíveis e padrões SMARTS",
         "reativos simples. O ScoreGlobal combina drug-likeness, espaço",
-        "físico-químico, similaridade ao protótipo, facilidade sintética,",
+        "físico-químico, similaridade ao protótipo e prioridades heurísticas de transformação,",
         "acessibilidade sintética e penalização por alertas.",
+        "O SA Score é uma estimativa computacional, não demonstra que exista rota",
+        "prática. Planejamento retrosintético, disponibilidade de reagentes,",
+        "condições, rendimento, segurança e confirmação experimental não são",
+        "avaliados. Alertas PAINS/Brenk são sinalizadores e exigem revisão contextual.",
+        "A prioridade da transformação não equivale a custo, número de etapas,",
+        "rendimento ou facilidade real de síntese.",
         "",
         "Top 10 candidatos:",
         "ID\tScore\tCategoria\tTanimoto\tSA\tAlertas\tModificação\tSMILES",

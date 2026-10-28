@@ -586,22 +586,21 @@ def generate_analogs(
     log_callback: Optional[Callable[[str], None]] = None,
     stop_flag: Optional[Callable[[], bool]] = None,
     random_seed: Optional[int] = ve.DEFAULT_RANDOM_SEED,
+    max_sa_score: Optional[float] = 6.0,
+    allow_multistep: bool = False,
 ) -> List[Dict]:
     """
     Gera análogos estruturais da molécula base através de modificações químicas.
 
-    Estratégia de geração (prioridade sintética + Random Walk):
+    Estratégia de geração (análogos diretos por padrão):
     ----------------------------------------------------------
       1. Inicia com a molécula base no pool de parentes.
       2. Aplica primeiro, sobre o composto-protótipo, as modificações de
          maior facilidade sintética.
-      3. Depois usa exploração ponderada por prioridade para ampliar a
-         diversidade química quando o alvo ainda não foi atingido.
-      4. Para cada candidato: valida -> filtra Lipinski -> filtra Veber (opt.).
-      5. Análogos aprovados são adicionados ao pool para gerar diversidade
-         estrutural crescente (análogos de análogos - exploração do espaço
-         químico). 30% das iterações relançam da molécula base para manter
-         proximidade estrutural ao scaffold original.
+      3. Por padrão, não encadeia transformações em análogos já modificados.
+      4. Aplica drug-likeness, limite opcional de SA e filtro de grupos
+         explicitamente reativos antes da aceitação.
+      5. Exploração multietapas é opcional e fica desligada por padrão.
       6. Controle de duplicatas via SMILES canônico (set).
       7. Ordena o resultado final por facilidade sintética estimada.
 
@@ -614,6 +613,8 @@ def generate_analogs(
         log_callback:      fn(mensagem)     - envia mensagem ao console da GUI.
         stop_flag:         fn() -> bool      - retorna True para interromper.
         random_seed:       Seed para reprodutibilidade da exploração aleatória.
+        max_sa_score:      Limite superior opcional do SA Score (escala 1-10).
+        allow_multistep:   Permite combinações de modificações; padrão False.
 
     Returns:
         Lista de dicionários com dados de cada análogo aprovado.
@@ -660,6 +661,8 @@ def generate_analogs(
     _log("Ordenação      : facilidade sintética estimada")
     _log(f"Seed           : {random_seed if random_seed is not None else 'não fixada'}")
     _log(f"Filtros        : {'Lipinski + Veber' if use_veber else 'somente Lipinski'}")
+    _log(f"SA máximo      : {max_sa_score if max_sa_score is not None else 'desativado'} (heurístico; não prova síntese)")
+    _log(f"Multietapas    : {'ativadas' if allow_multistep else 'desativadas; análogos diretos do protótipo'}")
     _log("-" * 58)
 
     def _accept_candidate(
@@ -685,6 +688,23 @@ def generate_analogs(
         passes_veber = veber_filter(props) if use_veber else True
 
         if not (passes_lipinski and passes_veber):
+            _log(f"REJEITADO | {mod_name}: falha em Lipinski/Veber")
+            return False
+
+        sa_score = ve.synthetic_accessibility_score(cand_mol)
+        if max_sa_score is not None and sa_score > max_sa_score:
+            _log(f"REJEITADO | {mod_name}: SA {sa_score:.2f} > limite {max_sa_score:.2f}")
+            return False
+
+        alerts = ve.chemical_alerts(cand_mol)
+        reactive_alerts = [
+            alert for alert in alerts
+            if any(token in alert.casefold() for token in (
+                "reativo", "epóxido tensionado", "energético", "michael acceptor"
+            ))
+        ]
+        if reactive_alerts:
+            _log(f"REJEITADO | {mod_name}: alerta(s) reativo(s): {'; '.join(reactive_alerts)}")
             return False
 
         validation = ve.evaluate_candidate(
@@ -705,6 +725,7 @@ def generate_analogs(
             "PrioridadeSintese": synthesis_priority,
             "FacilidadeSintese": synthesis_ease,
             "EtapaGeracao": generation_stage,
+            "ViabilidadeRota": "não avaliada; requer planejamento retrosintético/experimento",
             "MW": props["MW"],
             "LogP": props["LogP"],
             "HBA": props["HBA"],
@@ -760,7 +781,7 @@ def generate_analogs(
                 "protótipo",
             )
 
-    while len(approved) < target_count and attempts < max_attempts:
+    while allow_multistep and len(approved) < target_count and attempts < max_attempts:
 
         # Verifica sinal de parada enviado pela GUI
         if stop_flag and stop_flag():
