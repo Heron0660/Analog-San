@@ -1,4 +1,4 @@
-# Analog-San 1.7.0: small-set portfolio selection ablation
+# Analog-San 1.7.1: small-set portfolio selection ablation
 
 This study tests whether the optional tier-constrained MaxMin selector reduces redundancy in small direct-edit candidate sets relative to the default tier-priority ordering. It is an internal ablation, not a comparison of synthesis feasibility, activity, or general generator superiority.
 
@@ -16,6 +16,6 @@ Within-set redundancy is the mean, over candidates, of each candidate's maximum 
 
 ## Results and limitations
 
-In the archived evaluation, the selector reduced this redundancy metric by a mean 0.02795 at size 5 (95% paired prototype-bootstrap interval -0.03942 to -0.01716) and 0.00832 at size 10 (-0.01398 to -0.00309). At size 5, mean parent similarity decreased by 0.01285 and mean SA Score increased by 0.00893. At size 10, mean parent similarity was effectively unchanged and mean SA Score increased by 0.00557. Tier-count distributions did not change. These are small-set selection trade-offs, not evidence of synthetic feasibility or superiority over CReM.
+In the archived evaluation, the selector reduced this redundancy metric by a mean 0.02782 at size 5 (95% paired prototype-bootstrap interval -0.03934 to -0.01662) and 0.00834 at size 10 (-0.01433 to -0.00295). At size 5, mean parent similarity decreased by 0.01285 and mean SA Score increased by 0.00950. At size 10, mean parent similarity decreased by 0.00151 (interval includes zero) and mean SA Score increased by 0.00521. Tier-count distributions did not change. These are small-set selection trade-offs, not evidence of synthetic feasibility or superiority over CReM.
 
 The historical results are included in `outputs/`. Re-running with a different RDKit release may produce small descriptor or fingerprint differences; metadata records software versions and input hashes.

@@ -1,6 +1,6 @@
 # Analog-San
 
-Analog-San 1.7.0 is an open-source desktop application for rule-based molecular analogue generation and computational triage. It applies 18 explicit graph edits, property filters, molecular descriptors, structural-alert flags, and reproducible structure/data exports. An optional tier-constrained MaxMin mode selects a structurally diverse small portfolio within the existing manual rule tiers.
+Analog-San 1.7.1 is an open-source desktop application for rule-based molecular analogue generation and computational triage. It applies 18 explicit graph edits, property filters, molecular descriptors, structural-alert flags, and reproducible structure/data exports. An optional tier-constrained MaxMin mode selects a structurally diverse small portfolio within the existing manual rule tiers.
 
 ## Scope
 
@@ -34,7 +34,7 @@ python main.py --smoke-test
 
 ## Reproducibility study
 
-Benchmark inputs, scripts, fixed seeds, software versions, and generated outputs are provided under `study/`. The study is descriptive: it does not establish activity, synthetic feasibility, or comparative superiority. Version 1.7.0 additionally reports a paired ablation of tier-priority versus tier-constrained diversity selection at small output sizes. See [`study/README.md`](study/README.md) for protocols and caveats.
+Benchmark inputs, scripts, fixed seeds, software versions, and generated outputs are provided under `study/`. The study is descriptive: it does not establish activity, synthetic feasibility, or comparative superiority. Version 1.7.1 additionally reports a paired ablation of tier-priority versus tier-constrained diversity selection at small output sizes. See [`study/README.md`](study/README.md) for protocols and caveats.
 
 ## Citation and license
 

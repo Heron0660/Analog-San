@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.1 - 2026-10-28
+
+- Use RDKit's established MaxMinPicker for deterministic selection within manual rule tiers; the earlier v1.7.0 implementation is superseded.
+- Re-ran the 28-prototype paired small-set ablation and refreshed its reproducibility outputs.
+
 ## 1.7.0 - 2026-10-28
 
 - Added optional deterministic MaxMin fingerprint selection within manual rule tiers for small direct-edit portfolios.

@@ -1053,8 +1053,8 @@ def _select_tier_diverse(analogs: List[Dict], target_count: int) -> List[Dict]:
     Tiers are user-defined ordering labels, not estimates of reaction
     feasibility or synthetic difficulty.
     """
-    from rdkit import DataStructs
     from rdkit.Chem import rdFingerprintGenerator
+    from rdkit.SimDivFilters.rdSimDivPickers import MaxMinPicker
 
     generator = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048)
     by_tier: Dict[int, List[Tuple[Dict, object]]] = {}
@@ -1066,26 +1066,26 @@ def _select_tier_diverse(analogs: List[Dict], target_count: int) -> List[Dict]:
             )
 
     selected: List[Tuple[Dict, object]] = []
+    picker = MaxMinPicker()
     for tier in sorted(by_tier):
         remaining = sorted(
             by_tier[tier],
             key=lambda row: (row[0].get("Modificacao", ""), row[0].get("SMILES", "")),
         )
-        selected_at_tier: List[Tuple[Dict, object]] = []
-        while remaining and len(selected) + len(selected_at_tier) < target_count:
-            references = selected + selected_at_tier
-            if not references:
-                best_index = 0
-            else:
-                distances = [
-                    min(1.0 - DataStructs.TanimotoSimilarity(fp, ref_fp) for _, ref_fp in references)
-                    for _, fp in remaining
-                ]
-                best_index = max(
-                    range(len(remaining)),
-                    key=lambda index: (distances[index], remaining[index][0].get("SMILES", "")),
-                )
-            selected_at_tier.append(remaining.pop(best_index))
+        slots = min(len(remaining), target_count - len(selected))
+        if slots <= 0:
+            break
+        fingerprints = [fp for _, fp in selected] + [fp for _, fp in remaining]
+        fixed_count = len(selected)
+        picked_indices = picker.LazyBitVectorPick(
+            fingerprints,
+            len(fingerprints),
+            fixed_count + slots,
+            firstPicks=list(range(fixed_count)),
+            seed=41242,
+        )
+        chosen_indices = [index - fixed_count for index in picked_indices if index >= fixed_count]
+        selected_at_tier = [remaining[index] for index in chosen_indices]
         selected.extend(selected_at_tier)
         if len(selected) >= target_count:
             break

@@ -37,4 +37,4 @@ The comparison uses 28 prototypes, three fixed seeds, the same strict Lipinski a
 
 ## Small-set diversity-selection ablation
 
-Version 1.7.0 adds a paired ablation of tier-priority and tier-constrained MaxMin selection at output sizes 5 and 10 across the same 28 prototypes. Protocol, limitations, and outputs are in [`v1.7/`](v1.7/README.md). This analysis measures fingerprint nearest-neighbour redundancy only; it does not validate synthesis ease, novelty, or biological relevance.
+Version 1.7.1 adds a paired ablation of tier-priority and tier-constrained MaxMin selection at output sizes 5 and 10 across the same 28 prototypes. Protocol, limitations, and outputs are in [`v1.7/`](v1.7/README.md). This analysis measures fingerprint nearest-neighbour redundancy only; it does not validate synthesis ease, novelty, or biological relevance.
