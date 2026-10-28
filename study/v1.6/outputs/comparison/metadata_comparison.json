@@ -1,0 +1,37 @@
+{
+  "protocol": "Matched-input reanalysis: 28 prototypes, 3 fixed seeds, target 100.",
+  "software": "Analog-San 1.6.0 (18 registered operations)",
+  "validation": "1.3",
+  "evidence_catalog": "empty; no reaction records catalogued; no route verification claimed",
+  "RDKit": "2026.09.1",
+  "Python": "3.13.9",
+  "CReM": "Full archived pools re-filtered with the common filters, then seeded uniform sample without replacement capped at 100.",
+  "common_filters": {
+    "Lipinski": "MW<=500, MolLogP<=5, HBD<=5, HBA<=10; zero violations",
+    "Veber": "rotatable bonds<=10 and TPSA<=140 A^2",
+    "SA_score_max": 6.0,
+    "reactive_alert_exclusions": [
+      "reativo",
+      "ep\u00f3xido tensionado",
+      "energ\u00e9tico",
+      "michael acceptor"
+    ],
+    "PAINS_Brenk_other_alerts": "reported, not hard-excluded"
+  },
+  "Analog-San": "Current 18-operation direct prototype registry; multi-step exploration disabled; same common filters; up to 100 outputs. This is a post hoc descriptive reanalysis, not an independent validation of the newly added transformations.",
+  "CReM_database_bias": "The archived CReM candidate pools derive from a ChEMBL33 fragment database prefiltered for source SA<=2 and structural alerts; this remains a comparator limitation.",
+  "seeds": [
+    41242,
+    41243,
+    41244
+  ],
+  "inputs": {
+    "records_crem_comparison.csv": "bee1fe6dd135b52958f048034daea5edab1e86480bb2b8a64c5d917f8479522e",
+    "run_metadata_comparison.csv": "0a08ea4415ec3068e44ef46b46d6a449fb7a8eeae007819e10a801db9b72f923"
+  },
+  "outputs_sha256": {
+    "records_crem_comparison.csv": "81ec05c6e286d21e30182c09b737d79880997b7ed0a5e0d033364c3a03488640",
+    "records_analogsan_comparison.csv": "80e5c31e320b6261bfa9b33afb3190c213cabb1b67ee4b70451f517479cdc692",
+    "run_metadata_comparison.csv": "defe99a909c07e6edd802a7ea8a2cf60e7884236d93528ed5513226f2383039a"
+  }
+}

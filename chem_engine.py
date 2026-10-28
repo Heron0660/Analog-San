@@ -36,9 +36,11 @@
 """
 
 import csv
+import json
 import math
 import random
 import logging
+from pathlib import Path
 from typing import List, Dict, Callable, Optional, Tuple
 
 from rdkit import Chem
@@ -47,6 +49,7 @@ from rdkit.Chem.rdchem import RWMol, Atom, BondType
 from PIL import Image
 
 import validation_engine as ve
+from evidence_catalog import load_catalog
 
 logger = logging.getLogger(__name__)
 
@@ -513,7 +516,7 @@ def ketone_to_sulfone(mol: Chem.Mol) -> List[Chem.Mol]:
 #
 #  PARA ADICIONAR UMA NOVA REAÇÃO: basta inserir uma nova tupla abaixo.
 #  Formato:
-#  ("Nome", funcao, ("rota", ...), prioridade_sintese, "facilidade")
+#  ("Nome", funcao, ("rota", ...), prioridade_da_regra, "nivel_manual")
 #
 ROUTE_CLASSIC = "classica"
 ROUTE_NON_CLASSIC = "nao_classica"
@@ -538,6 +541,87 @@ MODIFICATION_REGISTRY: List[Tuple[str, Callable, Tuple[str, ...], int, str]] = [
     ("Bioisostero: Cetona->Sulfona",     ketone_to_sulfone,            (ROUTE_NON_CLASSIC,), 6, "baixa"),
     ("Bioisostero: Benzeno->Pirimidina", benzene_to_pyrimidine,        (ROUTE_CLASSIC,),     7, "baixa"),
 ]
+
+_REACTION_CLASS_HYPOTHESES = {
+    "N-Metilação": ("N-alquilação", "reaction_class_hypothesis"),
+    "O-Metilação (-OH -> -OCH3)": ("O-alquilação / eterificação", "reaction_class_hypothesis"),
+    "Metilação Aromática (-CH3)": ("Metilação C-H aromática", "reaction_class_hypothesis"),
+    "Hidroxila->Amino (-OH -> -NH2)": ("Substituição O por N; rota não codificada", "graph_edit"),
+    "Fluoração Aromática": ("Fluoração C-H aromática", "reaction_class_hypothesis"),
+    "Hidroxilação Alifática": ("Hidroxilação C-H alifática", "reaction_class_hypothesis"),
+    "Aminação Aromática (-NH2)": ("Aminação C-H aromática", "reaction_class_hypothesis"),
+    "Bioisostero: Éster->Amida": ("Conversão éster-amida; rota não especificada", "reaction_class_hypothesis"),
+    "Cianação Aromática (-CN)": ("Cianação C-H aromática", "reaction_class_hypothesis"),
+    "Bioisostero: Benzeno->Piridina": ("Troca por aza-scaffold; rota não codificada", "scaffold_hop"),
+    "Cloração Aromática": ("Cloração C-H aromática", "reaction_class_hypothesis"),
+    "Ar-Haleto->Metil": ("Acoplamento aril C(sp2)-C(sp3) hipotético", "reaction_class_hypothesis"),
+    "Ar-Haleto->Etil": ("Acoplamento aril C(sp2)-C(sp3) hipotético", "reaction_class_hypothesis"),
+    "Ar-Haleto->Isopropil": ("Acoplamento aril C(sp2)-C(sp3) hipotético", "reaction_class_hypothesis"),
+    "Ar-Haleto->terc-Butil": ("Acoplamento aril C(sp2)-C(sp3) hipotético", "reaction_class_hypothesis"),
+    "Trifluorometilação (-CF3)": ("Trifluorometilação aromática", "reaction_class_hypothesis"),
+    "Bioisostero: Cetona->Sulfona": ("Substituição carbonila-sulfona; rota não codificada", "graph_edit"),
+    "Bioisostero: Benzeno->Pirimidina": ("Troca por diaza-scaffold; rota não codificada", "scaffold_hop"),
+}
+
+TRANSFORMATION_EVIDENCE = {
+    name: {
+        "status": "not_catalogued",
+        "reaction_class": _REACTION_CLASS_HYPOTHESES.get(name, ("unclassified", "graph_edit"))[0],
+        "record_type": _REACTION_CLASS_HYPOTHESES.get(name, ("unclassified", "graph_edit"))[1],
+        "source_records": (),
+        "conditions": None,
+        "route_verified": False,
+        "note": "Classe hipotetizada a partir da edicao estrutural; precedente experimental nao catalogado.",
+    }
+    for name, _, _, _, _ in MODIFICATION_REGISTRY
+}
+
+
+def load_transformation_evidence_catalog(path: str) -> Dict[str, Dict]:
+    """Load reviewed source records without implying that they verify a route."""
+    names = [name for name, _, _, _, _ in MODIFICATION_REGISTRY]
+    catalog = load_catalog(path, names)
+    result = {name: dict(entry) for name, entry in TRANSFORMATION_EVIDENCE.items()}
+    for name, entry in catalog["transformations"].items():
+        records = tuple(dict(record) for record in entry["records"])
+        scopes = {record["scope"] for record in records}
+        result[name].update({
+            "status": "exact_transform_precedent" if "exact_transform" in scopes else (
+                "reaction_class_precedent" if records else "not_catalogued"
+            ),
+            "source_records": records,
+            "conditions": "; ".join(
+                record["conditions"] for record in records if record.get("conditions")
+            ) or None,
+            "route_verified": False,
+            "note": (
+                "Precedente bibliográfico catalogado; não confirma uma rota para este substrato."
+                if records else TRANSFORMATION_EVIDENCE[name]["note"]
+            ),
+        })
+    return result
+
+
+_EVIDENCE_CATALOG_PATH = Path(__file__).with_name("evidence_catalog.json")
+try:
+    TRANSFORMATION_EVIDENCE = load_transformation_evidence_catalog(str(_EVIDENCE_CATALOG_PATH))
+except FileNotFoundError:
+    pass
+
+
+def get_transformation_evidence(modification_name: str) -> Dict:
+    """Devolve metadados de evidência sem inferir viabilidade de síntese."""
+    evidence = TRANSFORMATION_EVIDENCE.get(modification_name)
+    if evidence is None:
+        return {
+            "status": "unknown",
+            "reaction_class": None,
+            "source_records": (),
+            "conditions": None,
+            "route_verified": False,
+            "note": "Transformação sem entrada no registro de evidências.",
+        }
+    return dict(evidence)
 
 
 def get_modification_pool(
@@ -662,6 +746,7 @@ def generate_analogs(
     random_seed: Optional[int] = ve.DEFAULT_RANDOM_SEED,
     max_sa_score: Optional[float] = 6.0,
     allow_multistep: bool = False,
+    objective_profile: Optional[List[Dict[str, str]]] = None,
 ) -> List[Dict]:
     """
     Gera análogos estruturais da molécula base através de modificações químicas.
@@ -670,13 +755,13 @@ def generate_analogs(
     ----------------------------------------------------------
       1. Inicia com a molécula base no pool de parentes.
       2. Aplica primeiro, sobre o composto-protótipo, as modificações de
-         maior facilidade sintética.
+         menor nível manual de prioridade da regra.
       3. Por padrão, não encadeia transformações em análogos já modificados.
       4. Aplica drug-likeness, limite opcional de SA e filtro de grupos
          explicitamente reativos antes da aceitação.
       5. Exploração multietapas é opcional e fica desligada por padrão.
       6. Controle de duplicatas via SMILES canônico (set).
-      7. Ordena o resultado final por facilidade sintética estimada.
+      7. Ordena o resultado legado por prioridade manual da regra.
 
     Args:
         base_smiles:       SMILES da molécula base (será canonicalizado).
@@ -693,7 +778,7 @@ def generate_analogs(
     Returns:
         Lista de dicionários com dados de cada análogo aprovado.
         Cada dicionário tem: ID_Molecula, SMILES, Modificacao,
-        PrioridadeSintese, FacilidadeSintese, EtapaGeracao, MW, LogP,
+        PrioridadeRegra, NivelRegraManual, EvidenciaStatus, EtapaGeracao, MW, LogP,
         HBA, HBD, TPSA, RotBonds, HAC e métricas de validação científica.
     """
     # Valida e canonicaliza a molécula base
@@ -703,6 +788,11 @@ def generate_analogs(
 
     Chem.SanitizeMol(base_mol)
     canonical_base = Chem.MolToSmiles(base_mol)
+    objective_profile = objective_profile or []
+    if objective_profile:
+        if len(objective_profile) > 2:
+            raise ValueError("Defina no máximo dois objetivos moleculares.")
+        ve.rank_by_objectives([], calculate_properties(base_mol), objective_profile)
 
     approved: List[Dict] = []
     seen_smiles = {canonical_base}
@@ -732,7 +822,7 @@ def generate_analogs(
     active_routes_text = ", ".join(route_labels.get(r, r) for r in active_routes)
     _log(f"Rotas ativas   : {active_routes_text}")
     _log(f"Modificações   : {len(modification_pool)} tipos disponíveis")
-    _log("Ordenação      : facilidade sintética estimada")
+    _log("Ordenação      : frentes de Pareto" if objective_profile else "Ordenação      : prioridade manual das regras (heurística)")
     _log(f"Seed           : {random_seed if random_seed is not None else 'não fixada'}")
     _log(f"Filtros        : {'Lipinski + Veber' if use_veber else 'somente Lipinski'}")
     _log(f"SA máximo      : {max_sa_score if max_sa_score is not None else 'desativado'} (heurístico; não prova síntese)")
@@ -742,11 +832,11 @@ def generate_analogs(
     def _accept_candidate(
         cand_mol: Chem.Mol,
         mod_name: str,
-        synthesis_priority: int,
-        synthesis_ease: str,
+        rule_priority: int,
+        rule_tier: str,
         generation_stage: str,
     ) -> bool:
-        if len(approved) >= target_count:
+        if not objective_profile and len(approved) >= target_count:
             return False
 
         if not is_valid_molecule(cand_mol):
@@ -785,19 +875,35 @@ def generate_analogs(
             base_mol=base_mol,
             analog_mol=cand_mol,
             props=props,
-            synthesis_priority=synthesis_priority,
-            synthesis_ease=synthesis_ease,
+            rule_priority=rule_priority,
+            rule_tier=rule_tier,
             use_veber=use_veber,
         )
 
         n = len(approved) + 1
         analog_id = f"Analog_{n:04d}"
+        evidence = get_transformation_evidence(mod_name)
         analog_data = {
             "ID_Molecula": analog_id,
             "SMILES": smiles,
             "Modificacao": mod_name,
-            "PrioridadeSintese": synthesis_priority,
-            "FacilidadeSintese": synthesis_ease,
+            "PrioridadeRegra": rule_priority,
+            "NivelRegraManual": rule_tier,
+            "EvidenciaStatus": evidence["status"],
+            "EvidenciaClasseReacao": evidence["reaction_class"] or "",
+            "EvidenciaTipoRegistro": evidence["record_type"],
+            "EvidenciaFontesJSON": json.dumps(evidence["source_records"], ensure_ascii=False),
+            "EvidenciaFonteIDs": "; ".join(
+                str(record.get("source_id", "")) for record in evidence["source_records"]
+                if record.get("source_id")
+            ),
+            "EvidenciaFonteCount": len(evidence["source_records"]),
+            "EvidenciaCondicoes": evidence["conditions"] or "",
+            "EvidenciaRotaVerificada": evidence["route_verified"],
+            "EvidenciaObservacao": evidence["note"],
+            # Deprecated aliases retained for compatibility with older exports.
+            "PrioridadeSintese": rule_priority,
+            "FacilidadeSintese": rule_tier,
             "EtapaGeracao": generation_stage,
             "ViabilidadeRota": "não avaliada; requer planejamento retrosintético/experimento",
             "MW": props["MW"],
@@ -815,20 +921,20 @@ def generate_analogs(
             parent_pool.append(cand_mol)
 
         _log(
-            f"OK {analog_id} | S{ synthesis_priority } {synthesis_ease:<10} | "
+            f"OK {analog_id} | regra R{ rule_priority } {rule_tier:<10} | "
             f"Score={validation['ScoreGlobal']:>5.1f} | "
             f"{mod_name[:20]:<20} | MW={props['MW']:>6.1f}  "
             f"LogP={props['LogP']:>5.2f}"
         )
 
-        if progress_callback:
-            progress_callback(len(approved), target_count)
+        if progress_callback and not objective_profile:
+            progress_callback(min(len(approved), target_count), target_count)
 
         return True
 
     _log("Fase direta    : composto-protótipo por prioridade")
-    for mod_name, mod_func, _, synthesis_priority, synthesis_ease in modification_pool:
-        if len(approved) >= target_count:
+    for mod_name, mod_func, _, rule_priority, rule_tier in modification_pool:
+        if not objective_profile and len(approved) >= target_count:
             break
         if stop_flag and stop_flag():
             _log("Geração interrompida pelo usuário.")
@@ -845,13 +951,13 @@ def generate_analogs(
             key=lambda m: Chem.MolToSmiles(m) if m is not None else "",
         )
         for cand_mol in candidates:
-            if len(approved) >= target_count:
+            if not objective_profile and len(approved) >= target_count:
                 break
             _accept_candidate(
                 cand_mol,
                 mod_name,
-                synthesis_priority,
-                synthesis_ease,
+                rule_priority,
+                rule_tier,
                 "protótipo",
             )
 
@@ -870,8 +976,8 @@ def generate_analogs(
         else:
             parent_mol = rng.choice(parent_pool)
 
-        # Sorteia uma modificação ponderando a facilidade sintética.
-        mod_name, mod_func, _, synthesis_priority, synthesis_ease = rng.choices(
+        # Amostra regras favorecendo níveis de prioridade manual mais altos.
+        mod_name, mod_func, _, rule_priority, rule_tier = rng.choices(
             modification_pool,
             weights=[1 / (item[3] ** 2) for item in modification_pool],
             k=1,
@@ -893,8 +999,8 @@ def generate_analogs(
             _accept_candidate(
                 cand_mol,
                 mod_name,
-                synthesis_priority,
-                synthesis_ease,
+                rule_priority,
+                rule_tier,
                 "exploração",
             )
 
@@ -904,14 +1010,18 @@ def generate_analogs(
         f"em {attempts} tentativas  |  Pool final: {len(parent_pool)} mol."
     )
 
-    approved.sort(
-        key=lambda a: (
-            a["PrioridadeSintese"],
-            0 if a["EtapaGeracao"] == "protótipo" else 1,
-            a["Modificacao"],
-            a["SMILES"],
+    if objective_profile:
+        approved = ve.rank_by_objectives(approved, calculate_properties(base_mol), objective_profile)
+        approved = approved[:target_count]
+    else:
+        approved.sort(
+            key=lambda a: (
+                a["PrioridadeRegra"],
+                0 if a["EtapaGeracao"] == "protótipo" else 1,
+                a["Modificacao"],
+                a["SMILES"],
+            )
         )
-    )
     for idx, analog in enumerate(approved, start=1):
         analog["ID_Molecula"] = f"Analog_{idx:04d}"
 
@@ -926,9 +1036,14 @@ def generate_analogs(
 _CSV_COLUMNS = [
     "ID_Molecula", "SMILES", "Modificacao",
     "PrioridadeSintese", "FacilidadeSintese", "EtapaGeracao",
+    "PrioridadeRegra", "NivelRegraManual", "EvidenciaStatus",
+    "EvidenciaClasseReacao", "EvidenciaTipoRegistro", "EvidenciaFontesJSON", "EvidenciaFonteIDs",
+    "EvidenciaFonteCount", "EvidenciaCondicoes", "EvidenciaRotaVerificada",
+    "EvidenciaObservacao",
     "ScoreGlobal", "CategoriaScore", "SimilaridadeTanimoto", "SAScore",
     "QtdAlertas", "AlertasQuimicos", "LipinskiOK", "VeberOK", "RegrasVioladas",
     "MW", "LogP", "HBA", "HBD", "TPSA", "RotBonds", "HAC",
+    "FrentePareto", "Objetivos", "DeltaObjetivos",
 ]
 
 

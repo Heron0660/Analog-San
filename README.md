@@ -1,37 +1,37 @@
 # Analog-San
 
-Analog-San is a desktop research tool for generating and prioritizing candidate molecular analogues from a user-supplied prototype. Its 18 registered graph edits include classical and non-classical transformations, including replacement of aromatic chlorine, bromine, or iodine by methyl, ethyl, isopropyl, or tert-butyl groups. It supports Lipinski and Veber filters, heuristic synthesis-priority ranking, molecular-property summaries, and CSV, SMILES, and MOL2 export.
+Analog-San 1.6.0 is an open-source desktop application for rule-based molecular analogue generation and computational triage. It applies 18 explicit graph edits, property filters, molecular descriptors, structural-alert flags, and reproducible structure/data exports.
 
-## Scope and limitations
+## Scope
 
-The software proposes structures; it does not predict binding affinity, biological efficacy, ADMET outcomes, toxicity, or experimentally validated synthetic routes. Priority and composite scores are heuristic ranking aids, not calibrated probabilities or evidence of synthesizability. The aromatic halide replacements are structure-enumeration rules, not reaction templates or route predictions. Every generated structure requires cheminformatics review and experimental validation. Filters can exclude useful compounds and should be selected deliberately.
+The software proposes structures; it does not predict binding, efficacy, ADMET, toxicity, novelty, or experimental synthesis success. Rule-priority tiers, SA Score, and composite scores are uncalibrated heuristics, not probabilities or route-feasibility estimates. Candidate structures may be impractical or unstable and require independent chemical review.
 
-## Installation and use
+## Transformation evidence catalogue
 
-Requires Python 3.10 or newer and a working Tk installation. RDKit installation is platform-dependent; use the official RDKit installation instructions if `pip install` is unavailable for your platform.
+`evidence_catalog.json` stores curated source records for registered transformations. Records are classified as `reaction_class` or `exact_transform`; neither classification verifies a route for a user's starting material. Exact-transformation records require reaction SMILES and an identified reviewer. Route verification remains false unless a complete substrate-specific route has been independently assessed. The released catalogue is empty: no records are currently curated for the 18 transformations.
+
+Add records only after checking primary sources, structural correspondence, limitations, and reuse terms. See [`docs/evidence_catalog.txt`](docs/evidence_catalog.txt). The software validates the JSON structure and exposes evidence status and source metadata in candidate exports and reports; it does not infer evidence from a similar reaction.
+
+## Installation
+
+Requires Python 3.10 or newer, Tk, and RDKit. RDKit installation can be platform-specific.
 
 ```bash
 python -m pip install -r requirements.txt
 python main.py
 ```
 
-To run the reproducible benchmark study, install `study/requirements-study.txt`, then follow `study/README.md`. The benchmark scripts use fixed random seeds and write their results under `study/dados/`.
+Run the automated checks with:
 
-## Source layout
+```bash
+python -m unittest discover -s tests -v
+python main.py --smoke-test
+```
 
-- `main.py`, `gui_app.py`: application entry point and interface.
-- `chem_engine.py`: analogue-generation and molecular-property logic.
-- `validation_engine.py`: validation and figure-generation support.
-- `study/`: benchmark inputs, analysis scripts, generated tables, figures, and run metadata.
+## Reproducibility study
 
-## Reproducibility
+Benchmark inputs, scripts, fixed seeds, software versions, and generated outputs are provided under `study/`. The study is descriptive: it does not establish activity, synthetic feasibility, or comparative superiority. See [`study/README.md`](study/README.md) for protocols and caveats.
 
-The study scripts document their versions, seeds, and checksums in `study/metadata_run.json`. Re-run the scripts to regenerate benchmark outputs and publication figures. Results describe computational experiments on the included prototype set; they are not prospective validation.
+## Citation and license
 
-## License and citation
-
-Released under the MIT License; see `LICENSE`. Citation metadata is provided in `CITATION.cff`. Add the archival DOI and final author list after depositing a tagged release in a DOI-minting archive.
-
-## Contact
-
-Please use the repository issue tracker for reproducible bug reports. Do not submit confidential structures or unpublished patent material in public issues.
+The source is released under the MIT License. Citation metadata is in [`CITATION.cff`](CITATION.cff). This GitHub release has no DOI; an archival DOI may be added after deposition.

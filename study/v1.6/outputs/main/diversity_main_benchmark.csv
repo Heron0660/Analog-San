@@ -1,0 +1,9 @@
+Prototype,DirectPerRun,ExplorationPerRun,DistinctAcrossSeeds,SharedAcrossSeeds,MeanPairwiseJaccard,InternalDiversity,MurckoScaffolds
+Paracetamol,18.0000,0.0000,18,18,1.0000,0.5917,2
+Aspirin,30.0000,0.0000,30,30,1.0000,0.5626,2
+Ibuprofen,20.0000,0.0000,20,20,1.0000,0.5486,2
+Caffeine,10.0000,0.0000,10,10,1.0000,0.5383,2
+Lidocaine,19.0000,0.0000,19,19,1.0000,0.4603,2
+Benzocaine,18.0000,0.0000,18,18,1.0000,0.5432,2
+Propranolol,30.0000,0.0000,30,30,1.0000,0.4562,2
+Diclofenac,30.0000,0.0000,30,30,1.0000,0.4674,4

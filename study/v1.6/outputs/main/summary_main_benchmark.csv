@@ -1,0 +1,9 @@
+Prototype,Records,DistinctAcrossSeeds,SeedInvariant,MeanScore,SDScore,MeanTanimoto,MeanSA,AlertFreePct,MeanReturnedPerRun,RunsAtTarget
+Paracetamol,54,18,True,80.1239,5.0657,0.5145,1.7967,22.2222,18.0000,0
+Aspirin,90,30,True,80.9767,3.7332,0.5562,1.9107,16.6667,30.0000,3
+Ibuprofen,60,20,True,83.7750,3.6766,0.5774,2.5785,90.0000,20.0000,0
+Caffeine,30,10,True,79.2500,2.2504,0.5158,2.5920,100.0000,10.0000,0
+Lidocaine,57,19,True,85.2979,3.7618,0.6602,2.1747,78.9474,19.0000,0
+Benzocaine,54,18,True,81.3094,4.2643,0.5698,1.8283,16.6667,18.0000,0
+Propranolol,90,30,True,86.0407,4.2571,0.6898,2.5483,63.3333,30.0000,3
+Diclofenac,90,30,True,86.5830,3.4370,0.6771,2.1180,73.3333,30.0000,3

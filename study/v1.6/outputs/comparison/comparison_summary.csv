@@ -1,0 +1,3 @@
+Tool,Prototypes,Runs,ReturnedRecords,PooledUniqueSMILES,RunsAtTarget,MeanReturnedPerRun,MeanParentTanimoto,MeanSAScore,MeanAlertCount,MeanPooledUniquePerPrototype
+Analog-San,28,84,2571,857,0,30.6071,0.6442,2.4373,0.4072,30.6071
+CReM,28,84,5298,2020,21,63.0714,0.6524,2.1939,0.1808,72.9286

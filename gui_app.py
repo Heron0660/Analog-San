@@ -354,6 +354,29 @@ class AnalogSanApp(ctk.CTk):
             fg_color=Palette.ACCENT_BLUE,
         ).pack(anchor="w", padx=10, pady=(0, 8))
 
+        row = self._section_header(frame, "Objetivos de otimização (opcional)", row)
+        self._objective_vars = []
+        objective_frame = ctk.CTkFrame(frame, fg_color=Palette.BG_CARD,
+                                       corner_radius=8, border_width=1,
+                                       border_color=Palette.BORDER)
+        objective_frame.grid(row=row, column=0, padx=12, pady=(4, 10), sticky="ew")
+        row += 1
+        prop_values = ["Nenhum", "LogP", "MW", "TPSA", "HBD", "HBA", "RotBonds"]
+        direction_values = ["Aumentar", "Reduzir", "Manter"]
+        for index in range(2):
+            prop_var = ctk.StringVar(value="Nenhum")
+            direction_var = ctk.StringVar(value="Aumentar")
+            self._objective_vars.append((prop_var, direction_var))
+            ctk.CTkOptionMenu(
+                objective_frame, values=prop_values, variable=prop_var,
+                width=105, height=28, font=ctk.CTkFont(size=11),
+            ).grid(row=index, column=0, padx=(8, 4), pady=5, sticky="ew")
+            ctk.CTkOptionMenu(
+                objective_frame, values=direction_values, variable=direction_var,
+                width=105, height=28, font=ctk.CTkFont(size=11),
+            ).grid(row=index, column=1, padx=(4, 8), pady=5, sticky="ew")
+        objective_frame.grid_columnconfigure((0, 1), weight=1)
+
         # -- Botões de Ação ------------------------------------------------
         row = self._section_header(frame, "Ações", row)
 
@@ -457,7 +480,7 @@ class AnalogSanApp(ctk.CTk):
         self._configure_treeview_style()
 
         columns = (
-            "ID", "SMILES", "Modificacao", "Sintese",
+            "ID", "SMILES", "Modificacao", "Regra", "Pareto", "Objetivo",
             "Score", "Tanimoto", "SA", "Alertas",
             "MW", "LogP", "HBA", "HBD", "TPSA", "RotBonds",
         )
@@ -471,8 +494,10 @@ class AnalogSanApp(ctk.CTk):
             "ID":         ("ID",           95,  "center", True),
             "SMILES":     ("SMILES",       290, "w",      False),
             "Modificacao":("Modificação",  155, "w",      True),
-            "Sintese":    ("Síntese",       92, "center", True),
-            "Score":      ("Score",         70, "center", True),
+            "Regra":      ("Prior. regra",  105, "center", True),
+            "Pareto":     ("Pareto",        60, "center", True),
+            "Objetivo":   ("Δ objetivo",    150, "w",      False),
+            "Score":      ("Score (heur.)", 88, "center", True),
             "Tanimoto":   ("Tanimoto",      82, "center", True),
             "SA":         ("SA",            58, "center", True),
             "Alertas":    ("Alertas",       70, "center", True),
@@ -581,8 +606,8 @@ class AnalogSanApp(ctk.CTk):
 
         ctk.CTkLabel(
             sb,
-            text="Analog-San v1.3  |  RDKit + CustomTkinter  "
-                 "|  Ordem: facilidade sintética  "
+            text="Analog-San  |  RDKit + CustomTkinter  "
+                 "|  Ordem: prioridade manual da regra  "
                  "|  Exporta: .csv / .smi / .mol2 / relatório científico",
             font=ctk.CTkFont(size=9), text_color=Palette.TEXT_DIM,
         ).grid(row=0, column=0, padx=10, sticky="w")
@@ -709,14 +734,30 @@ class AnalogSanApp(ctk.CTk):
         alerts_text = str(analog.get("AlertasQuimicos", "n/d"))
         if len(alerts_text) > 92:
             alerts_text = alerts_text[:89] + "..."
+        evidence_type = {
+            "reaction_class_hypothesis": "classe de reação hipotética",
+            "graph_edit": "edição de grafo; rota não codificada",
+            "scaffold_hop": "troca de scaffold; rota não codificada",
+        }.get(analog.get("EvidenciaTipoRegistro"), "n/d")
 
+        objective_detail = (
+            f"Frente Pareto: {analog.get('FrentePareto')}\n"
+            f"Objetivos    : {analog.get('Objetivos')}\n"
+            if "FrentePareto" in analog else ""
+        )
         detail = (
             f"ID         : {analog['ID_Molecula']}\n"
             f"Modificação: {analog['Modificacao']}\n"
-            f"Síntese    : S{analog.get('PrioridadeSintese', '')} "
-            f"({analog.get('FacilidadeSintese', 'n/d')})\n"
+            f"Prior. regra: R{analog.get('PrioridadeRegra', '')} "
+            f"(nível manual: {analog.get('NivelRegraManual', 'n/d')})\n"
+            f"Classe (hip.): {analog.get('EvidenciaClasseReacao', 'n/d')}\n"
+            f"Tipo de reg.: {evidence_type}\n"
+            f"Evidência   : {'não catalogada' if analog.get('EvidenciaStatus') == 'not_catalogued' else analog.get('EvidenciaStatus', 'n/d')} "
+            f"({analog.get('EvidenciaFonteCount', 0)} fontes; rota verificada: {'sim' if analog.get('EvidenciaRotaVerificada') else 'não'})\n"
+            f"Nota        : {analog.get('EvidenciaObservacao', 'n/d')}\n"
+            f"{objective_detail}"
             f"Origem     : {analog.get('EtapaGeracao', 'n/d')}\n"
-            f"Score      : {analog.get('ScoreGlobal', 'n/d')} "
+            f"Score heur.: {analog.get('ScoreGlobal', 'n/d')} "
             f"({analog.get('CategoriaScore', 'n/d')})\n"
             f"Tanimoto   : {analog.get('SimilaridadeTanimoto', 'n/d')}\n"
             f"SA Score   : {analog.get('SAScore', 'n/d')}\n"
@@ -747,6 +788,13 @@ class AnalogSanApp(ctk.CTk):
             routes.append(ce.ROUTE_NON_CLASSIC)
         return routes
 
+    def _selected_objectives(self) -> List[Dict[str, str]]:
+        direction_map = {"Aumentar": "increase", "Reduzir": "decrease", "Manter": "maintain"}
+        return [
+            {"property": prop.get(), "direction": direction_map[direction.get()]}
+            for prop, direction in self._objective_vars if prop.get() != "Nenhum"
+        ]
+
     def _on_generate(self):
         smiles = self._smiles_entry.get().strip()
         if not smiles:
@@ -770,6 +818,12 @@ class AnalogSanApp(ctk.CTk):
                 "Atenção",
                 "Selecione pelo menos uma rota de modificação molecular.",
             )
+            return
+
+        objective_profile = self._selected_objectives()
+        selected_properties = [item["property"] for item in objective_profile]
+        if len(selected_properties) != len(set(selected_properties)):
+            messagebox.showwarning("Objetivo repetido", "Escolha propriedades diferentes nos objetivos.")
             return
 
         try:
@@ -805,6 +859,7 @@ class AnalogSanApp(ctk.CTk):
             "max_sa_score": max_sa_score,
             "allow_multistep": self._multistep_var.get(),
             "seed": 0xA11A,
+            "objective_profile": objective_profile,
         }
 
         self._log(f"--- Sessão iniciada - {qty} análogos solicitados ---")
@@ -925,6 +980,7 @@ class AnalogSanApp(ctk.CTk):
                     self._gui_queue.put(("log", msg)),
                 stop_flag=lambda: self._stop_requested,
                 random_seed=self._last_generation_params.get("seed", 0xA11A),
+                objective_profile=self._last_generation_params.get("objective_profile"),
             )
             self._gui_queue.put(("done", analogs))
         except Exception as exc:
@@ -1012,7 +1068,9 @@ class AnalogSanApp(ctk.CTk):
                 a["ID_Molecula"],
                 smiles_display,
                 a["Modificacao"],
-                f"S{a.get('PrioridadeSintese', '')} {a.get('FacilidadeSintese', '')}",
+                f"R{a.get('PrioridadeRegra', '')} {a.get('NivelRegraManual', '')}",
+                a.get("FrentePareto", ""),
+                a.get("Objetivos", ""),
                 f"{a.get('ScoreGlobal', 0):.1f}",
                 f"{a.get('SimilaridadeTanimoto', 0):.3f}",
                 f"{a.get('SAScore', 0):.2f}",

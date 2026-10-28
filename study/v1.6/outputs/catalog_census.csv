@@ -1,0 +1,19 @@
+﻿Transformation,RegistryRecordType,SourceRecordCount,EvidenceStatus,RouteVerified
+N-Metilação,reaction_class_hypothesis,0,not_catalogued,False
+O-Metilação (-OH -> -OCH3),reaction_class_hypothesis,0,not_catalogued,False
+Metilação Aromática (-CH3),reaction_class_hypothesis,0,not_catalogued,False
+Hidroxila->Amino (-OH -> -NH2),graph_edit,0,not_catalogued,False
+Fluoração Aromática,reaction_class_hypothesis,0,not_catalogued,False
+Hidroxilação Alifática,reaction_class_hypothesis,0,not_catalogued,False
+Aminação Aromática (-NH2),reaction_class_hypothesis,0,not_catalogued,False
+Bioisostero: Éster->Amida,reaction_class_hypothesis,0,not_catalogued,False
+Cianação Aromática (-CN),reaction_class_hypothesis,0,not_catalogued,False
+Bioisostero: Benzeno->Piridina,scaffold_hop,0,not_catalogued,False
+Cloração Aromática,reaction_class_hypothesis,0,not_catalogued,False
+Ar-Haleto->Metil,reaction_class_hypothesis,0,not_catalogued,False
+Ar-Haleto->Etil,reaction_class_hypothesis,0,not_catalogued,False
+Ar-Haleto->Isopropil,reaction_class_hypothesis,0,not_catalogued,False
+Ar-Haleto->terc-Butil,reaction_class_hypothesis,0,not_catalogued,False
+Trifluorometilação (-CF3),reaction_class_hypothesis,0,not_catalogued,False
+Bioisostero: Cetona->Sulfona,graph_edit,0,not_catalogued,False
+Bioisostero: Benzeno->Pirimidina,scaffold_hop,0,not_catalogued,False

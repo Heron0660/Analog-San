@@ -1,0 +1,169 @@
+﻿Prototype,Seed,Tool,PoolBeforeCommonFilters,PassCommonFilters,Returned,Target,OldRawMutate,OldRawGrow,Source
+Paracetamol,41242,CReM,163,163,100,100,155.0,13.0,re-filtered archived full candidate pool
+Paracetamol,41242,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Paracetamol,41243,CReM,163,163,100,100,155.0,13.0,re-filtered archived full candidate pool
+Paracetamol,41243,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Paracetamol,41244,CReM,163,163,100,100,155.0,13.0,re-filtered archived full candidate pool
+Paracetamol,41244,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Aspirin,41242,CReM,59,59,59,100,36.0,24.0,re-filtered archived full candidate pool
+Aspirin,41242,Analog-San,NA,32,32,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Aspirin,41243,CReM,59,59,59,100,36.0,24.0,re-filtered archived full candidate pool
+Aspirin,41243,Analog-San,NA,32,32,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Aspirin,41244,CReM,59,59,59,100,36.0,24.0,re-filtered archived full candidate pool
+Aspirin,41244,Analog-San,NA,32,32,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ibuprofen,41242,CReM,92,92,92,100,80.0,15.0,re-filtered archived full candidate pool
+Ibuprofen,41242,Analog-San,NA,20,20,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ibuprofen,41243,CReM,92,92,92,100,80.0,15.0,re-filtered archived full candidate pool
+Ibuprofen,41243,Analog-San,NA,20,20,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ibuprofen,41244,CReM,92,92,92,100,80.0,15.0,re-filtered archived full candidate pool
+Ibuprofen,41244,Analog-San,NA,20,20,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Caffeine,41242,CReM,5,5,5,100,0.0,5.0,re-filtered archived full candidate pool
+Caffeine,41242,Analog-San,NA,10,10,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Caffeine,41243,CReM,5,5,5,100,0.0,5.0,re-filtered archived full candidate pool
+Caffeine,41243,Analog-San,NA,10,10,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Caffeine,41244,CReM,5,5,5,100,0.0,5.0,re-filtered archived full candidate pool
+Caffeine,41244,Analog-San,NA,10,10,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Lidocaine,41242,CReM,51,51,51,100,38.0,18.0,re-filtered archived full candidate pool
+Lidocaine,41242,Analog-San,NA,19,19,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Lidocaine,41243,CReM,51,51,51,100,38.0,18.0,re-filtered archived full candidate pool
+Lidocaine,41243,Analog-San,NA,19,19,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Lidocaine,41244,CReM,51,51,51,100,38.0,18.0,re-filtered archived full candidate pool
+Lidocaine,41244,Analog-San,NA,19,19,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Benzocaine,41242,CReM,128,128,100,100,122.0,10.0,re-filtered archived full candidate pool
+Benzocaine,41242,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Benzocaine,41243,CReM,128,128,100,100,122.0,10.0,re-filtered archived full candidate pool
+Benzocaine,41243,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Benzocaine,41244,CReM,128,128,100,100,122.0,10.0,re-filtered archived full candidate pool
+Benzocaine,41244,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Propranolol,41242,CReM,36,36,36,100,1.0,35.0,re-filtered archived full candidate pool
+Propranolol,41242,Analog-San,NA,57,57,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Propranolol,41243,CReM,36,36,36,100,1.0,35.0,re-filtered archived full candidate pool
+Propranolol,41243,Analog-San,NA,57,57,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Propranolol,41244,CReM,36,36,36,100,1.0,35.0,re-filtered archived full candidate pool
+Propranolol,41244,Analog-San,NA,57,57,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Diclofenac,41242,CReM,48,48,48,100,33.0,30.0,re-filtered archived full candidate pool
+Diclofenac,41242,Analog-San,NA,37,37,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Diclofenac,41243,CReM,48,48,48,100,33.0,30.0,re-filtered archived full candidate pool
+Diclofenac,41243,Analog-San,NA,37,37,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Diclofenac,41244,CReM,48,48,48,100,33.0,30.0,re-filtered archived full candidate pool
+Diclofenac,41244,Analog-San,NA,37,37,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Naproxen,41242,CReM,82,82,82,100,61.0,23.0,re-filtered archived full candidate pool
+Naproxen,41242,Analog-San,NA,47,47,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Naproxen,41243,CReM,82,82,82,100,61.0,23.0,re-filtered archived full candidate pool
+Naproxen,41243,Analog-San,NA,47,47,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Naproxen,41244,CReM,82,82,82,100,61.0,23.0,re-filtered archived full candidate pool
+Naproxen,41244,Analog-San,NA,47,47,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ketoprofen,41242,CReM,37,37,37,100,3.0,35.0,re-filtered archived full candidate pool
+Ketoprofen,41242,Analog-San,NA,54,54,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ketoprofen,41243,CReM,37,37,37,100,3.0,35.0,re-filtered archived full candidate pool
+Ketoprofen,41243,Analog-San,NA,54,54,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ketoprofen,41244,CReM,37,37,37,100,3.0,35.0,re-filtered archived full candidate pool
+Ketoprofen,41244,Analog-San,NA,54,54,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Indomethacin,41242,CReM,175,175,100,100,166.0,16.0,re-filtered archived full candidate pool
+Indomethacin,41242,Analog-San,NA,44,44,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Indomethacin,41243,CReM,175,175,100,100,166.0,16.0,re-filtered archived full candidate pool
+Indomethacin,41243,Analog-San,NA,44,44,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Indomethacin,41244,CReM,175,175,100,100,166.0,16.0,re-filtered archived full candidate pool
+Indomethacin,41244,Analog-San,NA,44,44,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Salicylic acid,41242,CReM,82,82,82,100,61.0,23.0,re-filtered archived full candidate pool
+Salicylic acid,41242,Analog-San,NA,32,32,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Salicylic acid,41243,CReM,82,82,82,100,61.0,23.0,re-filtered archived full candidate pool
+Salicylic acid,41243,Analog-San,NA,32,32,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Salicylic acid,41244,CReM,82,82,82,100,61.0,23.0,re-filtered archived full candidate pool
+Salicylic acid,41244,Analog-San,NA,32,32,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Phenacetin,41242,CReM,150,150,100,100,141.0,17.0,re-filtered archived full candidate pool
+Phenacetin,41242,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Phenacetin,41243,CReM,150,150,100,100,141.0,17.0,re-filtered archived full candidate pool
+Phenacetin,41243,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Phenacetin,41244,CReM,150,150,100,100,141.0,17.0,re-filtered archived full candidate pool
+Phenacetin,41244,Analog-San,NA,18,18,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Procaine,41242,CReM,124,124,100,100,118.0,10.0,re-filtered archived full candidate pool
+Procaine,41242,Analog-San,NA,20,20,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Procaine,41243,CReM,124,124,100,100,118.0,10.0,re-filtered archived full candidate pool
+Procaine,41243,Analog-San,NA,20,20,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Procaine,41244,CReM,124,124,100,100,118.0,10.0,re-filtered archived full candidate pool
+Procaine,41244,Analog-San,NA,20,20,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Nicotinamide,41242,CReM,54,54,54,100,39.0,16.0,re-filtered archived full candidate pool
+Nicotinamide,41242,Analog-San,NA,29,29,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Nicotinamide,41243,CReM,54,54,54,100,39.0,16.0,re-filtered archived full candidate pool
+Nicotinamide,41243,Analog-San,NA,29,29,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Nicotinamide,41244,CReM,54,54,54,100,39.0,16.0,re-filtered archived full candidate pool
+Nicotinamide,41244,Analog-San,NA,29,29,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Theophylline,41242,CReM,3,3,3,100,0.0,3.0,re-filtered archived full candidate pool
+Theophylline,41242,Analog-San,NA,9,9,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Theophylline,41243,CReM,3,3,3,100,0.0,3.0,re-filtered archived full candidate pool
+Theophylline,41243,Analog-San,NA,9,9,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Theophylline,41244,CReM,3,3,3,100,0.0,3.0,re-filtered archived full candidate pool
+Theophylline,41244,Analog-San,NA,9,9,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Metoprolol,41242,CReM,61,61,61,100,48.0,15.0,re-filtered archived full candidate pool
+Metoprolol,41242,Analog-San,NA,25,25,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Metoprolol,41243,CReM,61,61,61,100,48.0,15.0,re-filtered archived full candidate pool
+Metoprolol,41243,Analog-San,NA,25,25,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Metoprolol,41244,CReM,61,61,61,100,48.0,15.0,re-filtered archived full candidate pool
+Metoprolol,41244,Analog-San,NA,25,25,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Atenolol,41242,CReM,55,55,55,100,42.0,14.0,re-filtered archived full candidate pool
+Atenolol,41242,Analog-San,NA,24,24,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Atenolol,41243,CReM,55,55,55,100,42.0,14.0,re-filtered archived full candidate pool
+Atenolol,41243,Analog-San,NA,24,24,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Atenolol,41244,CReM,55,55,55,100,42.0,14.0,re-filtered archived full candidate pool
+Atenolol,41244,Analog-San,NA,24,24,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Warfarin,41242,CReM,42,42,42,100,5.0,37.0,re-filtered archived full candidate pool
+Warfarin,41242,Analog-San,NA,55,55,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Warfarin,41243,CReM,42,42,42,100,5.0,37.0,re-filtered archived full candidate pool
+Warfarin,41243,Analog-San,NA,55,55,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Warfarin,41244,CReM,42,42,42,100,5.0,37.0,re-filtered archived full candidate pool
+Warfarin,41244,Analog-San,NA,55,55,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Diazepam,41242,CReM,98,98,98,100,73.0,26.0,re-filtered archived full candidate pool
+Diazepam,41242,Analog-San,NA,48,48,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Diazepam,41243,CReM,98,98,98,100,73.0,26.0,re-filtered archived full candidate pool
+Diazepam,41243,Analog-San,NA,48,48,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Diazepam,41244,CReM,98,98,98,100,73.0,26.0,re-filtered archived full candidate pool
+Diazepam,41244,Analog-San,NA,48,48,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Fluoxetine,41242,CReM,39,39,39,100,28.0,27.0,re-filtered archived full candidate pool
+Fluoxetine,41242,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Fluoxetine,41243,CReM,39,39,39,100,28.0,27.0,re-filtered archived full candidate pool
+Fluoxetine,41243,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Fluoxetine,41244,CReM,39,39,39,100,28.0,27.0,re-filtered archived full candidate pool
+Fluoxetine,41244,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Celecoxib,41242,CReM,126,126,100,100,111.0,21.0,re-filtered archived full candidate pool
+Celecoxib,41242,Analog-San,NA,37,37,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Celecoxib,41243,CReM,126,126,100,100,111.0,21.0,re-filtered archived full candidate pool
+Celecoxib,41243,Analog-San,NA,37,37,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Celecoxib,41244,CReM,126,126,100,100,111.0,21.0,re-filtered archived full candidate pool
+Celecoxib,41244,Analog-San,NA,37,37,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Haloperidol,41242,CReM,169,169,100,100,192.0,19.0,re-filtered archived full candidate pool
+Haloperidol,41242,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Haloperidol,41243,CReM,169,169,100,100,192.0,19.0,re-filtered archived full candidate pool
+Haloperidol,41243,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Haloperidol,41244,CReM,169,169,100,100,192.0,19.0,re-filtered archived full candidate pool
+Haloperidol,41244,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Metoclopramide,41242,CReM,82,82,82,100,79.0,7.0,re-filtered archived full candidate pool
+Metoclopramide,41242,Analog-San,NA,25,25,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Metoclopramide,41243,CReM,82,82,82,100,79.0,7.0,re-filtered archived full candidate pool
+Metoclopramide,41243,Analog-San,NA,25,25,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Metoclopramide,41244,CReM,82,82,82,100,79.0,7.0,re-filtered archived full candidate pool
+Metoclopramide,41244,Analog-San,NA,25,25,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Tramadol,41242,CReM,97,97,97,100,81.0,17.0,re-filtered archived full candidate pool
+Tramadol,41242,Analog-San,NA,38,38,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Tramadol,41243,CReM,97,97,97,100,81.0,17.0,re-filtered archived full candidate pool
+Tramadol,41243,Analog-San,NA,38,38,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Tramadol,41244,CReM,97,97,97,100,81.0,17.0,re-filtered archived full candidate pool
+Tramadol,41244,Analog-San,NA,38,38,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Phenytoin,41242,CReM,16,16,16,100,0.0,16.0,re-filtered archived full candidate pool
+Phenytoin,41242,Analog-San,NA,23,23,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Phenytoin,41243,CReM,16,16,16,100,0.0,16.0,re-filtered archived full candidate pool
+Phenytoin,41243,Analog-San,NA,23,23,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Phenytoin,41244,CReM,16,16,16,100,0.0,16.0,re-filtered archived full candidate pool
+Phenytoin,41244,Analog-San,NA,23,23,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Carbamazepine,41242,CReM,18,18,18,100,4.0,15.0,re-filtered archived full candidate pool
+Carbamazepine,41242,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Carbamazepine,41243,CReM,18,18,18,100,4.0,15.0,re-filtered archived full candidate pool
+Carbamazepine,41243,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Carbamazepine,41244,CReM,18,18,18,100,4.0,15.0,re-filtered archived full candidate pool
+Carbamazepine,41244,Analog-San,NA,30,30,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ciprofloxacin,41242,CReM,9,9,9,100,8.0,2.0,re-filtered archived full candidate pool
+Ciprofloxacin,41242,Analog-San,NA,28,28,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ciprofloxacin,41243,CReM,9,9,9,100,8.0,2.0,re-filtered archived full candidate pool
+Ciprofloxacin,41243,Analog-San,NA,28,28,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations
+Ciprofloxacin,41244,CReM,9,9,9,100,8.0,2.0,re-filtered archived full candidate pool
+Ciprofloxacin,41244,Analog-San,NA,28,28,100,NA,NA,Analog-San 1.6.0 direct-only generator; 18 registered operations

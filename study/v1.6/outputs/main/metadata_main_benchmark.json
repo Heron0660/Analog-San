@@ -1,0 +1,31 @@
+{
+  "software": "Analog-San 1.6.0 (18 registered operations)",
+  "validation": "1.3",
+  "evidence_catalog": "empty; no reaction records catalogued; no route verification claimed",
+  "Python": "3.13.9",
+  "RDKit": "2026.09.1",
+  "pandas": "2.3.3",
+  "seeds": [
+    41242,
+    41243,
+    41244
+  ],
+  "target_per_run": 30,
+  "main_prototypes": 8,
+  "extended_prototypes": 20,
+  "filters": {
+    "Lipinski": "zero violations",
+    "Veber": true,
+    "SA_score_max": 6.0,
+    "high_risk_reactive_alerts": "excluded"
+  },
+  "multistep_exploration": false,
+  "seed_interpretation": "Direct enumeration is deterministic; repeated seeds are checks of invariance, not independent samples.",
+  "sha256": {
+    "direct_enumeration_yield.csv": "cf40fa6baf1709408f3b84fff10d3c345ac7d56024b340eee5eaf1d2b55600c9",
+    "records_extended_panel.csv": "26a05515acad30dd3e1b9eca28a493b15fe2846d3a3879472728c2a43112be85",
+    "records_main_benchmark.csv": "7c159bb7ab65d7b0e13427f8fb58dd47ea6f9f0225ae246ee96bbb323a489718",
+    "run_metadata_extended_panel.csv": "f7947b8c371f881bf0d74f0d8349eb21fafeec4bfaebc0a7fee8c82209992074",
+    "run_metadata_main_benchmark.csv": "bddd9d1e22776a1fac217f19e4498d50d87b667cd71bc2ee19787295777976f0"
+  }
+}

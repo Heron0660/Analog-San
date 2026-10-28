@@ -3,7 +3,7 @@
   VALIDAÇÃO CIENTÍFICA - Analog-San
   Módulo: validation_engine.py
 =============================================================================
-  Calcula métricas de priorização farmacêutica, acessibilidade sintética,
+  Calcula métricas heurísticas de priorização, SA Score estrutural,
   similaridade ao composto-protótipo, alertas químicos e gera relatórios com
   figuras simples para uso em artigo científico.
 =============================================================================
@@ -29,11 +29,11 @@ except Exception:
     sascorer = None
 
 
-VALIDATION_VERSION = "1.1"
-APP_VERSION = "1.5.0"
+VALIDATION_VERSION = "1.3"
+APP_VERSION = "1.6.0"
 DEFAULT_RANDOM_SEED = 0xA11A
 
-EASE_SCORE = {
+RULE_PRIORITY_SCORE = {
     "muito alta": 100.0,
     "alta": 82.0,
     "média": 64.0,
@@ -172,8 +172,8 @@ def chemical_alerts(mol: Chem.Mol) -> List[str]:
 def score_candidate(
     props: Dict,
     similarity: float,
-    synthesis_priority: int,
-    synthesis_ease: str,
+    rule_priority: int,
+    rule_tier: str,
     sa_score: float,
     alerts: List[str],
     use_veber: bool = True,
@@ -191,7 +191,9 @@ def score_candidate(
         _range_score(float(props.get("TPSA", 0)), 20, 120, 80),
     ])
     similarity_score = _clip(similarity * 100.0)
-    synthesis_score = EASE_SCORE.get(str(synthesis_ease).lower(), _clip(108.0 - synthesis_priority * 11.0))
+    rule_priority_score = RULE_PRIORITY_SCORE.get(
+        str(rule_tier).lower(), _clip(108.0 - rule_priority * 11.0)
+    )
     sa_component = _clip(100.0 - ((sa_score - 1.0) / 9.0) * 100.0)
     alert_score = _clip(100.0 - len(alerts) * 30.0)
 
@@ -199,7 +201,7 @@ def score_candidate(
         druglike_score * 0.18
         + physicochemical_score * 0.18
         + similarity_score * 0.18
-        + synthesis_score * 0.18
+        + rule_priority_score * 0.18
         + sa_component * 0.14
         + alert_score * 0.14
     )
@@ -226,8 +228,8 @@ def evaluate_candidate(
     base_mol: Chem.Mol,
     analog_mol: Chem.Mol,
     props: Dict,
-    synthesis_priority: int,
-    synthesis_ease: str,
+    rule_priority: int,
+    rule_tier: str,
     use_veber: bool = True,
 ) -> Dict:
     """Calcula validação completa para um único análogo."""
@@ -237,8 +239,8 @@ def evaluate_candidate(
     score = score_candidate(
         props=props,
         similarity=similarity,
-        synthesis_priority=synthesis_priority,
-        synthesis_ease=synthesis_ease,
+        rule_priority=rule_priority,
+        rule_tier=rule_tier,
         sa_score=sa_score,
         alerts=alerts,
         use_veber=use_veber,
@@ -253,17 +255,104 @@ def evaluate_candidate(
 
 
 def sort_by_scientific_score(analogs: List[Dict]) -> List[Dict]:
-    """Ordena candidatos por score e desempata por síntese e SA Score."""
+    """Ordena por frentes de Pareto quando presentes; caso contrário, pelo score legado."""
+    if any("FrentePareto" in analog for analog in analogs):
+        return sorted(
+            analogs,
+            key=lambda a: (
+                int(a.get("FrentePareto", 10**9)),
+                float(a.get("SAScore", 10)),
+                -float(a.get("SimilaridadeTanimoto", 0)),
+                int(a.get("QtdAlertas", 10**6)),
+                a.get("SMILES", ""),
+            ),
+        )
     return sorted(
         analogs,
         key=lambda a: (
             -float(a.get("ScoreGlobal", 0)),
-            int(a.get("PrioridadeSintese", 99)),
+            int(a.get("PrioridadeRegra", a.get("PrioridadeSintese", 99))),
             float(a.get("SAScore", 10)),
             -float(a.get("SimilaridadeTanimoto", 0)),
             a.get("SMILES", ""),
         ),
     )
+
+
+OBJECTIVE_PROPERTIES = {
+    "LogP": "LogP", "MW": "MW", "TPSA": "TPSA",
+    "HBD": "HBD", "HBA": "HBA", "RotBonds": "RotBonds",
+}
+OBJECTIVE_DIRECTIONS = {"increase", "decrease", "maintain"}
+
+
+def rank_by_objectives(
+    analogs: List[Dict], base_properties: Dict, objective_profile: List[Dict[str, str]]
+) -> List[Dict]:
+    """Anota frentes não dominadas usando preferências do usuário e métricas auxiliares."""
+    if not objective_profile:
+        return analogs
+    if len(objective_profile) > 2:
+        raise ValueError("Defina no máximo dois objetivos moleculares.")
+
+    objectives = []
+    seen = set()
+    for item in objective_profile:
+        prop = item.get("property")
+        direction = item.get("direction")
+        if prop not in OBJECTIVE_PROPERTIES or direction not in OBJECTIVE_DIRECTIONS:
+            raise ValueError(f"Objetivo inválido: {item!r}")
+        if prop in seen:
+            raise ValueError(f"A propriedade {prop} foi selecionada mais de uma vez.")
+        seen.add(prop)
+        objectives.append((prop, direction))
+
+    def utility_vector(analog):
+        values = []
+        deltas = {}
+        for prop, direction in objectives:
+            delta = float(analog[prop]) - float(base_properties[prop])
+            deltas[prop] = delta
+            values.append(delta if direction == "increase" else -delta if direction == "decrease" else -abs(delta))
+        values.extend((
+            float(analog.get("SimilaridadeTanimoto", 0)),
+            -float(analog.get("SAScore", 10)),
+            -float(analog.get("QtdAlertas", 0)),
+        ))
+        analog["DeltaObjetivos"] = deltas
+        analog["Objetivos"] = "; ".join(
+            f"{prop} {direction}: {deltas[prop]:+.2f}" for prop, direction in objectives
+        )
+        return values
+
+    vectors = [utility_vector(a) for a in analogs]
+    dominates = [[] for _ in analogs]
+    dominated_count = [0] * len(analogs)
+    fronts = [[]]
+    for i, left in enumerate(vectors):
+        for j, right in enumerate(vectors):
+            if i == j:
+                continue
+            if all(x >= y for x, y in zip(left, right)) and any(x > y for x, y in zip(left, right)):
+                dominates[i].append(j)
+            elif all(y >= x for x, y in zip(left, right)) and any(y > x for x, y in zip(left, right)):
+                dominated_count[i] += 1
+        if dominated_count[i] == 0:
+            analogs[i]["FrentePareto"] = 1
+            fronts[0].append(i)
+
+    rank = 1
+    while fronts[-1]:
+        next_front = []
+        for i in fronts[-1]:
+            for j in dominates[i]:
+                dominated_count[j] -= 1
+                if dominated_count[j] == 0:
+                    analogs[j]["FrentePareto"] = rank + 1
+                    next_front.append(j)
+        rank += 1
+        fronts.append(next_front)
+    return sort_by_scientific_score(analogs)
 
 
 # ---------------------------------------------------------------------------
@@ -407,8 +496,10 @@ def _make_scatter_png(analogs: List[Dict], path: Path, x_key: str, y_key: str, t
 
 def _make_ranking_png(analogs: List[Dict], path: Path):
     top = sort_by_scientific_score(analogs)[:10]
+    pareto_mode = any("FrentePareto" in a for a in top)
     img, draw = _new_canvas()
-    _text(draw, (32, 28), "Ranking dos 10 melhores análogos", "#111827", _font(28, True))
+    title = "10 candidatos em ordem Pareto" if pareto_mode else "10 candidatos por ScoreGlobal"
+    _text(draw, (32, 28), title, "#111827", _font(28, True))
     x0, y0, x1, y1 = 360, 130, 1260, 760
     max_score = max([float(a.get("ScoreGlobal", 0)) for a in top] or [1])
     bar_h = 46
@@ -420,17 +511,20 @@ def _make_ranking_png(analogs: List[Dict], path: Path):
         _text(draw, (70, y + 11), analog.get("ID_Molecula", f"#{i+1}"), "#111827", _font(18, True))
         _text(draw, (170, y + 11), f"{score:.1f}", "#111827", _font(18))
         _text(draw, (x0 + 8, y + 11), analog.get("CategoriaScore", ""), "#ffffff", _font(18, True))
-    _text(draw, (70, 820), "Figura 5. Ordenação por ScoreGlobal, combinando perfil farmacêutico e viabilidade sintética.", "#374151", _font(18))
+    caption = ("Ordem por frentes de Pareto; barras mostram ScoreGlobal auxiliar."
+               if pareto_mode else "Ordenação por ScoreGlobal heurístico.")
+    _text(draw, (70, 820), f"Figura 5. {caption}", "#374151", _font(18))
     return _save_png(img, path)
 
 
 def _make_radar_png(analogs: List[Dict], path: Path):
     top = sort_by_scientific_score(analogs)[:5]
+    pareto_mode = any("FrentePareto" in a for a in top)
     img, draw = _new_canvas()
     _text(draw, (32, 28), "Radar dos melhores análogos", "#111827", _font(28, True))
     center = (700, 455)
     radius = 260
-    axes = ["Score", "Similaridade", "Síntese", "SA", "Sem alertas"]
+    axes = ["Score", "Similaridade", "Prioridade regra", "SA", "Sem alertas"]
     angles = [(-90 + i * 360 / len(axes)) * math.pi / 180 for i in range(len(axes))]
     for r in (0.25, 0.5, 0.75, 1.0):
         pts = [(center[0] + math.cos(a) * radius * r, center[1] + math.sin(a) * radius * r) for a in angles]
@@ -445,14 +539,16 @@ def _make_radar_png(analogs: List[Dict], path: Path):
         vals = [
             float(analog.get("ScoreGlobal", 0)) / 100,
             float(analog.get("SimilaridadeTanimoto", 0)),
-            EASE_SCORE.get(str(analog.get("FacilidadeSintese", "")).lower(), 60) / 100,
+            RULE_PRIORITY_SCORE.get(str(analog.get("NivelRegraManual", "")).lower(), 60) / 100,
             _clip(100 - ((float(analog.get("SAScore", 10)) - 1) / 9) * 100) / 100,
             _clip(100 - float(analog.get("QtdAlertas", 0)) * 30) / 100,
         ]
         pts = [(center[0] + math.cos(a) * radius * v, center[1] + math.sin(a) * radius * v) for a, v in zip(angles, vals)]
         draw.line(pts + [pts[0]], fill=colors[idx % len(colors)], width=3)
         _text(draw, (100, 150 + idx * 32), analog.get("ID_Molecula", ""), colors[idx % len(colors)], _font(18, True))
-    _text(draw, (80, 820), "Figura 4. Perfil multivariado dos análogos com maior ScoreGlobal.", "#374151", _font(18))
+    caption = ("Candidatos em ordem Pareto; Score é métrica auxiliar."
+               if pareto_mode else "Candidatos ordenados pelo ScoreGlobal heurístico.")
+    _text(draw, (80, 820), f"Figura 4. {caption}", "#374151", _font(18))
     return _save_png(img, path)
 
 
@@ -515,7 +611,8 @@ def _make_distribution_svg(analogs: List[Dict], path: Path):
 def _make_ranking_svg(analogs: List[Dict], path: Path):
     top = sort_by_scientific_score(analogs)[:10]
     width, height = 1000, 680
-    lines = _svg_header(width, height, "Ranking dos 10 melhores análogos")
+    title = "Ordem Pareto (barras: ScoreGlobal auxiliar)" if any("FrentePareto" in a for a in top) else "Ranking por ScoreGlobal heurístico"
+    lines = _svg_header(width, height, title)
     max_score = max([float(a.get("ScoreGlobal", 0)) for a in top] or [1])
     for i, analog in enumerate(top):
         y = 95 + i * 53
@@ -533,7 +630,7 @@ def _make_radar_svg(analogs: List[Dict], path: Path):
     width, height = 1000, 680
     lines = _svg_header(width, height, "Radar dos melhores análogos")
     cx, cy, radius = 500, 365, 220
-    axes = ["Score", "Similaridade", "Síntese", "SA", "Sem alertas"]
+    axes = ["Score", "Similaridade", "Prioridade regra", "SA", "Sem alertas"]
     angles = [(-90 + i * 360 / len(axes)) * math.pi / 180 for i in range(len(axes))]
     for r in (0.25, 0.5, 0.75, 1.0):
         pts = " ".join(f"{cx + math.cos(a)*radius*r:.1f},{cy + math.sin(a)*radius*r:.1f}" for a in angles)
@@ -543,7 +640,7 @@ def _make_radar_svg(analogs: List[Dict], path: Path):
         vals = [
             float(analog.get("ScoreGlobal", 0)) / 100,
             float(analog.get("SimilaridadeTanimoto", 0)),
-            EASE_SCORE.get(str(analog.get("FacilidadeSintese", "")).lower(), 60) / 100,
+            RULE_PRIORITY_SCORE.get(str(analog.get("NivelRegraManual", "")).lower(), 60) / 100,
             _clip(100 - ((float(analog.get("SAScore", 10)) - 1) / 9) * 100) / 100,
             _clip(100 - float(analog.get("QtdAlertas", 0)) * 30) / 100,
         ]
@@ -597,19 +694,24 @@ def generate_scientific_report(
     files["fig_01_svg"] = _make_distribution_svg(ranked, out / "fig_01_distribuicoes.svg")
     files["fig_02_png"] = _make_scatter_png(ranked, out / "fig_02_mw_vs_logp.png", "MW", "LogP", "MW vs LogP", "MW (Da)", "LogP")
     files["fig_02_svg"] = _make_basic_svg(ranked, out / "fig_02_mw_vs_logp.svg", "MW vs LogP", "MW", "LogP", "MW (Da)", "LogP")
-    files["fig_03_png"] = _make_scatter_png(ranked, out / "fig_03_similaridade_vs_sintese.png", "SimilaridadeTanimoto", "PrioridadeSintese", "Similaridade vs prioridade sintética", "Tanimoto", "Prioridade sintética")
-    files["fig_03_svg"] = _make_basic_svg(ranked, out / "fig_03_similaridade_vs_sintese.svg", "Similaridade vs prioridade sintética", "SimilaridadeTanimoto", "PrioridadeSintese", "Tanimoto", "Prioridade")
+    files["fig_03_png"] = _make_scatter_png(ranked, out / "fig_03_similaridade_vs_sintese.png", "SimilaridadeTanimoto", "PrioridadeRegra", "Similaridade vs prioridade manual da regra", "Tanimoto", "Prioridade da regra")
+    files["fig_03_svg"] = _make_basic_svg(ranked, out / "fig_03_similaridade_vs_sintese.svg", "Similaridade vs prioridade manual da regra", "SimilaridadeTanimoto", "PrioridadeRegra", "Tanimoto", "Prioridade da regra")
     files["fig_04_png"] = _make_radar_png(ranked, out / "fig_04_radar_top5.png")
     files["fig_04_svg"] = _make_radar_svg(ranked, out / "fig_04_radar_top5.svg")
     files["fig_05_png"] = _make_ranking_png(ranked, out / "fig_05_ranking_top10.png")
     files["fig_05_svg"] = _make_ranking_svg(ranked, out / "fig_05_ranking_top10.svg")
 
+    pareto_mode = any("FrentePareto" in analog for analog in ranked)
+    ranking_description = (
+        "ordem Pareto; ScoreGlobal exibido apenas como métrica auxiliar"
+        if pareto_mode else "ordem por ScoreGlobal heurístico"
+    )
     captions = [
         "Figura 1. Distribuição de MW, LogP e TPSA dos análogos aprovados.",
         "Figura 2. Dispersão MW vs LogP para avaliação do espaço físico-químico.",
-        "Figura 3. Relação entre similaridade Tanimoto ao protótipo e prioridade sintética.",
-        "Figura 4. Radar multivariado dos cinco melhores candidatos por ScoreGlobal.",
-        "Figura 5. Ranking dos dez melhores candidatos por ScoreGlobal.",
+        "Figura 3. Similaridade Tanimoto versus prioridade manual da regra de transformação.",
+        f"Figura 4. Perfil multivariado dos cinco candidatos em {ranking_description}.",
+        f"Figura 5. Dez candidatos em {ranking_description}.",
     ]
     captions_path = out / "analog_san_legendas_figuras.txt"
     captions_path.write_text("\n".join(captions) + "\n", encoding="utf-8")
@@ -631,27 +733,42 @@ def generate_scientific_report(
         f"- SA Score máximo: {params.get('max_sa_score', 6.0)} (estimativa heurística)",
         f"- Exploração multietapas: {'sim' if params.get('allow_multistep', False) else 'não'}",
         f"- Rotas: {', '.join(params.get('selected_routes', [])) or 'não informado'}",
+        f"- Perfil de objetivos: {json.dumps(params.get('objective_profile', []), ensure_ascii=False) or '[]'}",
         "",
         "Metodologia resumida:",
         "Os análogos foram avaliados por descritores RDKit, regras de Lipinski",
         "e Veber, similaridade Tanimoto por fingerprint Morgan, SA Score,",
         "alertas químicos PAINS/Brenk quando disponíveis e padrões SMARTS",
-        "reativos simples. O ScoreGlobal combina drug-likeness, espaço",
-        "físico-químico, similaridade ao protótipo e prioridades heurísticas de transformação,",
-        "acessibilidade sintética e penalização por alertas.",
+        "reativos simples. O ScoreGlobal heurístico combina drug-likeness,",
+        "faixa físico-química, similaridade, prioridade manual da regra, SA Score",
+        "e alertas. A prioridade manual não é estimativa de facilidade de síntese.",
+        "As evidências de reação são mostradas por operação; nesta versão, as",
+        "transformações ainda não têm precedentes experimentais catalogados.",
         "O SA Score é uma estimativa computacional, não demonstra que exista rota",
         "prática. Planejamento retrosintético, disponibilidade de reagentes,",
         "condições, rendimento, segurança e confirmação experimental não são",
         "avaliados. Alertas PAINS/Brenk são sinalizadores e exigem revisão contextual.",
-        "A prioridade da transformação não equivale a custo, número de etapas,",
-        "rendimento ou facilidade real de síntese.",
+        "A prioridade da regra não equivale a custo, número de etapas,",
+        "rendimento ou facilidade real de síntese. Os aliases históricos",
+        "PrioridadeSintese e FacilidadeSintese permanecem só por compatibilidade.",
+        "Quando há perfil de objetivos, a ordenação usa frentes de Pareto com",
+        "as preferências de descritores informadas, similaridade, SA Score e",
+        "alertas; não representa previsão de eficácia ou de síntese.",
         "",
-        "Top 10 candidatos:",
-        "ID\tScore\tCategoria\tTanimoto\tSA\tAlertas\tModificação\tSMILES",
+        "Top 10 candidatos (ordem Pareto, se objetivos foram definidos):",
+        "ID\tRegra prior.\tClasse hipotética\tTipo registro\tEvidência\tFontes\tRota verificada\tFrente Pareto\tObjetivos\tScore auxiliar\tCategoria\tTanimoto\tSA\tAlertas\tModificação\tSMILES",
     ]
     for analog in ranked[:10]:
         report_lines.append(
             f"{analog.get('ID_Molecula')}\t"
+            f"{analog.get('PrioridadeRegra', '')}\t"
+            f"{analog.get('EvidenciaClasseReacao', '')}\t"
+            f"{analog.get('EvidenciaTipoRegistro', '')}\t"
+            f"{analog.get('EvidenciaStatus', '')}\t"
+            f"{analog.get('EvidenciaFonteCount', 0)}\t"
+            f"{analog.get('EvidenciaRotaVerificada', False)}\t"
+            f"{analog.get('FrentePareto', '')}\t"
+            f"{analog.get('Objetivos', '')}\t"
             f"{analog.get('ScoreGlobal')}\t"
             f"{analog.get('CategoriaScore')}\t"
             f"{analog.get('SimilaridadeTanimoto')}\t"
@@ -686,6 +803,7 @@ def generate_scientific_report(
         "output_dir": str(out),
         "top_id": ranked[0].get("ID_Molecula"),
         "top_score": ranked[0].get("ScoreGlobal"),
+        "top_pareto_front": ranked[0].get("FrentePareto"),
         "result_sha256": result_hash,
         "files": files,
     }

@@ -1,0 +1,26 @@
+CATÁLOGO DE EVIDÊNCIAS DE TRANSFORMAÇÕES
+
+Arquivo inicial: evidence_catalog.template.json
+Validador: evidence_catalog.py
+
+Escopos aceitos:
+- reaction_class: a fonte documenta a classe de reação, mas não prova que a edição
+  específica do Analog-San foi realizada naquele substrato.
+- exact_transform: a fonte documenta o produto e a transformação específicos.
+  Exige reaction_smiles e reviewer para deixar explícita a revisão humana.
+
+Cada registro precisa de source_id, title, URL HTTPS e scope. Sempre que possível,
+source_id deve ser DOI, identificador de patente ou identificador persistente do
+registro. Inclua reaction_smiles, conditions, yield, substrate_scope, limitations
+e reviewer quando disponíveis. Não deduza condições, rendimento ou viabilidade.
+
+O catálogo não é um preditor de síntese nem confirma que uma rota funciona para
+qualquer molécula do usuário. Antes de usar um registro, confira a fonte primária,
+a correspondência estrutural, as condições e as limitações. Use reaction_class
+para precedentes gerais e reserve exact_transform para correspondência direta,
+revisada por uma pessoa. Uma rota só deve ser considerada verificada após análise
+de todos os passos e disponibilidade dos materiais de partida.
+
+Não copie bases ou dados de terceiros para este repositório sem verificar a
+licença e as condições de redistribuição. Preserve atribuição, versão da fonte,
+data de acesso e licença em qualquer conjunto de dados derivado.

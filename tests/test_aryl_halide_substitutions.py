@@ -61,6 +61,24 @@ class ArylHalideSubstitutionTests(unittest.TestCase):
         self.assertEqual(matching[0]["Modificacao"], "Ar-Haleto->terc-Butil")
         self.assertEqual(matching[0]["EtapaGeracao"], "protótipo")
 
+    def test_objective_mode_selects_from_complete_direct_candidate_set(self):
+        profile = [{"property": "LogP", "direction": "increase"}]
+        all_candidates = chem_engine.generate_analogs(
+            self.parent_smiles, target_count=100, random_seed=41242,
+            max_sa_score=6.0, allow_multistep=False,
+        )
+        expected = chem_engine.ve.rank_by_objectives(
+            [dict(item) for item in all_candidates],
+            chem_engine.calculate_properties(self.parent), profile,
+        )[0]["SMILES"]
+        selected = chem_engine.generate_analogs(
+            self.parent_smiles, target_count=1, random_seed=41242,
+            max_sa_score=6.0, allow_multistep=False, objective_profile=profile,
+        )
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0]["SMILES"], expected)
+        self.assertIn("FrentePareto", selected[0])
+
 
 if __name__ == "__main__":
     unittest.main()
