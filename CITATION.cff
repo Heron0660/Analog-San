@@ -1,7 +1,14 @@
 cff-version: 1.2.0
 message: "If you use Analog-San, please cite the software and its accompanying article. Complete author and DOI metadata when the public archival release is made."
 title: "Analog-San: heuristic generation and prioritization of molecular analogues"
-version: 1.3.0
+authors:
+  - family-names: Soares
+    given-names: Heron Silva
+    orcid: "https://orcid.org/0009-0005-7233-3626"
+  - family-names: Santos
+    given-names: Antônia Laíres da Silva
+    orcid: "https://orcid.org/0000-0001-6233-6173"
+version: 1.5.0
 date-released: 2026-10-28
 license: MIT
 type: software

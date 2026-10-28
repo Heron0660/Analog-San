@@ -172,6 +172,76 @@ def add_methyl_aromatic(mol: Chem.Mol) -> List[Chem.Mol]:
     return results
 
 
+def replace_aromatic_halogen_with_alkyl(
+    mol: Chem.Mol,
+    carbon_count: int,
+    branching: int = 0,
+) -> List[Chem.Mol]:
+    """Replace aromatic Cl, Br, or I with a small alkyl substituent.
+
+    The transformation enumerates structures only; it does not assert that a
+    particular substrate has a validated or experimentally feasible route.
+    ``branching`` is 0 for a linear chain, 1 for isopropyl, and 2 for tert-butyl.
+    """
+    if carbon_count < 1 or branching not in (0, 1, 2):
+        raise ValueError("Unsupported alkyl fragment")
+
+    results = []
+    for halogen in mol.GetAtoms():
+        if halogen.GetAtomicNum() not in (17, 35, 53):
+            continue
+        neighbors = list(halogen.GetNeighbors())
+        if len(neighbors) != 1:
+            continue
+        aryl_atom = neighbors[0]
+        if not (aryl_atom.GetIsAromatic() and aryl_atom.GetAtomicNum() == 6):
+            continue
+
+        rw = RWMol(mol)
+        halogen_idx = halogen.GetIdx()
+        aryl_idx = aryl_atom.GetIdx()
+        rw.RemoveAtom(halogen_idx)
+        if halogen_idx < aryl_idx:
+            aryl_idx -= 1
+
+        fragment_size = 1 if branching else carbon_count
+        fragment_indices = [rw.AddAtom(Atom(6)) for _ in range(fragment_size)]
+        rw.AddBond(aryl_idx, fragment_indices[0], BondType.SINGLE)
+
+        if branching == 1:
+            for _ in range(2):
+                methyl_idx = rw.AddAtom(Atom(6))
+                rw.AddBond(fragment_indices[0], methyl_idx, BondType.SINGLE)
+        elif branching == 2:
+            for _ in range(3):
+                methyl_idx = rw.AddAtom(Atom(6))
+                rw.AddBond(fragment_indices[0], methyl_idx, BondType.SINGLE)
+        else:
+            for first, second in zip(fragment_indices, fragment_indices[1:]):
+                rw.AddBond(first, second, BondType.SINGLE)
+
+        candidate = _try_finalize(rw)
+        if candidate:
+            results.append(candidate)
+    return results
+
+
+def replace_aryl_halide_with_methyl(mol: Chem.Mol) -> List[Chem.Mol]:
+    return replace_aromatic_halogen_with_alkyl(mol, carbon_count=1)
+
+
+def replace_aryl_halide_with_ethyl(mol: Chem.Mol) -> List[Chem.Mol]:
+    return replace_aromatic_halogen_with_alkyl(mol, carbon_count=2)
+
+
+def replace_aryl_halide_with_isopropyl(mol: Chem.Mol) -> List[Chem.Mol]:
+    return replace_aromatic_halogen_with_alkyl(mol, carbon_count=3, branching=1)
+
+
+def replace_aryl_halide_with_tert_butyl(mol: Chem.Mol) -> List[Chem.Mol]:
+    return replace_aromatic_halogen_with_alkyl(mol, carbon_count=4, branching=2)
+
+
 def n_methylation(mol: Chem.Mol) -> List[Chem.Mol]:
     """
     N-Metilação: adiciona CH3 a átomos de nitrogênio com H disponível.
@@ -460,6 +530,10 @@ MODIFICATION_REGISTRY: List[Tuple[str, Callable, Tuple[str, ...], int, str]] = [
     ("Cianação Aromática (-CN)",         add_cyano_aromatic,           (ROUTE_NON_CLASSIC,), 5, "média"),
     ("Bioisostero: Benzeno->Piridina",   benzene_to_pyridine,          (ROUTE_CLASSIC,),     5, "média"),
     ("Cloração Aromática",               add_chlorine_aromatic,        (ROUTE_CLASSIC,),     5, "média"),
+    ("Ar-Haleto->Metil",                  replace_aryl_halide_with_methyl,    (ROUTE_NON_CLASSIC,), 5, "média"),
+    ("Ar-Haleto->Etil",                   replace_aryl_halide_with_ethyl,     (ROUTE_NON_CLASSIC,), 5, "média"),
+    ("Ar-Haleto->Isopropil",              replace_aryl_halide_with_isopropyl, (ROUTE_NON_CLASSIC,), 6, "baixa"),
+    ("Ar-Haleto->terc-Butil",             replace_aryl_halide_with_tert_butyl,(ROUTE_NON_CLASSIC,), 7, "baixa"),
     ("Trifluorometilação (-CF3)",        add_trifluoromethyl_aromatic, (ROUTE_CLASSIC,),     6, "baixa"),
     ("Bioisostero: Cetona->Sulfona",     ketone_to_sulfone,            (ROUTE_NON_CLASSIC,), 6, "baixa"),
     ("Bioisostero: Benzeno->Pirimidina", benzene_to_pyrimidine,        (ROUTE_CLASSIC,),     7, "baixa"),

@@ -1,10 +1,10 @@
 # Analog-San
 
-Analog-San is a desktop research tool for generating and prioritizing candidate molecular analogues from a user-supplied prototype. It supports classical and non-classical bioisosteric edits, Lipinski and Veber filters, heuristic synthesis-priority ranking, molecular-property summaries, and CSV, SMILES, and MOL2 export.
+Analog-San is a desktop research tool for generating and prioritizing candidate molecular analogues from a user-supplied prototype. Its 18 registered graph edits include classical and non-classical transformations, including replacement of aromatic chlorine, bromine, or iodine by methyl, ethyl, isopropyl, or tert-butyl groups. It supports Lipinski and Veber filters, heuristic synthesis-priority ranking, molecular-property summaries, and CSV, SMILES, and MOL2 export.
 
 ## Scope and limitations
 
-The software proposes structures; it does not predict binding affinity, biological efficacy, ADMET outcomes, toxicity, or experimentally validated synthetic routes. Priority and composite scores are heuristic ranking aids, not calibrated probabilities or evidence of synthesizability. Every generated structure requires cheminformatics review and experimental validation. Filters can exclude useful compounds and should be selected deliberately.
+The software proposes structures; it does not predict binding affinity, biological efficacy, ADMET outcomes, toxicity, or experimentally validated synthetic routes. Priority and composite scores are heuristic ranking aids, not calibrated probabilities or evidence of synthesizability. The aromatic halide replacements are structure-enumeration rules, not reaction templates or route predictions. Every generated structure requires cheminformatics review and experimental validation. Filters can exclude useful compounds and should be selected deliberately.
 
 ## Installation and use
 
