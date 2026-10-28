@@ -747,6 +747,7 @@ def generate_analogs(
     max_sa_score: Optional[float] = 6.0,
     allow_multistep: bool = False,
     objective_profile: Optional[List[Dict[str, str]]] = None,
+    selection_strategy: str = "tier_priority",
 ) -> List[Dict]:
     """
     Gera análogos estruturais da molécula base através de modificações químicas.
@@ -774,6 +775,8 @@ def generate_analogs(
         random_seed:       Seed para reprodutibilidade da exploração aleatória.
         max_sa_score:      Limite superior opcional do SA Score (escala 1-10).
         allow_multistep:   Permite combinações de modificações; padrão False.
+        selection_strategy: "tier_priority" (padrão) ou "tier_diverse", que
+                            seleciona por MaxMin dentro de cada tier manual.
 
     Returns:
         Lista de dicionários com dados de cada análogo aprovado.
@@ -789,6 +792,10 @@ def generate_analogs(
     Chem.SanitizeMol(base_mol)
     canonical_base = Chem.MolToSmiles(base_mol)
     objective_profile = objective_profile or []
+    if selection_strategy not in {"tier_priority", "tier_diverse"}:
+        raise ValueError("selection_strategy deve ser 'tier_priority' ou 'tier_diverse'.")
+    if selection_strategy == "tier_diverse" and (allow_multistep or objective_profile):
+        raise ValueError("tier_diverse requer geração direta e não pode combinar-se com frentes de Pareto.")
     if objective_profile:
         if len(objective_profile) > 2:
             raise ValueError("Defina no máximo dois objetivos moleculares.")
@@ -822,7 +829,12 @@ def generate_analogs(
     active_routes_text = ", ".join(route_labels.get(r, r) for r in active_routes)
     _log(f"Rotas ativas   : {active_routes_text}")
     _log(f"Modificações   : {len(modification_pool)} tipos disponíveis")
-    _log("Ordenação      : frentes de Pareto" if objective_profile else "Ordenação      : prioridade manual das regras (heurística)")
+    if objective_profile:
+        _log("Ordenação      : frentes de Pareto")
+    elif selection_strategy == "tier_diverse":
+        _log("Ordenação      : diversidade max-min dentro de cada tier manual (heurístico)")
+    else:
+        _log("Ordenação      : prioridade manual das regras (heurística)")
     _log(f"Seed           : {random_seed if random_seed is not None else 'não fixada'}")
     _log(f"Filtros        : {'Lipinski + Veber' if use_veber else 'somente Lipinski'}")
     _log(f"SA máximo      : {max_sa_score if max_sa_score is not None else 'desativado'} (heurístico; não prova síntese)")
@@ -836,7 +848,7 @@ def generate_analogs(
         rule_tier: str,
         generation_stage: str,
     ) -> bool:
-        if not objective_profile and len(approved) >= target_count:
+        if not objective_profile and selection_strategy == "tier_priority" and len(approved) >= target_count:
             return False
 
         if not is_valid_molecule(cand_mol):
@@ -927,14 +939,14 @@ def generate_analogs(
             f"LogP={props['LogP']:>5.2f}"
         )
 
-        if progress_callback and not objective_profile:
+        if progress_callback and not objective_profile and selection_strategy == "tier_priority":
             progress_callback(min(len(approved), target_count), target_count)
 
         return True
 
     _log("Fase direta    : composto-protótipo por prioridade")
     for mod_name, mod_func, _, rule_priority, rule_tier in modification_pool:
-        if not objective_profile and len(approved) >= target_count:
+        if not objective_profile and selection_strategy == "tier_priority" and len(approved) >= target_count:
             break
         if stop_flag and stop_flag():
             _log("Geração interrompida pelo usuário.")
@@ -951,7 +963,7 @@ def generate_analogs(
             key=lambda m: Chem.MolToSmiles(m) if m is not None else "",
         )
         for cand_mol in candidates:
-            if not objective_profile and len(approved) >= target_count:
+            if not objective_profile and selection_strategy == "tier_priority" and len(approved) >= target_count:
                 break
             _accept_candidate(
                 cand_mol,
@@ -1013,6 +1025,13 @@ def generate_analogs(
     if objective_profile:
         approved = ve.rank_by_objectives(approved, calculate_properties(base_mol), objective_profile)
         approved = approved[:target_count]
+    elif selection_strategy == "tier_diverse":
+        approved = _select_tier_diverse(approved, target_count)
+        for rank, analog in enumerate(approved, start=1):
+            analog["OrdemSelecaoDiversa"] = rank
+        approved.sort(key=lambda analog: (
+            analog["PrioridadeRegra"], analog["OrdemSelecaoDiversa"]
+        ))
     else:
         approved.sort(
             key=lambda a: (
@@ -1028,6 +1047,51 @@ def generate_analogs(
     return approved
 
 
+def _select_tier_diverse(analogs: List[Dict], target_count: int) -> List[Dict]:
+    """Select a diverse set within manual tiers, preserving tier precedence.
+
+    Tiers are user-defined ordering labels, not estimates of reaction
+    feasibility or synthetic difficulty.
+    """
+    from rdkit import DataStructs
+    from rdkit.Chem import rdFingerprintGenerator
+
+    generator = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048)
+    by_tier: Dict[int, List[Tuple[Dict, object]]] = {}
+    for analog in analogs:
+        mol = Chem.MolFromSmiles(analog["SMILES"])
+        if mol is not None:
+            by_tier.setdefault(int(analog["PrioridadeRegra"]), []).append(
+                (analog, generator.GetFingerprint(mol))
+            )
+
+    selected: List[Tuple[Dict, object]] = []
+    for tier in sorted(by_tier):
+        remaining = sorted(
+            by_tier[tier],
+            key=lambda row: (row[0].get("Modificacao", ""), row[0].get("SMILES", "")),
+        )
+        selected_at_tier: List[Tuple[Dict, object]] = []
+        while remaining and len(selected) + len(selected_at_tier) < target_count:
+            references = selected + selected_at_tier
+            if not references:
+                best_index = 0
+            else:
+                distances = [
+                    min(1.0 - DataStructs.TanimotoSimilarity(fp, ref_fp) for _, ref_fp in references)
+                    for _, fp in remaining
+                ]
+                best_index = max(
+                    range(len(remaining)),
+                    key=lambda index: (distances[index], remaining[index][0].get("SMILES", "")),
+                )
+            selected_at_tier.append(remaining.pop(best_index))
+        selected.extend(selected_at_tier)
+        if len(selected) >= target_count:
+            break
+    return [analog for analog, _ in selected]
+
+
 # ---------------------------------------------------------------------------
 #  SEÇÃO 5: EXPORTAÇÃO E VISUALIZAÇÃO
 # ---------------------------------------------------------------------------
@@ -1040,6 +1104,7 @@ _CSV_COLUMNS = [
     "EvidenciaClasseReacao", "EvidenciaTipoRegistro", "EvidenciaFontesJSON", "EvidenciaFonteIDs",
     "EvidenciaFonteCount", "EvidenciaCondicoes", "EvidenciaRotaVerificada",
     "EvidenciaObservacao",
+    "OrdemSelecaoDiversa",
     "ScoreGlobal", "CategoriaScore", "SimilaridadeTanimoto", "SAScore",
     "QtdAlertas", "AlertasQuimicos", "LipinskiOK", "VeberOK", "RegrasVioladas",
     "MW", "LogP", "HBA", "HBD", "TPSA", "RotBonds", "HAC",

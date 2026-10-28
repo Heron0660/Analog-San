@@ -34,3 +34,7 @@ python scripts/analyze_crem_comparison.py
 ```
 
 The comparison uses 28 prototypes, three fixed seeds, the same strict Lipinski and Veber filters, CReM `mutate`/`grow` settings, a cap of 1,000 candidates per CReM mode and seed, and a seeded uniform sample of up to 100 passing structures per run. The target was increased from 30 because the lower target saturated many runs and obscured output capacity. The complete filtered CReM candidate pools, selected records, per-run metadata, and derived summaries are provided in `dados/`. This is an exploratory matched-input software comparison, not an independent synthesis-feasibility or biological validation.
+
+## Small-set diversity-selection ablation
+
+Version 1.7.0 adds a paired ablation of tier-priority and tier-constrained MaxMin selection at output sizes 5 and 10 across the same 28 prototypes. Protocol, limitations, and outputs are in [`v1.7/`](v1.7/README.md). This analysis measures fingerprint nearest-neighbour redundancy only; it does not validate synthesis ease, novelty, or biological relevance.

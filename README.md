@@ -1,10 +1,14 @@
 # Analog-San
 
-Analog-San 1.6.0 is an open-source desktop application for rule-based molecular analogue generation and computational triage. It applies 18 explicit graph edits, property filters, molecular descriptors, structural-alert flags, and reproducible structure/data exports.
+Analog-San 1.7.0 is an open-source desktop application for rule-based molecular analogue generation and computational triage. It applies 18 explicit graph edits, property filters, molecular descriptors, structural-alert flags, and reproducible structure/data exports. An optional tier-constrained MaxMin mode selects a structurally diverse small portfolio within the existing manual rule tiers.
 
 ## Scope
 
 The software proposes structures; it does not predict binding, efficacy, ADMET, toxicity, novelty, or experimental synthesis success. Rule-priority tiers, SA Score, and composite scores are uncalibrated heuristics, not probabilities or route-feasibility estimates. Candidate structures may be impractical or unstable and require independent chemical review.
+
+## Small-set diversity selection
+
+The default selector returns candidates in manual rule-tier order. The optional `tier_diverse` selector evaluates the complete filtered direct-edit set and greedily maximizes minimum Morgan-fingerprint distance within each tier, filling lower-numbered tiers first. It is deterministic for a fixed input and filter set. This can reduce redundancy in a small proposed set; it may slightly reduce similarity to the prototype and is not evidence of synthetic accessibility, biological value, or synthesis ease. It cannot be combined with multi-step exploration or Pareto objectives.
 
 ## Transformation evidence catalogue
 
@@ -30,7 +34,7 @@ python main.py --smoke-test
 
 ## Reproducibility study
 
-Benchmark inputs, scripts, fixed seeds, software versions, and generated outputs are provided under `study/`. The study is descriptive: it does not establish activity, synthetic feasibility, or comparative superiority. See [`study/README.md`](study/README.md) for protocols and caveats.
+Benchmark inputs, scripts, fixed seeds, software versions, and generated outputs are provided under `study/`. The study is descriptive: it does not establish activity, synthetic feasibility, or comparative superiority. Version 1.7.0 additionally reports a paired ablation of tier-priority versus tier-constrained diversity selection at small output sizes. See [`study/README.md`](study/README.md) for protocols and caveats.
 
 ## Citation and license
 

@@ -98,6 +98,7 @@ class AnalogSanApp(ctk.CTk):
         self._sort_reverse: Dict[str, bool] = {}
         self._last_base_smiles: str = ""
         self._last_generation_params: Dict = {}
+        self._selection_var = ctk.StringVar(value="Prioridade por tier")
 
         self._build_ui()
         self._poll_queue()  # Inicia loop de polling (seguro para threads)
@@ -353,6 +354,22 @@ class AnalogSanApp(ctk.CTk):
             font=ctk.CTkFont(size=11), checkmark_color="white",
             fg_color=Palette.ACCENT_BLUE,
         ).pack(anchor="w", padx=10, pady=(0, 8))
+
+        selection_frame = ctk.CTkFrame(filter_frame, fg_color="transparent")
+        selection_frame.pack(fill="x", padx=10, pady=(0, 8))
+        ctk.CTkLabel(
+            selection_frame,
+            text="Seleção do conjunto:",
+            font=ctk.CTkFont(size=11),
+        ).pack(side="left")
+        ctk.CTkOptionMenu(
+            selection_frame,
+            values=["Prioridade por tier", "Diversidade dentro do tier"],
+            variable=self._selection_var,
+            width=190,
+            height=28,
+            font=ctk.CTkFont(size=11),
+        ).pack(side="left", padx=(8, 0))
 
         row = self._section_header(frame, "Objetivos de otimização (opcional)", row)
         self._objective_vars = []
@@ -821,6 +838,17 @@ class AnalogSanApp(ctk.CTk):
             return
 
         objective_profile = self._selected_objectives()
+        selection_strategy = (
+            "tier_diverse" if self._selection_var.get() == "Diversidade dentro do tier"
+            else "tier_priority"
+        )
+        if selection_strategy == "tier_diverse" and (objective_profile or self._multistep_var.get()):
+            messagebox.showwarning(
+                "Combinação incompatível",
+                "A seleção diversificada requer geração direta e não pode ser combinada "
+                "com objetivos de Pareto ou exploração multietapas.",
+            )
+            return
         selected_properties = [item["property"] for item in objective_profile]
         if len(selected_properties) != len(set(selected_properties)):
             messagebox.showwarning("Objetivo repetido", "Escolha propriedades diferentes nos objetivos.")
@@ -860,6 +888,7 @@ class AnalogSanApp(ctk.CTk):
             "allow_multistep": self._multistep_var.get(),
             "seed": 0xA11A,
             "objective_profile": objective_profile,
+            "selection_strategy": selection_strategy,
         }
 
         self._log(f"--- Sessão iniciada - {qty} análogos solicitados ---")
@@ -981,6 +1010,7 @@ class AnalogSanApp(ctk.CTk):
                 stop_flag=lambda: self._stop_requested,
                 random_seed=self._last_generation_params.get("seed", 0xA11A),
                 objective_profile=self._last_generation_params.get("objective_profile"),
+                selection_strategy=self._last_generation_params.get("selection_strategy", "tier_priority"),
             )
             self._gui_queue.put(("done", analogs))
         except Exception as exc:

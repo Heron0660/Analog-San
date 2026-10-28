@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.0 - 2026-10-28
+
+- Added optional deterministic MaxMin fingerprint selection within manual rule tiers for small direct-edit portfolios.
+- Kept the existing tier precedence and tier counts; diversity selection is not described as a synthesis-feasibility predictor.
+- Added a paired 28-prototype ablation at requested set sizes 5 and 10. The observed within-set nearest-neighbour similarity decreased, with a small trade-off in parent similarity at size 5 and a slight increase in SA Score; see `study/v1.7`.
+- Added GUI control, export field, validation, and tests for the new selection mode.
+
 ## 1.6.0 - 2026-10-28
 
 - Added a validated JSON catalogue for sourced transformation records, distinguishing reaction-class precedent from exact-transformation precedent.

@@ -1,0 +1,85 @@
+{
+  "software": "1.7.0",
+  "validation": "1.4",
+  "RDKit": "2026.09.1",
+  "Python": "3.13.9",
+  "prototypes": 28,
+  "seed": 41242,
+  "filters": {
+    "Lipinski": true,
+    "Veber": true,
+    "SA_score_max": 6.0,
+    "selected_reactive_alerts_excluded": true
+  },
+  "metric": "mean over candidates of each candidate's maximum Morgan radius-2, 2048-bit Tanimoto to any other selected candidate; lower indicates lower nearest-neighbour similarity",
+  "bootstrap": {
+    "unit": "prototype; paired by prototype",
+    "replicates": 20000,
+    "seed": 41242
+  },
+  "outputs_sha256": {
+    "portfolio_selection_by_prototype.csv": "c416102584e6e197d9acd1aa6a56bb70820f12b03c62cc144e21ad01b733f9a0"
+  },
+  "results": {
+    "5": {
+      "MeanNearestNeighborTanimoto": {
+        "mean_paired_delta": -0.027946866619842217,
+        "bootstrap_95pct_CI": [
+          -0.03946829713306662,
+          -0.016743065954233576
+        ],
+        "improved_count": 15,
+        "worsened_count": 0
+      },
+      "MeanParentTanimoto": {
+        "mean_paired_delta": -0.012849285714285714,
+        "bootstrap_95pct_CI": [
+          -0.01902928571428572,
+          -0.00720071428571431
+        ],
+        "improved_count": 16,
+        "worsened_count": 1
+      },
+      "MeanSAScore": {
+        "mean_paired_delta": 0.008928571428571373,
+        "bootstrap_95pct_CI": [
+          0.0038571428571427813,
+          0.014428571428571346
+        ],
+        "improved_count": 3,
+        "worsened_count": 15
+      },
+      "tier_distribution_changed": 0
+    },
+    "10": {
+      "MeanNearestNeighborTanimoto": {
+        "mean_paired_delta": -0.00832374331589046,
+        "bootstrap_95pct_CI": [
+          -0.013883049667702683,
+          -0.0031662979094945792
+        ],
+        "improved_count": 15,
+        "worsened_count": 6
+      },
+      "MeanParentTanimoto": {
+        "mean_paired_delta": 5.8214285714296354e-05,
+        "bootstrap_95pct_CI": [
+          -0.004003571428571424,
+          0.004543928571428588
+        ],
+        "improved_count": 11,
+        "worsened_count": 10
+      },
+      "MeanSAScore": {
+        "mean_paired_delta": 0.005571428571428593,
+        "bootstrap_95pct_CI": [
+          -0.0009285714285714849,
+          0.012285714285714344
+        ],
+        "improved_count": 8,
+        "worsened_count": 16
+      },
+      "tier_distribution_changed": 0
+    }
+  }
+}
