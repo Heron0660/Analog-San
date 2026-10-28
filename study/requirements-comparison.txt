@@ -1,0 +1,6 @@
+crem==0.3.2
+rdkit==2026.09.1
+pandas==2.3.3
+numpy==2.3.5
+matplotlib==3.11.2
+pillow==12.3.0

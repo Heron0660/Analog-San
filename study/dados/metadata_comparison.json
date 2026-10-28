@@ -1,0 +1,36 @@
+{
+  "protocol": "Paired 28-prototype comparison; 3 fixed seeds; target 100; strict Lipinski and Veber filters.",
+  "CReM": "0.3.2",
+  "RDKit": "2026.09.1",
+  "Python": "3.12.14",
+  "database": "CReM ChEMBL33 SA<=2, alert-filtered, max fragment size 15; Zenodo 10.5281/zenodo.16909329; file chembl33_sa2_f5.db.gz",
+  "database_sha256_gz": "e863c5de768df66d3bdf371895f24bf4fc0f1e0a534ca0fbde45fc0111f87283",
+  "parameters": {
+    "mutate": {
+      "radius": 3,
+      "min_size": 0,
+      "max_size": 1,
+      "max_inc": 3,
+      "max_replacements_per_seed": 1000
+    },
+    "grow": {
+      "radius": 3,
+      "min_atoms": 1,
+      "max_atoms": 1,
+      "max_replacements_per_seed": 1000
+    },
+    "CReM_selection": "Uniform seeded sample without replacement from unique structures passing both filters, capped at 100 per run.",
+    "Analog-San": "Official v1.3 generator; both routes; Lipinski and Veber active; target 100.",
+    "seeds": [
+      41242,
+      41243,
+      41244
+    ]
+  },
+  "database_url": "https://zenodo.org/records/16909329/files/chembl33_sa2_f5.db.gz?download=1",
+  "outputs_sha256": {
+    "records_crem_comparison.csv": "bee1fe6dd135b52958f048034daea5edab1e86480bb2b8a64c5d917f8479522e",
+    "records_analogsan_comparison.csv": "e7e60155eaa98ed40c9d3c883b30197e7602dfadd9fc6f0ad33b20b0e6d62383",
+    "run_metadata_comparison.csv": "0a08ea4415ec3068e44ef46b46d6a449fb7a8eeae007819e10a801db9b72f923"
+  }
+}

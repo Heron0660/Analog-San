@@ -1,0 +1,3 @@
+Tool,Runs,Returned records,Pooled unique SMILES,Runs reaching 100,Mean records per run,Mean parent Tanimoto,SD parent Tanimoto,Mean SA score,SD SA score,Mean alert count,Mean molecular weight,Mean MolLogP
+CReM,84,5298,2020,21,63.0714,0.6524,0.1006,2.1939,0.4293,0.1808,280.3761,2.5885
+Analog-San,84,8400,6155,84,100.0000,0.4853,0.1563,2.6642,0.4774,0.5033,288.2856,2.2196
